@@ -23,26 +23,22 @@ class Makefile(buildtool.BuildTool):
     def write(self):
         utility.mkdir(os.path.dirname(self.pathname_))
         with open(self.pathname_, "w") as fp:
-            # Pattern rule to turn sources into artifacts.
-            fp.write("%%.artifact:\t%%.source\n"
-                     "\t%stouch $@;\n\n" % (self.atsign()))
-
             fp.write("SOURCE\t:=\t\t\\\n")
             first = True
             for m in self.modules_:
                 if not first:
                     fp.write("\t\t\\\n")
-                fp.write("\t%s" % (os.path.basename(m.source_)))
+                fp.write("\t$(subst $(BPC_SOURCE)/,,%s)" % (m.source_))
                 first = False
             fp.write("\n\n"
-                     "ARTIFACT\t= $(SOURCE:.source=.artifact)\n\n")
+                     "ARTIFACT\t= $(addprefix $(BOD)/,$(SOURCE:.source=.artifact))\n\n")
 
             # Set all import files as prerequisites.
             for m in self.modules_:
+                fp.write("$(BOD)/%s: %s" % (m.artifact_, m.source_))
                 for imp in m.imports_:
-                    fp.write("%s: %s\n" % (os.path.basename(m.artifact_),
-                                           imp.interface_))
-            fp.write("\nsubdirectory__: $(ARTIFACT)\n\n")
+                    fp.write(" %s" % (imp.interface_))
+                fp.write("\n\t%stouch $@;\n\n" % (self.atsign()))
 
 
 class RootMakefile(Makefile):
@@ -78,29 +74,6 @@ class RootMakefile(Makefile):
             first = False
         fp.write("\n\n")
 
-    def invoke_subordinate_make(self, fp):
-        silent = ""
-        for sub in self.subordinates_:
-            fp.write("%s " % (sub.rela_artifact_dir_))
-        fp.write(":\tcreate-build-directories\n"
-                 "\t%s$(MAKE)\t\t\t\\\n"
-                 "\t    $(if $(VERBOSE),,--silent)\t\\\n"
-                 "\t    --no-print-directory\t\\\n"
-                 "\t    BOD=$(BOD)/$@\t\t\\\n"
-                 "\t    VPATH=%s/$@\t\t\\\n"
-                 "\t    -C $(BOD)/$@\t\t\\\n"
-                 "\t    -f %s/$@/Makefile.single\t\t\\\n"
-                 "\t    subdirectory__\n" % (self.atsign(),
-                                             self.src_root_, self.src_root_))
-        fp.write("\n\n")
-
-    def subordinate_rules(self, fp):
-        # Silence compiler invocations.
-        fp.write("$(eval $(if $(VERBOSE),,export CXX := @$(CXX)))\n")
-
-        self.create_subordinate_directories(fp)
-        self.invoke_subordinate_make(fp)
-
     def prolog(self, fp):
         fp.write("$(if $(BOD),,$(error BOD "
                  "must be set to build output location. "
@@ -115,21 +88,25 @@ class RootMakefile(Makefile):
     def default_goal(self, fp):
         fp.write(".PHONY:\tbuild\n\n")
         fp.write("build:\t")
-        for sub in self.subordinates_:
-            fp.write("\t%s" % (sub.rela_artifact_dir_))
         fp.write("\n\t%secho \"All targets up-to-date.\";\n" % self.atsign())
         fp.write("\n")
+
+    def generate_subordinate(self, fp, sub):
+        sub.write()
+        fp.write("include %s\n" % (sub.pathname_))
+        fp.write("$(ARTIFACT):\t| $(BOD)/%s\n" % (sub.rela_artifact_dir_))
+        fp.write("build: $(ARTIFACT)\n\n")
 
     def write(self):
         utility.mkdir(os.path.dirname(self.pathname_))
         with open(self.pathname_, "w") as fp:
             self.prolog(fp)
-            self.subordinate_rules(fp)
+            self.create_subordinate_directories(fp)
+
+            for sub in self.subordinates_:
+                self.generate_subordinate(fp, sub)
+
             self.default_goal(fp)
-
-        for sub in self.subordinates_:
-            sub.write()
-
 
 def create(verbose, src_root, files_per_dir, modules):
     assert(isinstance(verbose, bool))

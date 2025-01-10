@@ -7,12 +7,13 @@ import random
 import utility
 
 class Module(object):
-    def __init__(self, n):
+    def __init__(self, n, file_size):
         self.module_num_ = n
         self.imports_    = []
         self.source_     = None
-        self.artifact_     = None
-        self.interface_     = None
+        self.artifact_   = None
+        self.interface_  = None
+        self.file_size_  = file_size
 
     def set_file_locations(self, src_dir, incl_dir, dir_num):
         mname        = self.module_name()
@@ -60,6 +61,9 @@ class Module(object):
             for imp in self.imports_:
                 imp.write_import(fp)
 
+            # Write the file size specified on the command line.
+            fp.write("0" * 1024 * self.file_size_)
+
     def create(self):
         self.write_public_interface()
         self.write_source()
@@ -81,7 +85,7 @@ def create(verbose, src_dir, incl_dir, file_size,
 
         if verbose and (i % 1000 == 0):
             print("%d: Creating source module" % (i))
-        m = Module(i)
+        m = Module(i, file_size)
         m.set_file_locations(src_dir, incl_dir, dir_number)
         modules.append(m)
         for j in range(0, n_imports):

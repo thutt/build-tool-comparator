@@ -35,7 +35,8 @@ def configure_parser():
                         help     = ("Size, in kilobytes, of module files "
                                     "written.  This tunable is to compare "
                                     "against build systems that checksum "
-                                    "files rather than using timestamps."),
+                                    "files rather than using timestamps "
+                                    "[default: %(default)s Kb]"),
                         required = False,
                         default  = 30,
                         action   = "store",
@@ -47,7 +48,7 @@ def configure_parser():
                                     "written to a directory.  If this "
                                     "number is too large, the OS will spend "
                                     "more time searching for files in the "
-                                    "filesystem."),
+                                    "filesystem [default: %(default)s files]."),
                         required = False,
                         default  = 100,
                         action   = "store",
@@ -55,9 +56,10 @@ def configure_parser():
                         dest     = "arg_n_files_per_dir")
 
     parser.add_argument("--modules",
-                        help     = ("Number of modules that should be created."),
+                        help     = ("Number of modules that should be "
+                                    "created [default: %(default)s modules]."),
                         required = False,
-                        default  = 0,
+                        default  = 100,
                         action   = "store",
                         type     = int,
                         dest     = "arg_n_modules")
