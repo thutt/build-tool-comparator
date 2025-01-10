@@ -1,0 +1,101 @@
+#!/bin/bash
+# Copyright (c) 2025  Logic Magicians Software.
+# All Rights Reserved.
+# Licensed under Gnu GPL V3.
+#
+# Do not run.  Use 'source' to load into environment.
+#
+SCRIPT="${BASH_SOURCE[0]}"
+SRC_DIR=$(dirname "${SCRIPT}");
+
+
+function _help()
+{
+    cat <<EOF
+
+This script sets the environment for using the build process comparator system.
+
+It must be loaded via 'source', like so:
+
+  source ${SCRIPT}                                     \\
+    --bod <build-output-directory>                        \\
+    --modules <number-of-C++-modules>                     \\
+    --parallel <number of parallel jobs in build process> \\
+    --source <directory-where-source-to-be-written>       \\
+    [--files-per-dir <max-files-per-directory>]           \\
+    [--verbose]
+EOF
+}
+
+
+function process_args ()
+{
+    while true ; do
+        case "$1" in
+            -b|--bod)
+                export BPC_BOD=$(eval echo ${2});
+                shift 2;
+                ;;
+
+            -f|--files-per-dir)
+                export BPC_FILES_PER_DIR=$(eval echo ${2});
+                shift 2;
+                ;;
+
+            -m|--modules)
+                export BPC_MODULES=$(eval echo ${2});
+                shift 2;
+                ;;
+
+            -p|--parallel)
+                export BPC_PARALLEL=$(eval echo ${2});
+                shift 2;
+                ;;
+
+            -s|--source)
+                export BPC_SOURCE=$(eval echo ${2});
+                shift 2;
+                ;;
+
+            -v|--verbose)
+                export BPC_VERBOSE=1;
+                shift 1;
+                ;;
+
+            --)                 # End of arguments
+                shift;
+                break;
+                ;;
+
+            *)
+                echo "Unknown option '${1}'";
+                return 1;
+                ;;
+        esac
+    done
+
+    return 0;
+}
+
+
+function main()
+{
+    unset BPC_BOD BPC_MODULES BPC_PARALLEL BPC_SOURCE BPC_VERBOSE;
+    if process_args ${@} ; then
+        if [ -z "${BPC_BOD}" -o                 \
+             -z "${BPC_MODULES}" -o             \
+             -z "${BPC_PARALLEL}" -o            \
+             -z "${BPC_SOURCE}" ] ; then
+            _help;
+        fi;
+    else
+        _help;
+        echo "Local work environment configuration failed."
+    fi;
+}
+
+args=$(/usr/bin/getopt -o b:f:m:p:s:v --longoptions bod:,files-per-dir:,modules:,parallel:,source:,verbose -- "${@}")
+set -- "${args}"            # Set postional args to ${args}.
+unset args;
+
+main ${@};
