@@ -114,15 +114,10 @@ def create(verbose, src_root, files_per_dir, modules):
     n_modules     = len(modules)
     root_makefile = RootMakefile(src_root, n_modules, files_per_dir)
 
-    # Compute number of recursively invoked Makefiles.
-    n_makefiles = n_modules // files_per_dir + 1
-    makefiles   = [ ]
-
     for m in modules:
         mf_index = m.module_num_ // files_per_dir
 
-        # Add a subordinate Makefile for this set of modules.
-
+        # Add a subordinate Makefile snippet for this set of modules.
         if len(root_makefile.subordinates_) <= mf_index:
             module_dir = os.path.dirname(m.source_)
             mf = Makefile(module_dir)
