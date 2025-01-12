@@ -1,4 +1,4 @@
-# Copyright (c) 2021, 2022, 2024, 2025 Logic Magicians Software.
+# Copyright (c) 2025 Logic Magicians Software.
 # All Rights Reserved.
 # Licensed under Gnu GPL V3.
 
