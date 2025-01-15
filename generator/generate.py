@@ -12,11 +12,14 @@ import sys
 import threading
 import time
 
-import bash                     # Bash shell script.
-import rmakefile                # Recursive Makefile.
-import smakefile                # Single Makefile.
 import module
 import utility
+
+# Build process creators.
+import bash                     # Bash shell script.
+import rmakefile                # Recursive Makefile.
+import scons                    # Scons
+import smakefile                # Single Makefile.
 
 
 def configure_parser():
@@ -118,6 +121,13 @@ def bash_script(options, modules):
     return m
 
 
+def scons_script(options, modules):
+    m = scons.create(options.arg_verbose, options.arg_root,
+                    options.arg_n_files_per_dir, modules)
+    assert(isinstance(m, scons.SConstruct))
+    return m
+
+
 def main():
     try:
         options   = get_options()
@@ -135,6 +145,7 @@ def main():
         options.build_systems.append(recursive_make(options, modules))
         options.build_systems.append(single_make(options, modules))
         options.build_systems.append(bash_script(options, modules))
+        options.build_systems.append(scons_script(options, modules))
 
         for bs in options.build_systems:
             print("Writing build system: %s" % (bs.__class__))
