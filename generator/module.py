@@ -23,7 +23,7 @@ class Module(object):
         self.source_ = os.path.join(src_dir, str(dir_num), cfname)
 
         self.rela_artifact_dir_ = os.path.join(os.path.basename(src_dir),
-                                          str(dir_num))
+                                               str(dir_num))
 
         # self.artifact_ is relative so build output can be in a
         # different location than sources.
