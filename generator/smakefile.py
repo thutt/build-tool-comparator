@@ -62,8 +62,9 @@ class RootMakefile(Makefile):
             fp.write("%s" % (sub.rela_artifact_dir_))
             first = False
         fp.write("):\n")
-        fp.write("\t%secho \"Creating build directory '$@'\"; \\\n"
-                 "\tmkdir --parents $@;\n\n" % (self.atsign()))
+        fp.write("\t%smkdir --parents $@; "
+                 "$(if $(VERBOSE),echo \"Creating build directory '$@'\";)"
+                 "\n\n" % (self.atsign()))
 
         fp.write("create-build-directories:\t\\\n\t|")
         first = True
