@@ -66,17 +66,19 @@ class Script(buildtool.BuildTool):
 
     def create_artifact(self, fp, m):
         fp.write("\n"
-                 "[ -f \"${BOD}/%s\" ] \\\n"
-                 "&& [ \"${BOD}/%s\" -nt \"%s\" ] \\" % (m.artifact_,
-                                                         m.artifact_,
-                                                         m.interface_))
+                 "[ ! -f \"${BOD}/%s\" ] \\\n"
+                 "|| [ \"${BOD}/%s\" -ot \"%s\" ] \\\n"
+                 "|| [ \"${BOD}/%s\" -ot \"%s\" ] \\" %
+                 (m.artifact_,
+                  m.artifact_, m.source_,
+                  m.artifact_, m.interface_))
         for imp in m.imports_:
             fp.write("\n"
-                     "&& [ \"${BOD}/%s\" -nt \"%s\" ] \\" % (m.artifact_,
+                     "|| [ \"${BOD}/%s\" -ot \"%s\" ] \\" % (m.artifact_,
                                                              imp.interface_))
-        fp.write("\n|| (touch \"${BOD}/%s\" \\"
-                 "\n   && [ ! -z \"${VERBOSE:-}\" ] \\"
-                 "\n   && echo \"Creating '${BOD}/%s'\");\n" %
+        fp.write("\n&& touch \"${BOD}/%s\" \\"
+                 "\n&& [ ! -z \"${VERBOSE:-}\" ] \\"
+                 "\n&& echo \"Creating '${BOD}/%s'\";\n" %
                  (m.artifact_, m.artifact_))
 
     def create_artifacts(self, fp):
