@@ -1,0 +1,18 @@
+o Add two new options to invocation of Make:
+
+  --no-builtin-rules                     \
+  --no-builtin-variables                 \
+
+  This will end up NOT being an out-of-the-box experience, so it needs
+  to be an optional setting.
+
+o Configure Scons to not checksum files for out-of-date checking.
+
+  This is also not an out-of-the-box configuration, so it needs to be
+  done optionally.
+
+o Create graphs of runtime numbers, based on all the variable factors
+  of the system (such as parallelism, number of modules, size of
+  modules, etc.)
+
+o Add Bazel generator.
