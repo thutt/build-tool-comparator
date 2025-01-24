@@ -23,8 +23,9 @@ function main ()
         VERBOSE="t";            # True, for Gnu Make
     fi;
 
-    time -p make BOD=${BOD}                     \
+    exec make BOD=${BOD}                        \
          ${SILENT}                              \
+         ${MAKE_ADDITIONAL_OPTIONS}             \
          -C ${BOD}                              \
          -j ${PARALLEL}                         \
          -f ${SRC}/Makefile.recursive           \

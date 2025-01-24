@@ -15,7 +15,7 @@ function main ()
     export BOD="${BPC_BOD:?:?Use setup.sh to configure environment.}";
 
     cd ${BOD};
-    time -p scons -Q --file ${SRC}/SConstruct -j ${BPC_PARALLEL} all
+    exec scons -Q --file ${SRC}/SConstruct -j ${BPC_PARALLEL} all
 }
 
 main;

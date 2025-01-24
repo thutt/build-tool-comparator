@@ -14,7 +14,7 @@ function main ()
     local SRC="${BPC_SOURCE:?Use setup.sh to configure environment.}";
     local BOD="${BPC_BOD:?:?Use setup.sh to configure environment.}";
 
-    time -p ${SRC}/build.sh;
+    exec ${SRC}/build.sh;
 }
 
 main;
