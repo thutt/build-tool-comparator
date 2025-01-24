@@ -76,7 +76,7 @@ class Script(buildtool.BuildTool):
             fp.write("\n"
                      "|| [ \"${BOD}/%s\" -ot \"%s\" ] \\" % (m.artifact_,
                                                              imp.interface_))
-        fp.write("\n&& builtin echo "" >\"${BOD}/%s\" \\"
+        fp.write("\n&& touch \"${BOD}/%s\" \\"
                  "\n&& [ ! -z \"${VERBOSE:-}\" ] \\"
                  "\n&& builtin echo \"Creating '${BOD}/%s'\";\n" %
                  (m.artifact_, m.artifact_))
