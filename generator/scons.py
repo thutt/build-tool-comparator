@@ -25,10 +25,13 @@ class SConstruct(buildtool.BuildTool):
         fp.write("          ])\n")
 
     def prolog(self, fp):
+        fp.write("import os\n\n")
         fp.write("arti = Builder(action='touch $TARGET')\n"
                  "env  = Environment(BUILDERS={'CreateArtifact': arti})\n"
                  "SetOption('silent', True)\n"
                  "\n")
+        fp.write("if os.getenv(\"SCONS_MAKE\", None) is not None:\n"
+                 "    Decider('make')\n\n")
 
     def write(self):
         utility.mkdir(os.path.dirname(self.pathname_))
