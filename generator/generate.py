@@ -4,13 +4,9 @@
 # Licensed under Gnu GPL V3.
 
 import argparse
-import hashlib
 import os
-import re
-import stat
+import random
 import sys
-import threading
-import time
 
 import module
 import utility
@@ -75,6 +71,13 @@ def configure_parser():
                         action   = "store",
                         dest     = "arg_root")
 
+    parser.add_argument("--seed",
+                        help     = ("Random seed."),
+                        required = False,
+                        default  = 0x19671116,
+                        action   = "store",
+                        dest     = "arg_seed")
+
     parser.add_argument("--verbose",
                         help     = ("Cause build process to not be silent."),
                         required = False,
@@ -83,7 +86,7 @@ def configure_parser():
                         dest     = "arg_verbose")
 
     parser.add_argument("arg_tail",
-                        help    = "List of directories to check.",
+                        help    = "Command tail.",
                         nargs = "*")
 
     return parser
@@ -131,6 +134,7 @@ def scons_script(options, modules):
 def main():
     try:
         options   = get_options()
+        random.seed(options.arg_seed)
 
         print("Creating %d source modules, "
               "with no more than %d files per directory." %
