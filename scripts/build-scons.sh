@@ -3,7 +3,7 @@
 # All Rights Reserved.
 # Licensed under Gnu GPL V3.
 #
-#  This script invokes Gnu Make on the generated recursive Makefiles.
+#  This script invokes Scons on the generated SConstruct file.
 #
 set -o pipefail;
 set -o nounset;

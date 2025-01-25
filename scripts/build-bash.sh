@@ -3,7 +3,7 @@
 # All Rights Reserved.
 # Licensed under Gnu GPL V3.
 #
-#  This script invokes Gnu Make on the generated recursive Makefiles.
+#  This script invokes the Bash script to create all the build artifacts.
 #
 set -o pipefail;
 set -o nounset;
