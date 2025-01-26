@@ -13,6 +13,7 @@ import utility
 
 # Build process creators.
 import bash                     # Bash shell script.
+import bazel                    # Bazel files.
 import rmakefile                # Recursive Makefile.
 import scons                    # Scons
 import smakefile                # Single Makefile.
@@ -131,6 +132,13 @@ def scons_script(options, modules):
     return m
 
 
+def bazel_script(options, modules):
+    m = bazel.create(options.arg_verbose, options.arg_root,
+                    options.arg_n_files_per_dir, modules)
+    assert(isinstance(m, bazel.Builder))
+    return m
+
+
 def main():
     try:
         options   = get_options()
@@ -150,14 +158,15 @@ def main():
         options.build_systems.append(single_make(options, modules))
         options.build_systems.append(bash_script(options, modules))
         options.build_systems.append(scons_script(options, modules))
-
-        for bs in options.build_systems:
-            print("Writing build system: %s" % (bs.__class__))
-            bs.write()
+        options.build_systems.append(bazel_script(options, modules))
 
         print("Writing %d source modules." % (options.arg_n_modules))
         for m in modules:
             m.create()
+
+        for bs in options.build_systems:
+            print("Writing build system: %s" % (bs.__class__))
+            bs.write()
 
     except KeyboardInterrupt as exc:
         print("Ctrl-C interrupt")
