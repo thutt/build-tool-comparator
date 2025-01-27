@@ -94,7 +94,7 @@ this project, but speed and disk utilization certainly are.
 - Extremely complicated.
 - Does not play well with other build systems.
 - Significant hidden state affecting build via automatically used config files.
-- Ridicuolous number of command line options (eg: bazel help build|nl -ba)
+- Ridiculous number of command line options (eg: bazel help build|nl -ba)
 - Bad, often incomplete or incorrect, documentation.
 - Profligate use of disk space and other system resources.
 - Not as hermetic as fans claim.
@@ -220,7 +220,7 @@ you will see if you use a particular build tool for your project.
 NOTE on Bazel memory use:
 
   The memory figures for Bazel are incorrect because Bazel launches a
-  Java subprocess which has not been counted.  Visual inspection of
+  Java sub-process which has not been counted.  Visual inspection of
   processes during testing shows that uses much more memory than Make,
   but less than Scons for the same load.
 
