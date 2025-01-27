@@ -30,14 +30,17 @@ class build_system(object):
         (stdout, stderr, rc, rusage) = execute_process([ self.generate_ ])
         assert(rc == 0)
 
-    def set_build_disk_space(self):
-        cmd = [ "/usr/bin/du", "-sh", os.environ.get("BPC_BOD") ]
+    def get_directory_space(self, directory):
+        cmd = [ "/usr/bin/du", "-Dsh", directory ]
         (stdout,
          stderr,
          rc,
          rusage) = execute_process(cmd)
         fields = stdout[0].split("\t")
-        self.disk_space_ = fields[0]
+        return fields[0]
+
+    def set_build_disk_space(self):
+        self.disk_space_ = self.get_directory_space(os.environ.get("BPC_BOD"))
 
     def run(self):
         start = time.time()
@@ -82,6 +85,31 @@ class build_system(object):
                self.elapsed_,
                self.scale(self.rusage_.ru_maxrss * 1024),
                self.disk_space_))
+
+class bazel(build_system):
+    def __init__(self, name, full):
+        super(bazel, self).__init__(name, full)
+
+    def set_build_disk_space(self):
+        # Bazel writes to these directories.  They are one directory
+        # above the root of the source tree.  But, by default, they
+        # are symlinked into ~/.cache/bazel.
+        #
+        # For out-of-the-box comparisons, this system will remove
+        # ~/.cache/bazel (to ensure it's empty, and no cheating with
+        # pre-existing data, so instead of following these symlinks,
+        # the full ~/.cache/bazel size is measured.
+        #
+        #   root = os.path.join(os.environ.get("BPC_SOURCE"))
+        #   os.path.abspath(os.path.join(root, "bazel-bin")),
+        #   os.path.abspath(os.path.join(root, "bazel-out")),
+        #   os.path.abspath(os.path.join(root, "bazel-source")),
+        #   os.path.abspath(os.path.join(root, "bazel-testlogs"))
+        #
+        cache_dir = os.path.expanduser("~/.cache/bazel")
+        size = self.get_directory_space(cache_dir)
+        self.disk_space_ = size
+
 
 def configure_parser():
     description = ("""
@@ -177,7 +205,14 @@ def get_options():
 
 
 def create_build_data(name, full):
-    return [ build_system(name, full) ]
+    if name == "bazel":
+        # Bazel doesn't play well with others, and therefore does
+        # things its own way.  Extracting the necessary information to
+        # make a report about build system overheads requires
+        # specialization for Bazel.
+        return [ bazel(name, full) ]
+    else:
+        return [ build_system(name, full) ]
 
 
 def main():

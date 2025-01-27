@@ -28,6 +28,11 @@ function main ()
     echo "Removing source & build output (BOD).";
     rm -rf ${SRC} ${BOD};
 
+    if [ -d ~/.cache/bazel ] ; then
+        echo "Removing ~/.cache/bazel";
+        rm -rf ~/.cache/bazel;
+    fi;
+
     echo "Creating BOD.";
     mkdir --parents ${BOD};
 

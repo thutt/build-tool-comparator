@@ -36,6 +36,12 @@ function build_all ()
     );
 
     (
+        echo -e "\nBazel";
+        ${RUN} --name bazel --full;
+        ${RUN} --name bazel;
+    );
+
+    (
         export MAKE_ADDITIONAL_OPTIONS="";
 
         echo -e "\nRecursive Make";
@@ -81,9 +87,41 @@ function build_all ()
 }
 
 
+function check_bazel_cache ()
+{
+    local cache=~/.cache/bazel;
+
+    if [ -d "${cache}" ] ; then
+        cat <<EOF
+
+To ensure a consistent runtime is measured without skewing results via
+build tool caching, the tools used by this build comparison system
+will delete:
+
+
+  ${cache}
+
+
+If you are a Bazel user and do not want this directory to be deleted,
+you must rename or move it.  Otherwise, simply delete the entire
+directory and re-run this script.
+
+When this tool is finished, the directory will have been removed; you
+can restore it from the one you saved.
+
+
+EOF
+        exit 1;
+    fi;
+        
+}
+
 function main ()
 {
     local nf;                   # Number of files.
+
+    check_bazel_cache;
+
     for nf in 50 100 1000 5000 10000 50000 100000; do
         build_all "${nf}";
     done;
