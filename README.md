@@ -249,6 +249,7 @@ The columns below are as follows:
 
 ## 50 simulated modules
 
+```
 BOD          : /tmp/make/BOD
 Files Per Dir: 100
 Modules      : 50
@@ -286,11 +287,12 @@ Single Make
 Single Make + --no-builtin-rules --no-builtin-variables
          single-make: full:  True  secs:    0.065  mem:  13M  BOD:  12K
          single-make: full: False  secs:    0.011  mem:  12M  BOD:  12K
-
+```
 
 
 ## 100 simulated modules
 
+```
 BOD          : /tmp/make/BOD
 Files Per Dir: 100
 Modules      : 100
@@ -328,11 +330,12 @@ Single Make
 Single Make + --no-builtin-rules --no-builtin-variables
          single-make: full:  True  secs:    0.120  mem:  13M  BOD:  12K
          single-make: full: False  secs:    0.013  mem:  12M  BOD:  12K
-
+```
 
 
 ## 1000 simulated modules
 
+```
 BOD          : /tmp/make/BOD
 Files Per Dir: 100
 Modules      : 1000
@@ -370,11 +373,12 @@ Single Make
 Single Make + --no-builtin-rules --no-builtin-variables
          single-make: full:  True  secs:    1.084  mem:  14M  BOD:  48K
          single-make: full: False  secs:    0.067  mem:  12M  BOD:  48K
-
+```
 
 
 ## 5000 simulated modules
 
+```
 BOD          : /tmp/make/BOD
 Files Per Dir: 100
 Modules      : 5000
@@ -412,10 +416,11 @@ Single Make
 Single Make + --no-builtin-rules --no-builtin-variables
          single-make: full:  True  secs:    5.560  mem:  37M  BOD: 208K
          single-make: full: False  secs:    0.412  mem:  13M  BOD: 208K
-
+```
 
 ## 10000 simulated modules
 
+```
 BOD          : /tmp/make/BOD
 Files Per Dir: 100
 Modules      : 10000
@@ -453,11 +458,12 @@ Single Make
 Single Make + --no-builtin-rules --no-builtin-variables
          single-make: full:  True  secs:   11.823  mem:  72M  BOD: 408K
          single-make: full: False  secs:    0.940  mem:  24M  BOD: 408K
-
+```
 
 
 ## 50000 simulated modules
 
+```
 BOD          : /tmp/make/BOD
 Files Per Dir: 100
 Modules      : 50000
@@ -495,11 +501,12 @@ Single Make
 Single Make + --no-builtin-rules --no-builtin-variables
          single-make: full:  True  secs:   58.307  mem: 364M  BOD: 2.0M
          single-make: full: False  secs:    6.229  mem: 116M  BOD: 2.0M
-
+```
 
 
 ## 100000 simulated modules
 
+```
 BOD          : /tmp/make/BOD
 Files Per Dir: 100
 Modules      : 100000
@@ -537,3 +544,4 @@ Single Make
 Single Make + --no-builtin-rules --no-builtin-variables
          single-make: full:  True  secs:  151.225  mem: 730M  BOD: 4.0M
          single-make: full: False  secs:   15.462  mem: 230M  BOD: 4.0M
+```
