@@ -122,7 +122,7 @@ all-too-often not achieved in practice.  These properties, when
 present, make developers much more productive and happier.  A few
 desirable properties are shown below:
 
- o Simple Model Invocation
+ - Simple Model Invocation
 
    A tool should be simple to use, since it will be used dozens or
    hundreds of times a day.  It should as little hidden state as
@@ -133,7 +133,7 @@ desirable properties are shown below:
    reduces the mental load needed to understand the how a produced is
    produced is reduced.
 
- o Little time spent executing build tool
+ - Little time spent executing build tool
 
    The build tool needs to read the product specification, construct a
    DAG and execute rules to turn sources into artifacts.
@@ -144,18 +144,18 @@ desirable properties are shown below:
    understandable, errors are produced!) helps to ensure that the
    project is consistent, as specified, at all times.
 
- o Parallel execution of rules
+ - Parallel execution of rules
 
    When projects have thousands of files, executing them serially can
    make the time to build the project seem glacial.  Executing
    unrelated rules at the same time speeds product builds.
 
- o Low resource overhead
+ - Low resource overhead
 
    The fewer resources used by the build tool means more resources are
    available to execute rules.
 
- o Minimal work performed on each invocation.
+ - Minimal work performed on each invocation.
 
    A build tool should only execute rules needed to bring out-of-date
    artifacts up-to-date.  An artifact is out-of-date when it doesn't
@@ -164,7 +164,7 @@ desirable properties are shown below:
    out-of-date is unnecessary, a deficiency in the build process, and,
    possibly, the build tool.
 
- o Good error reporting
+ - Good error reporting
 
    There are two major classes of errors that can occur.
 
@@ -217,18 +217,22 @@ normally needed to build software.  Because each tool is doing the
 same thing, this gives a representative example of the base overhead
 you will see if you use a particular build tool for your project.
 
+```
 NOTE on Bazel memory use:
 
   The memory figures for Bazel are incorrect because Bazel launches a
   Java sub-process which has not been counted.  Visual inspection of
   processes during testing shows that uses much more memory than Make,
   but less than Scons for the same load.
+```
 
+```
 Note on Scons variants:
 
   Scons uses md5sums to determine if files have changed.  There is a
   simple option to have it use just timestamps, like make.
-
+```
+```
 Note on Make variants:
 
    Make has a lot of built-in suffix rules, and will automatically
@@ -237,14 +241,16 @@ Note on Make variants:
    disabled, resulting in a faster build.  When these rules are
    disabled, the Makefile maintainer will have to supply the rules (or
    copy them from Make) needed to build the product.
+```
 
+```
 The columns below are as follows:
 
   full:  When 'true', every file is built. When false, a NULL build is performed.
   secs:  Number of seconds consumed performing the build.
   mem :  The amount of memory used to perform the build.
   BOD :  The amount of disk space consumed by the build.  Each 'module' produces just a single 0-byte file.
-
+```
 
 
 ## 50 simulated modules
