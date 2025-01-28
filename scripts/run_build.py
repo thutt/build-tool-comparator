@@ -4,11 +4,11 @@
 # Licensed under Gnu GPL V3.
 
 import argparse
-import json
 import os
 import resource
 import subprocess
 import sys
+import threading
 import time
 
 class build_system(object):
@@ -50,20 +50,8 @@ class build_system(object):
          self.rusage_) = execute_process([ self.builder_ ])
         end = time.time()
         self.elapsed_ = end - start
+        self.rsz_ = self.rusage_.ru_maxrss * 1024 # Resident size, in bytes.
         self.set_build_disk_space()
-
-    def dictionary(self):
-        return {
-            "full"   : self.full_,
-            "stdout" : self.stdout_,
-            "stderr" : self.stderr_,
-            "rc"     : self.rc_,
-            "seconds": elapsed,
-            "maxrss" : self.rusage_.ru_maxrss,
-            "ixxrss" : self.rusage_.ru_ixrss,
-            "idxrss" : self.rusage_.ru_idrss,
-            "disk"   : self.disk_space_,
-            }
 
     def scale(self, n_bytes):
         Kb = 1024
@@ -78,17 +66,19 @@ class build_system(object):
         else:
             return "%d " % (n_bytes)
 
-
     def display(self):
         print("%20s: full: %5s  secs: %8.3f  mem: %4s  BOD: %4s" %
               (self.name_, str(self.full_),
                self.elapsed_,
-               self.scale(self.rusage_.ru_maxrss * 1024),
+               self.scale(self.rsz_),
                self.disk_space_))
 
 class bazel(build_system):
     def __init__(self, name, full):
         super(bazel, self).__init__(name, full)
+        self.build_complete_  = False
+        self.thread_stopped_  = True
+        self.java_daemon_rsz_ = 0
 
     def set_build_disk_space(self):
         # Bazel writes to these directories.  They are one directory
@@ -110,25 +100,51 @@ class bazel(build_system):
         size = self.get_directory_space(cache_dir)
         self.disk_space_ = size
 
+    def get_pid(self, cmd):
+        (stdout,
+         stderr,
+         rc,
+         rusage) = execute_process([ "/usr/bin/pidof", cmd ])
 
-def configure_parser():
-    description = ("""
-  Return Code:
-    0       : success
-    non-zero: failure
-""")
+        if rc == 0:
+            return stdout[0]
+        else:
+            return -1           # Invalid PID
 
-    formatter = argparse.RawDescriptionHelpFormatter
-    parser    = argparse.ArgumentParser(usage           = None,
-                                        formatter_class = formatter,
-                                        description     = description,
-                                        prog            = "generate.py")
+    def get_resident_size(self, pid):
+        while not self.build_complete_:
+            time.sleep(5)       # Gather daemon size every 5 seconds.
 
-    parser.add_argument("arg_tail",
-                        help    = "Command line arguments.",
-                        nargs = "*")
+            pid = self.get_pid("bazel(source)")
+            if pid != -1:
+                # A valid PID found.
+                (stdout,
+                 stderr,
+                 rc,
+                 rusage) = execute_process([ "/usr/bin/ps",
+                                             "-o", "rsz",
+                                             "-p", pid ])
+                if rc == 0:
+                    self.java_daemon_rsz_ = max(self.java_daemon_rsz_,
+                                                int(stdout[1]) * 1024)
 
-    return parser
+            else:
+                # No applicable Java process found, so no need to add
+                # daemon memory consumption.
+                pass
+
+
+
+    def run(self):
+        self.build_complete_ = False
+        thread = threading.Thread(name="java-rsz",
+                                  target=self.get_resident_size,
+                                  args=[self])
+        thread.start()
+        super(bazel, self).run()
+        self.build_complete_ = True
+        thread.join()
+        self.rsz_ += self.java_daemon_rsz_
 
 
 def execute_process(cmd):
