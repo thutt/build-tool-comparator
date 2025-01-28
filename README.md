@@ -507,39 +507,39 @@ Single Make + --no-builtin-rules --no-builtin-variables
 ```
 BOD          : /tmp/make/BOD
 Files Per Dir: 100
-Modules      : 50000
+Modules      : 100000
 Parallel     : 4
 Source       : /tmp/make/source
 
 Bash
-                bash: full:  True  secs:  138.671  mem:  55M  BOD: 2.0M
-                bash: full: False  secs:   46.526  mem:  12M  BOD: 2.0M
+                bash: full:  True  secs:  277.848  mem:  97M  BOD: 4.0M
+                bash: full: False  secs:   93.897  mem:  12M  BOD: 4.0M
 
 Bazel
-               bazel: full:  True  secs:  647.644  mem:   1G  BOD:  14G
-               bazel: full: False  secs:   17.173  mem:   1G  BOD:  13G
+               bazel: full:  True  secs: 1312.319  mem:   2G  BOD:  27G
+               bazel: full: False  secs:   34.993  mem:   2G  BOD:  26G
 
 Recursive Make
-      recursive-make: full:  True  secs:  502.948  mem:  55M  BOD: 2.0M
-      recursive-make: full: False  secs:  402.447  mem:  28M  BOD: 2.0M
+      recursive-make: full:  True  secs:  806.988  mem:  97M  BOD: 4.0M
+      recursive-make: full: False  secs:  681.628  mem:  31M  BOD: 4.0M
 
 Recursive Make + --no-builtin-rules --no-builtin-variables
-      recursive-make: full:  True  secs:   51.647  mem:  55M  BOD: 2.0M
-      recursive-make: full: False  secs:    3.748  mem:  12M  BOD: 2.0M
+      recursive-make: full:  True  secs:  100.282  mem:  97M  BOD: 4.0M
+      recursive-make: full: False  secs:    7.703  mem:  12M  BOD: 4.0M
 
 Scons: md5sum
-               scons: full:  True  secs:  487.910  mem:   1G  BOD: 150M
-               scons: full: False  secs:  411.543  mem:   1G  BOD: 150M
+               scons: full:  True  secs:  853.155  mem:   3G  BOD: 311M
+               scons: full: False  secs:  664.987  mem:   3G  BOD: 311M
 
 Scons: make
-               scons: full:  True  secs:  387.646  mem:   1G  BOD: 105M
-               scons: full: False  secs:  254.737  mem:   1G  BOD: 105M
+               scons: full:  True  secs:  736.486  mem:   3G  BOD: 217M
+               scons: full: False  secs:  511.880  mem:   3G  BOD: 217M
 
 Single Make
-         single-make: full:  True  secs:  192.407  mem:   1G  BOD: 2.0M
-         single-make: full: False  secs:  134.121  mem: 935M  BOD: 2.0M
+         single-make: full:  True  secs:  390.552  mem:   2G  BOD: 4.0M
+         single-make: full: False  secs:  279.498  mem:   1G  BOD: 4.0M
 
 Single Make + --no-builtin-rules --no-builtin-variables
-         single-make: full:  True  secs:   58.381  mem: 364M  BOD: 2.0M
-         single-make: full: False  secs:    6.211  mem: 116M  BOD: 2.0M
+         single-make: full:  True  secs:  117.391  mem: 730M  BOD: 4.0M
+         single-make: full: False  secs:   14.020  mem: 230M  BOD: 4.0M
 ```
