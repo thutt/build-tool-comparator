@@ -25,7 +25,7 @@ function main ()
 
     exec make BOD=${BOD}                        \
          ${SILENT}                              \
-         ${MAKE_ADDITIONAL_OPTIONS}             \
+         ${MAKE_ADDITIONAL_OPTIONS:-}           \
          -C ${BOD}                              \
          -j ${PARALLEL}                         \
          -f ${SRC}/Makefile.single              \
