@@ -30,7 +30,10 @@ function main ()
 
     if [ -d ~/.cache/bazel ] ; then
         echo "Removing ~/.cache/bazel";
-        rm -rf ~/.cache/bazel;
+        local fmt_date=$(date +"%Y-%m-%d-%H-%M-%S")
+        local cache_name=~/.cache/bazel.${fmt_date};
+        mv ~/.cache/bazel ${cache_name};
+        rm -rf ${cache_name} &
     fi;
 
     echo "Creating BOD.";

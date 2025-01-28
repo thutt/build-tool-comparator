@@ -23,6 +23,8 @@ function build_all ()
     export BPC_MODULES=${nf};
 
     echo -e "\n\n"
+    echo "## ${BPC_MODULES} simulated modules.";
+    echo -e "\n"
     echo "BOD          : ${BPC_BOD}";
     echo "Files Per Dir: ${BPC_FILES_PER_DIR}";
     echo "Modules      : ${BPC_MODULES}";
@@ -113,7 +115,6 @@ can restore it from the one you saved.
 EOF
         exit 1;
     fi;
-        
 }
 
 function main ()
