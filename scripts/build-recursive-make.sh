@@ -25,7 +25,7 @@ function main ()
 
     exec make BOD=${BOD}                        \
          ${SILENT}                              \
-         ${MAKE_ADDITIONAL_OPTIONS:-}           \
+         ${BPC_BUILD_ADDITIONAL_ARGS:-}         \
          -C ${BOD}                              \
          -j ${PARALLEL}                         \
          -f ${SRC}/Makefile.recursive           \

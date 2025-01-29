@@ -19,6 +19,7 @@ function build_all ()
     local SRC="${BPC_SOURCE:?Use setup.sh to configure environment.}";
     local BOD="${BPC_BOD:?:?Use setup.sh to configure environment.}";
     local RUN="${SRC_DIR}/run_build.py";
+    local METRICS="$(readlink -f ${SRC_DIR}/../metrics/metrics.json)";
 
     export BPC_MODULES=${nf};
 
@@ -33,58 +34,74 @@ function build_all ()
 
     (
         echo -e "\nBash";
-        ${RUN} --name bash --full;
-        ${RUN} --name bash;
+        ${RUN} --metrics "${METRICS}" --tool bash --name bash --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool bash --name bash --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool bash --name bash --kind NULL;
     );
 
     (
         echo -e "\nBazel";
-        ${RUN} --name bazel --full;
-        ${RUN} --name bazel;
+        ${RUN} --metrics "${METRICS}" --tool bazel --name bazel --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool bazel --name bazel --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool bazel --name bazel --kind NULL;
     );
 
     (
-        export MAKE_ADDITIONAL_OPTIONS="";
+        export BPC_BUILD_ADDITIONAL_ARGS="";
 
         echo -e "\nRecursive Make";
-        ${RUN} --name recursive-make --full;
-        ${RUN} --name recursive-make;
+        ${RUN} --metrics "${METRICS}" --tool make --name recursive-make --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool make --name recursive-make --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool make --name recursive-make --kind NULL;
     );
 
     (
-        export MAKE_ADDITIONAL_OPTIONS="--no-builtin-rules --no-builtin-variables"
+        export BPC_BUILD_ADDITIONAL_ARGS="--no-builtin-rules --no-builtin-variables"
 
-        echo -e "\nRecursive Make + ${MAKE_ADDITIONAL_OPTIONS}";
-        ${RUN} --name recursive-make --full;
-        ${RUN} --name recursive-make;
+        echo -e "\nRecursive Make + ${BPC_BUILD_ADDITIONAL_ARGS}";
+        ${RUN} --metrics "${METRICS}" --tool make --name recursive-make --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool make --name recursive-make --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool make --name recursive-make --kind NULL;
     );
 
     (
         echo -e "\nScons: md5sum";
-        ${RUN} --name scons --full;
-        ${RUN} --name scons;
+        ${RUN} --metrics "${METRICS}" --tool scons --name scons --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool scons --name scons --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool scons --name scons --kind NULL;
     );
 
     (
         echo -e "\nScons: make";
         export SCONS_MAKE=1;
-        ${RUN} --name scons --full;
-        ${RUN} --name scons;
+        ${RUN} --metrics "${METRICS}" --tool scons --name scons --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool scons --name scons --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool scons --name scons --kind NULL;
     );
 
     (
-        export MAKE_ADDITIONAL_OPTIONS="";
+        export BPC_BUILD_ADDITIONAL_ARGS="";
         echo -e "\nSingle Make";
-        ${RUN} --name single-make --full;
-        ${RUN} --name single-make;
+        ${RUN} --metrics "${METRICS}" --tool make --name single-make --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool make --name single-make --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool make --name single-make --kind NULL;
     );
 
     (
-        export MAKE_ADDITIONAL_OPTIONS="--no-builtin-rules --no-builtin-variables"
+        export BPC_BUILD_ADDITIONAL_ARGS="--no-builtin-rules --no-builtin-variables"
 
-        echo -e "\nSingle Make + ${MAKE_ADDITIONAL_OPTIONS}";
-        ${RUN} --name single-make --full;
-        ${RUN} --name single-make;
+        echo -e "\nSingle Make + ${BPC_BUILD_ADDITIONAL_ARGS}";
+        ${RUN} --metrics "${METRICS}" --tool make --name single-make --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool make --name single-make --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool make --name single-make --kind NULL;
     );
 }
 

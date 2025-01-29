@@ -32,18 +32,6 @@ def configure_parser():
                                         description     = description,
                                         prog            = "generate.py")
 
-    parser.add_argument("--file-size",
-                        help     = ("Size, in kilobytes, of module files "
-                                    "written.  This tunable is to compare "
-                                    "against build systems that checksum "
-                                    "files rather than using timestamps "
-                                    "[default: %(default)s Kb]"),
-                        required = False,
-                        default  = 30,
-                        action   = "store",
-                        type     = int,
-                        dest     = "arg_file_size")
-
     parser.add_argument("--files-per-dir",
                         help     = ("Max number of files that can be "
                                     "written to a directory.  If this "
@@ -64,6 +52,18 @@ def configure_parser():
                         action   = "store",
                         type     = int,
                         dest     = "arg_n_modules")
+
+    parser.add_argument("--module-size",
+                        help     = ("Size, in kilobytes, of module files "
+                                    "written.  This tunable is to compare "
+                                    "against build systems that checksum "
+                                    "files rather than using timestamps "
+                                    "[default: %(default)s Kb]"),
+                        required = False,
+                        default  = 30,
+                        action   = "store",
+                        type     = int,
+                        dest     = "arg_module_size")
 
     parser.add_argument("--root",
                         help     = ("Root where source files will be created."),
@@ -149,7 +149,7 @@ def main():
               (options.arg_n_modules, options.arg_n_files_per_dir))
         modules   = module.create(options.arg_verbose,
                                   options.source_, options.interface_,
-                                  options.arg_file_size,
+                                  options.arg_module_size,
                                   options.arg_n_files_per_dir,
                                   options.arg_n_modules, options.max_imports)
         assert(isinstance(modules, list))
