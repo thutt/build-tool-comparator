@@ -239,10 +239,13 @@ Note on Make variants:
 ```
 The columns below are as follows:
 
-  full:  When 'true', every file is built. When false, a NULL build is performed.
+  kind:  'full' means a full build of all files was produced.
+         'incr' means only a few files needed to be re-created.
+         'NULL' means no files needed to be re-created.
   secs:  Number of seconds consumed performing the build.
   mem :  The amount of memory used to perform the build.
-  BOD :  The amount of disk space consumed by the build.  Each 'module' produces just a single 0-byte file.
+  BOD :  The amount of disk space consumed by the build.
+         Each 'module' produces just a single 0-byte file.
 ```
 
 
