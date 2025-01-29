@@ -4,11 +4,11 @@
 
 There is a significant amount of discord about build tools:
 
-  Scons has perfect dependencies.
+  - Scons has perfect dependencies.
 
-  Bazel is hermetically sealed.
+  - Bazel is hermetically sealed.
 
-  Make is old.
+  - Make is old.
 
 Many of the claims made about any particular build tool are often
 untrue (two of the three above, for example).  Adding to the
@@ -91,13 +91,14 @@ this project, but speed and disk utilization certainly are.
 
 ### Cons
 
+- Out-of-the-box resource use makes machine nearly unsuable while building.
 - Extremely complicated.
 - Does not play well with other build systems.
 - Significant hidden state affecting build via automatically used config files.
 - Ridiculous number of command line options (eg: bazel help build|nl -ba)
 - Bad, often incomplete or incorrect, documentation.
 - Profligate use of disk space and other system resources.
-- Not as hermetic as fans claim.
+- Not as hermetic as claimed.
 - Continually being updated & changed.
 
 # Rationale
@@ -255,36 +256,44 @@ Parallel     : 4
 Source       : /tmp/make/source
 
 Bash
-                bash: full:  True  secs:    0.155  mem:  13M  BOD:  12K
-                bash: full: False  secs:    0.037  mem:  12M  BOD:  12K
+                bash: kind: full  secs:    0.144  mem:  14M  BOD:  12K
+                bash: kind: incr  secs:    0.101  mem:  13M  BOD:  12K
+                bash: kind: NULL  secs:    0.037  mem:  13M  BOD:  12K
 
 Bazel
-               bazel: full:  True  secs:    8.942  mem: 236M  BOD: 7.0M
-               bazel: full: False  secs:    0.506  mem: 237M  BOD: 6.3M
+               bazel: kind: full  secs:    8.632  mem: 230M  BOD: 7.0M
+               bazel: kind: incr  secs:    0.852  mem: 235M  BOD:  11M
+               bazel: kind: NULL  secs:    0.356  mem: 241M  BOD: 9.9M
 
 Recursive Make
-      recursive-make: full:  True  secs:    0.116  mem:  13M  BOD:  12K
-      recursive-make: full: False  secs:    0.063  mem:  12M  BOD:  12K
+      recursive-make: kind: full  secs:    0.113  mem:  14M  BOD:  12K
+      recursive-make: kind: incr  secs:    0.091  mem:  13M  BOD:  12K
+      recursive-make: kind: NULL  secs:    0.062  mem:  13M  BOD:  12K
 
 Recursive Make + --no-builtin-rules --no-builtin-variables
-      recursive-make: full:  True  secs:    0.072  mem:  13M  BOD:  12K
-      recursive-make: full: False  secs:    0.015  mem:  12M  BOD:  12K
+      recursive-make: kind: full  secs:    0.069  mem:  14M  BOD:  12K
+      recursive-make: kind: incr  secs:    0.044  mem:  13M  BOD:  12K
+      recursive-make: kind: NULL  secs:    0.015  mem:  13M  BOD:  12K
 
 Scons: md5sum
-               scons: full:  True  secs:    0.856  mem:  28M  BOD:  52K
-               scons: full: False  secs:    0.690  mem:  28M  BOD:  52K
+               scons: kind: full  secs:    0.802  mem:  28M  BOD:  52K
+               scons: kind: incr  secs:    0.746  mem:  28M  BOD:  52K
+               scons: kind: NULL  secs:    0.674  mem:  28M  BOD:  52K
 
 Scons: make
-               scons: full:  True  secs:    0.772  mem:  28M  BOD:  44K
-               scons: full: False  secs:    0.661  mem:  28M  BOD:  44K
+               scons: kind: full  secs:    0.789  mem:  28M  BOD:  44K
+               scons: kind: incr  secs:    0.706  mem:  28M  BOD:  44K
+               scons: kind: NULL  secs:    0.662  mem:  28M  BOD:  44K
 
 Single Make
-         single-make: full:  True  secs:    0.113  mem:  13M  BOD:  12K
-         single-make: full: False  secs:    0.057  mem:  12M  BOD:  12K
+         single-make: kind: full  secs:    0.111  mem:  14M  BOD:  12K
+         single-make: kind: incr  secs:    0.088  mem:  13M  BOD:  12K
+         single-make: kind: NULL  secs:    0.059  mem:  12M  BOD:  12K
 
 Single Make + --no-builtin-rules --no-builtin-variables
-         single-make: full:  True  secs:    0.066  mem:  13M  BOD:  12K
-         single-make: full: False  secs:    0.011  mem:  12M  BOD:  12K
+         single-make: kind: full  secs:    0.067  mem:  14M  BOD:  12K
+         single-make: kind: incr  secs:    0.039  mem:  13M  BOD:  12K
+         single-make: kind: NULL  secs:    0.010  mem:  13M  BOD:  12K
 ```
 
 
@@ -298,36 +307,44 @@ Parallel     : 4
 Source       : /tmp/make/source
 
 Bash
-                bash: full:  True  secs:    0.290  mem:  13M  BOD:  12K
-                bash: full: False  secs:    0.074  mem:  12M  BOD:  12K
+                bash: kind: full  secs:    0.276  mem:  14M  BOD:  12K
+                bash: kind: incr  secs:    0.185  mem:  13M  BOD:  12K
+                bash: kind: NULL  secs:    0.073  mem:  13M  BOD:  12K
 
 Bazel
-               bazel: full:  True  secs:   10.619  mem: 243M  BOD:  16M
-               bazel: full: False  secs:    0.545  mem: 250M  BOD:  14M
+               bazel: kind: full  secs:   10.271  mem: 251M  BOD:  16M
+               bazel: kind: incr  secs:    1.363  mem: 262M  BOD:  22M
+               bazel: kind: NULL  secs:    0.397  mem: 263M  BOD:  21M
 
 Recursive Make
-      recursive-make: full:  True  secs:    0.230  mem:  13M  BOD:  12K
-      recursive-make: full: False  secs:    0.126  mem:  12M  BOD:  12K
+      recursive-make: kind: full  secs:    0.226  mem:  13M  BOD:  12K
+      recursive-make: kind: incr  secs:    0.177  mem:  13M  BOD:  12K
+      recursive-make: kind: NULL  secs:    0.123  mem:  13M  BOD:  12K
 
 Recursive Make + --no-builtin-rules --no-builtin-variables
-      recursive-make: full:  True  secs:    0.126  mem:  13M  BOD:  12K
-      recursive-make: full: False  secs:    0.020  mem:  12M  BOD:  12K
+      recursive-make: kind: full  secs:    0.126  mem:  14M  BOD:  12K
+      recursive-make: kind: incr  secs:    0.066  mem:  13M  BOD:  12K
+      recursive-make: kind: NULL  secs:    0.020  mem:  13M  BOD:  12K
 
 Scons: md5sum
-               scons: full:  True  secs:    1.118  mem:  30M  BOD:  92K
-               scons: full: False  secs:    0.890  mem:  30M  BOD:  92K
+               scons: kind: full  secs:    1.113  mem:  30M  BOD:  92K
+               scons: kind: incr  secs:    0.998  mem:  30M  BOD:  92K
+               scons: kind: NULL  secs:    0.874  mem:  30M  BOD:  92K
 
 Scons: make
-               scons: full:  True  secs:    1.072  mem:  30M  BOD:  80K
-               scons: full: False  secs:    0.850  mem:  30M  BOD:  80K
+               scons: kind: full  secs:    1.063  mem:  30M  BOD:  80K
+               scons: kind: incr  secs:    0.974  mem:  30M  BOD:  80K
+               scons: kind: NULL  secs:    0.845  mem:  30M  BOD:  80K
 
 Single Make
-         single-make: full:  True  secs:    0.234  mem:  13M  BOD:  12K
-         single-make: full: False  secs:    0.121  mem:  12M  BOD:  12K
+         single-make: kind: full  secs:    0.237  mem:  14M  BOD:  12K
+         single-make: kind: incr  secs:    0.178  mem:  13M  BOD:  12K
+         single-make: kind: NULL  secs:    0.121  mem:  13M  BOD:  12K
 
 Single Make + --no-builtin-rules --no-builtin-variables
-         single-make: full:  True  secs:    0.118  mem:  13M  BOD:  12K
-         single-make: full: False  secs:    0.013  mem:  12M  BOD:  12K
+         single-make: kind: full  secs:    0.119  mem:  13M  BOD:  12K
+         single-make: kind: incr  secs:    0.061  mem:  13M  BOD:  12K
+         single-make: kind: NULL  secs:    0.013  mem:  13M  BOD:  12K
 ```
 
 
@@ -341,36 +358,44 @@ Parallel     : 4
 Source       : /tmp/make/source
 
 Bash
-                bash: full:  True  secs:    2.763  mem:  14M  BOD:  48K
-                bash: full: False  secs:    0.858  mem:  12M  BOD:  48K
+                bash: kind: full  secs:    2.778  mem:  14M  BOD:  48K
+                bash: kind: incr  secs:    1.130  mem:  13M  BOD:  48K
+                bash: kind: NULL  secs:    0.852  mem:  13M  BOD:  48K
 
 Bazel
-               bazel: full:  True  secs:   26.895  mem: 288M  BOD: 194M
-               bazel: full: False  secs:    0.896  mem: 298M  BOD: 180M
+               bazel: kind: full  secs:   26.068  mem: 304M  BOD: 194M
+               bazel: kind: incr  secs:    2.154  mem: 305M  BOD: 198M
+               bazel: kind: NULL  secs:    0.560  mem: 307M  BOD: 197M
 
 Recursive Make
-      recursive-make: full:  True  secs:    2.899  mem:  14M  BOD:  48K
-      recursive-make: full: False  secs:    1.817  mem:  12M  BOD:  48K
+      recursive-make: kind: full  secs:    2.944  mem:  14M  BOD:  48K
+      recursive-make: kind: incr  secs:    1.937  mem:  13M  BOD:  48K
+      recursive-make: kind: NULL  secs:    1.819  mem:  13M  BOD:  48K
 
 Recursive Make + --no-builtin-rules --no-builtin-variables
-      recursive-make: full:  True  secs:    1.004  mem:  14M  BOD:  48K
-      recursive-make: full: False  secs:    0.062  mem:  12M  BOD:  48K
+      recursive-make: kind: full  secs:    0.983  mem:  14M  BOD:  48K
+      recursive-make: kind: incr  secs:    0.151  mem:  13M  BOD:  48K
+      recursive-make: kind: NULL  secs:    0.059  mem:  13M  BOD:  48K
 
 Scons: md5sum
-               scons: full:  True  secs:    7.274  mem:  64M  BOD: 1.3M
-               scons: full: False  secs:    4.934  mem:  64M  BOD: 1.3M
+               scons: kind: full  secs:    7.251  mem:  63M  BOD: 1.3M
+               scons: kind: incr  secs:    5.229  mem:  64M  BOD: 1.3M
+               scons: kind: NULL  secs:    4.907  mem:  64M  BOD: 1.3M
 
 Scons: make
-               scons: full:  True  secs:    6.809  mem:  64M  BOD: 1012K
-               scons: full: False  secs:    4.549  mem:  63M  BOD: 1012K
+               scons: kind: full  secs:    6.811  mem:  64M  BOD: 1012K
+               scons: kind: incr  secs:    4.912  mem:  63M  BOD: 1012K
+               scons: kind: NULL  secs:    4.540  mem:  63M  BOD: 1012K
 
 Single Make
-         single-make: full:  True  secs:    3.186  mem:  25M  BOD:  48K
-         single-make: full: False  secs:    2.106  mem:  21M  BOD:  48K
+         single-make: kind: full  secs:    3.191  mem:  26M  BOD:  48K
+         single-make: kind: incr  secs:    2.249  mem:  22M  BOD:  48K
+         single-make: kind: NULL  secs:    2.091  mem:  21M  BOD:  48K
 
 Single Make + --no-builtin-rules --no-builtin-variables
-         single-make: full:  True  secs:    1.093  mem:  14M  BOD:  48K
-         single-make: full: False  secs:    0.068  mem:  12M  BOD:  48K
+         single-make: kind: full  secs:    1.085  mem:  14M  BOD:  48K
+         single-make: kind: incr  secs:    0.167  mem:  13M  BOD:  48K
+         single-make: kind: NULL  secs:    0.068  mem:  13M  BOD:  48K
 ```
 
 
@@ -384,36 +409,44 @@ Parallel     : 4
 Source       : /tmp/make/source
 
 Bash
-                bash: full:  True  secs:   13.993  mem:  17M  BOD: 208K
-                bash: full: False  secs:    4.507  mem:  12M  BOD: 208K
+                bash: kind: full  secs:   14.283  mem:  17M  BOD: 208K
+                bash: kind: incr  secs:    5.032  mem:  13M  BOD: 208K
+                bash: kind: NULL  secs:    4.568  mem:  13M  BOD: 208K
 
 Bazel
-               bazel: full:  True  secs:   78.216  mem: 436M  BOD: 1.2G
-               bazel: full: False  secs:    2.290  mem: 420M  BOD: 1.1G
+               bazel: kind: full  secs:   82.142  mem: 460M  BOD: 1.2G
+               bazel: kind: incr  secs:    4.760  mem: 448M  BOD: 1.1G
+               bazel: kind: NULL  secs:    1.406  mem: 446M  BOD: 1.1G
 
 Recursive Make
-      recursive-make: full:  True  secs:   28.659  mem:  21M  BOD: 208K
-      recursive-make: full: False  secs:   29.556  mem:  21M  BOD: 208K
+      recursive-make: kind: full  secs:   30.881  mem:  21M  BOD: 208K
+      recursive-make: kind: incr  secs:   24.819  mem:  21M  BOD: 208K
+      recursive-make: kind: NULL  secs:   28.424  mem:  21M  BOD: 208K
 
 Recursive Make + --no-builtin-rules --no-builtin-variables
-      recursive-make: full:  True  secs:    4.886  mem:  17M  BOD: 208K
-      recursive-make: full: False  secs:    0.316  mem:  12M  BOD: 208K
+      recursive-make: kind: full  secs:    6.220  mem:  17M  BOD: 208K
+      recursive-make: kind: incr  secs:    0.463  mem:  13M  BOD: 208K
+      recursive-make: kind: NULL  secs:    0.323  mem:  13M  BOD: 208K
 
 Scons: md5sum
-               scons: full:  True  secs:   36.722  mem: 205M  BOD:  11M
-               scons: full: False  secs:   24.936  mem: 207M  BOD:  11M
+               scons: kind: full  secs:   37.637  mem: 206M  BOD:  11M
+               scons: kind: incr  secs:   26.435  mem: 207M  BOD:  11M
+               scons: kind: NULL  secs:   25.413  mem: 207M  BOD:  11M
 
 Scons: make
-               scons: full:  True  secs:   34.319  mem: 205M  BOD: 7.7M
-               scons: full: False  secs:   23.151  mem: 203M  BOD: 7.7M
+               scons: kind: full  secs:   45.696  mem: 206M  BOD: 7.7M
+               scons: kind: incr  secs:   32.987  mem: 204M  BOD: 7.7M
+               scons: kind: NULL  secs:   35.154  mem: 203M  BOD: 7.7M
 
 Single Make
-         single-make: full:  True  secs:   29.506  mem: 119M  BOD: 208K
-         single-make: full: False  secs:   24.140  mem:  96M  BOD: 208K
+         single-make: kind: full  secs:   36.091  mem: 119M  BOD: 208K
+         single-make: kind: incr  secs:   25.917  mem:  96M  BOD: 208K
+         single-make: kind: NULL  secs:   24.561  mem:  96M  BOD: 208K
 
 Single Make + --no-builtin-rules --no-builtin-variables
-         single-make: full:  True  secs:    5.523  mem:  37M  BOD: 208K
-         single-make: full: False  secs:    0.411  mem:  13M  BOD: 208K
+         single-make: kind: full  secs:    5.707  mem:  37M  BOD: 208K
+         single-make: kind: incr  secs:    0.581  mem:  14M  BOD: 208K
+         single-make: kind: NULL  secs:    0.421  mem:  13M  BOD: 208K
 ```
 
 ## 10000 simulated modules
@@ -426,36 +459,44 @@ Parallel     : 4
 Source       : /tmp/make/source
 
 Bash
-                bash: full:  True  secs:   27.591  mem:  21M  BOD: 408K
-                bash: full: False  secs:    9.033  mem:  12M  BOD: 408K
+                bash: kind: full  secs:   27.901  mem:  21M  BOD: 408K
+                bash: kind: incr  secs:    9.635  mem:  13M  BOD: 408K
+                bash: kind: NULL  secs:    9.148  mem:  13M  BOD: 408K
 
 Bazel
-               bazel: full:  True  secs:  130.787  mem: 603M  BOD: 2.5G
-               bazel: full: False  secs:    3.354  mem: 550M  BOD: 2.3G
+               bazel: kind: full  secs:  137.192  mem: 705M  BOD: 2.5G
+               bazel: kind: incr  secs:    5.095  mem: 582M  BOD: 2.4G
+               bazel: kind: NULL  secs:    1.506  mem: 582M  BOD: 2.4G
 
 Recursive Make
-      recursive-make: full:  True  secs:   63.457  mem:  24M  BOD: 408K
-      recursive-make: full: False  secs:   51.116  mem:  23M  BOD: 408K
+      recursive-make: kind: full  secs:   64.640  mem:  24M  BOD: 408K
+      recursive-make: kind: incr  secs:   52.416  mem:  23M  BOD: 408K
+      recursive-make: kind: NULL  secs:   51.977  mem:  23M  BOD: 408K
 
 Recursive Make + --no-builtin-rules --no-builtin-variables
-      recursive-make: full:  True  secs:    9.722  mem:  21M  BOD: 408K
-      recursive-make: full: False  secs:    0.680  mem:  12M  BOD: 408K
+      recursive-make: kind: full  secs:   10.380  mem:  21M  BOD: 408K
+      recursive-make: kind: incr  secs:    0.847  mem:  13M  BOD: 408K
+      recursive-make: kind: NULL  secs:    0.685  mem:  13M  BOD: 408K
 
 Scons: md5sum
-               scons: full:  True  secs:   74.561  mem: 385M  BOD:  25M
-               scons: full: False  secs:   51.453  mem: 390M  BOD:  25M
+               scons: kind: full  secs:   75.071  mem: 386M  BOD:  25M
+               scons: kind: incr  secs:   52.683  mem: 389M  BOD:  25M
+               scons: kind: NULL  secs:   51.852  mem: 389M  BOD:  25M
 
 Scons: make
-               scons: full:  True  secs:   70.341  mem: 386M  BOD:  18M
-               scons: full: False  secs:   48.215  mem: 382M  BOD:  18M
+               scons: kind: full  secs:   70.825  mem: 386M  BOD:  18M
+               scons: kind: incr  secs:   49.691  mem: 383M  BOD:  18M
+               scons: kind: NULL  secs:   48.680  mem: 382M  BOD:  18M
 
 Single Make
-         single-make: full:  True  secs:   71.645  mem: 239M  BOD: 408K
-         single-make: full: False  secs:   61.355  mem: 191M  BOD: 408K
+         single-make: kind: full  secs:   72.519  mem: 238M  BOD: 408K
+         single-make: kind: incr  secs:   61.973  mem: 191M  BOD: 408K
+         single-make: kind: NULL  secs:   61.525  mem: 190M  BOD: 408K
 
 Single Make + --no-builtin-rules --no-builtin-variables
-         single-make: full:  True  secs:   11.298  mem:  72M  BOD: 408K
-         single-make: full: False  secs:    0.932  mem:  24M  BOD: 408K
+         single-make: kind: full  secs:   11.589  mem:  72M  BOD: 408K
+         single-make: kind: incr  secs:    1.143  mem:  25M  BOD: 408K
+         single-make: kind: NULL  secs:    0.948  mem:  24M  BOD: 408K
 ```
 
 
@@ -469,36 +510,44 @@ Parallel     : 4
 Source       : /tmp/make/source
 
 Bash
-                bash: full:  True  secs:  138.671  mem:  55M  BOD: 2.0M
-                bash: full: False  secs:   46.526  mem:  12M  BOD: 2.0M
+                bash: kind: full  secs:  149.888  mem:  55M  BOD: 2.0M
+                bash: kind: incr  secs:   52.989  mem:  13M  BOD: 2.0M
+                bash: kind: NULL  secs:   47.051  mem:  13M  BOD: 2.0M
 
 Bazel
-               bazel: full:  True  secs:  647.644  mem:   1G  BOD:  14G
-               bazel: full: False  secs:   17.173  mem:   1G  BOD:  13G
+               bazel: kind: full  secs:  661.977  mem:   1G  BOD:  14G
+               bazel: kind: incr  secs:   18.457  mem:   1G  BOD:  13G
+               bazel: kind: NULL  secs:    7.165  mem:   1G  BOD:  13G
 
 Recursive Make
-      recursive-make: full:  True  secs:  502.948  mem:  55M  BOD: 2.0M
-      recursive-make: full: False  secs:  402.447  mem:  28M  BOD: 2.0M
+      recursive-make: kind: full  secs:  390.795  mem:  55M  BOD: 2.0M
+      recursive-make: kind: incr  secs:  325.651  mem:  28M  BOD: 2.0M
+      recursive-make: kind: NULL  secs:  322.823  mem:  28M  BOD: 2.0M
 
 Recursive Make + --no-builtin-rules --no-builtin-variables
-      recursive-make: full:  True  secs:   51.647  mem:  55M  BOD: 2.0M
-      recursive-make: full: False  secs:    3.748  mem:  12M  BOD: 2.0M
+      recursive-make: kind: full  secs:   51.259  mem:  55M  BOD: 2.0M
+      recursive-make: kind: incr  secs:    4.351  mem:  13M  BOD: 2.0M
+      recursive-make: kind: NULL  secs:    3.775  mem:  13M  BOD: 2.0M
 
 Scons: md5sum
-               scons: full:  True  secs:  487.910  mem:   1G  BOD: 150M
-               scons: full: False  secs:  411.543  mem:   1G  BOD: 150M
+               scons: kind: full  secs:  440.138  mem:   1G  BOD: 150M
+               scons: kind: incr  secs:  295.302  mem:   1G  BOD: 150M
+               scons: kind: NULL  secs:  288.051  mem:   1G  BOD: 150M
 
 Scons: make
-               scons: full:  True  secs:  387.646  mem:   1G  BOD: 105M
-               scons: full: False  secs:  254.737  mem:   1G  BOD: 105M
+               scons: kind: full  secs:  396.699  mem:   1G  BOD: 105M
+               scons: kind: incr  secs:  259.472  mem:   1G  BOD: 105M
+               scons: kind: NULL  secs:  257.144  mem:   1G  BOD: 105M
 
 Single Make
-         single-make: full:  True  secs:  192.407  mem:   1G  BOD: 2.0M
-         single-make: full: False  secs:  134.121  mem: 935M  BOD: 2.0M
+         single-make: kind: full  secs:  191.576  mem:   1G  BOD: 2.0M
+         single-make: kind: incr  secs:  136.677  mem: 936M  BOD: 2.0M
+         single-make: kind: NULL  secs:  135.415  mem: 936M  BOD: 2.0M
 
 Single Make + --no-builtin-rules --no-builtin-variables
-         single-make: full:  True  secs:   58.381  mem: 364M  BOD: 2.0M
-         single-make: full: False  secs:    6.211  mem: 116M  BOD: 2.0M
+         single-make: kind: full  secs:   60.228  mem: 364M  BOD: 2.0M
+         single-make: kind: incr  secs:    6.588  mem: 116M  BOD: 2.0M
+         single-make: kind: NULL  secs:    6.445  mem: 116M  BOD: 2.0M
 ```
 
 
@@ -512,34 +561,43 @@ Parallel     : 4
 Source       : /tmp/make/source
 
 Bash
-                bash: full:  True  secs:  277.848  mem:  97M  BOD: 4.0M
-                bash: full: False  secs:   93.897  mem:  12M  BOD: 4.0M
+                bash: kind: full  secs:  280.902  mem:  97M  BOD: 4.0M
+                bash: kind: incr  secs:   95.337  mem:  13M  BOD: 4.0M
+                bash: kind: NULL  secs:   94.720  mem:  13M  BOD: 4.0M
 
 Bazel
-               bazel: full:  True  secs: 1312.319  mem:   2G  BOD:  27G
-               bazel: full: False  secs:   34.993  mem:   2G  BOD:  26G
+               bazel: kind: full  secs: 2057.709  mem:   3G  BOD:  27G
+               bazel: kind: incr  secs:   57.452  mem:   2G  BOD:  26G
+               bazel: kind: NULL  secs:   13.527  mem:   2G  BOD:  26G
 
 Recursive Make
-      recursive-make: full:  True  secs:  806.988  mem:  97M  BOD: 4.0M
-      recursive-make: full: False  secs:  681.628  mem:  31M  BOD: 4.0M
+      recursive-make: kind: full  secs:  805.441  mem:  97M  BOD: 4.0M
+      recursive-make: kind: incr  secs:  687.163  mem:  31M  BOD: 4.0M
+      recursive-make: kind: NULL  secs:  681.766  mem:  31M  BOD: 4.0M
 
 Recursive Make + --no-builtin-rules --no-builtin-variables
-      recursive-make: full:  True  secs:  100.282  mem:  97M  BOD: 4.0M
-      recursive-make: full: False  secs:    7.703  mem:  12M  BOD: 4.0M
+      recursive-make: kind: full  secs:  100.026  mem:  97M  BOD: 4.0M
+      recursive-make: kind: incr  secs:    9.316  mem:  13M  BOD: 4.0M
+      recursive-make: kind: NULL  secs:    7.739  mem:  13M  BOD: 4.0M
 
 Scons: md5sum
-               scons: full:  True  secs:  853.155  mem:   3G  BOD: 311M
-               scons: full: False  secs:  664.987  mem:   3G  BOD: 311M
+               scons: kind: full  secs:  854.764  mem:   3G  BOD: 311M
+               scons: kind: incr  secs:  645.269  mem:   3G  BOD: 311M
+               scons: kind: NULL  secs:  607.749  mem:   3G  BOD: 311M
 
 Scons: make
-               scons: full:  True  secs:  736.486  mem:   3G  BOD: 217M
-               scons: full: False  secs:  511.880  mem:   3G  BOD: 217M
+               scons: kind: full  secs:  732.709  mem:   3G  BOD: 217M
+               scons: kind: incr  secs:  515.686  mem:   3G  BOD: 217M
+               scons: kind: NULL  secs:  511.016  mem:   3G  BOD: 217M
 
 Single Make
-         single-make: full:  True  secs:  390.552  mem:   2G  BOD: 4.0M
-         single-make: full: False  secs:  279.498  mem:   1G  BOD: 4.0M
+         single-make: kind: full  secs:  387.505  mem:   2G  BOD: 4.0M
+         single-make: kind: incr  secs:  279.338  mem:   1G  BOD: 4.0M
+         single-make: kind: NULL  secs:  280.445  mem:   1G  BOD: 4.0M
 
 Single Make + --no-builtin-rules --no-builtin-variables
-         single-make: full:  True  secs:  117.391  mem: 730M  BOD: 4.0M
-         single-make: full: False  secs:   14.020  mem: 230M  BOD: 4.0M
+         single-make: kind: full  secs:  117.151  mem: 730M  BOD: 4.0M
+         single-make: kind: incr  secs:   14.425  mem: 231M  BOD: 4.0M
+         single-make: kind: NULL  secs:   14.122  mem: 230M  BOD: 4.0M
 ```
+
