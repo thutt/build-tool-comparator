@@ -6,7 +6,9 @@
 import argparse
 import datetime
 import json
+import multiprocessing
 import os
+import platform
 import resource
 import subprocess
 import sys
@@ -14,33 +16,238 @@ import threading
 import time
 
 class Metrics(object):
-    def __init__(self, metrics_file, tool_name):
-        self.json_path_ = metrics_file
-        self.json_      = None
-
-        now      = datetime.datetime.now()
-        now_date = now.strftime("%Y/%m/%d")
-        now_time = now.strftime("%H:%M:%S.%f")
-        self.metrics_ = {
-            "tool"    : tool_name,
-            "version" : self.get_tool_version(tool_name),
-            "date"    : now_date,
-            "time"    : now_time,
-        }
+    def __init__(self, metrics_file, tool_name, tool_label):
+        now                 = datetime.datetime.now()
+        self.tool_name_     = tool_name
+        self.tool_label_    = tool_label
+        self.tool_version_  = self.get_tool_version(tool_name)
+        self.json_path_     = metrics_file
+        self.json_          = None
+        self.host_os_       = platform.system()
+        self.host_arch_     = platform.machine()
+        self.host_cpus_     = str(multiprocessing.cpu_count())
+        self.host_memory_   = str((os.sysconf('SC_PAGE_SIZE') *
+                                   os.sysconf('SC_PHYS_PAGES')))
+        self.host_platform_ = platform.platform()
+        self.host_version_  = platform.version()
+        self.now_date_      = now.strftime("%Y/%m/%d")    # Date script run.
+        self.now_time_      = now.strftime("%H:%M:%S.%f") # Time script run.
+        self.addl_args_     = self.get_additional_args()
+        self.n_modules_     = self.get_n_modules()
+        self.module_size_   = self.get_module_size()
+        self.files_per_dir_ = self.get_files_per_dir()
+        self.parallelism_   = self.get_parallelism()
 
         if os.path.exists(self.json_path_):
             with open(self.json_path_, "r") as fp:
                 self.json_ = json.load(fp)
 
-    def save(self):
-        if self.json_ is not None:
-            self.json_.append(self.metrics_)
+            self.initialize_fields()
         else:
-            self.json_ = [ self.metrics_ ]
+            self.json_ = { }
+            self.initialize_fields()
 
+    def get_parallelism(self):
+        j = os.environ.get("BPC_PARALLEL")
+        if j is None:
+            return "<unknown>"
+        else:
+            return str(j)
+
+    def get_n_modules(self):
+        n_modules = os.environ.get("BPC_MODULES")
+        if n_modules is not None:
+            return str(n_modules)
+        else:
+            return "<M: internal error>"
+
+    def get_module_size(self):
+        ms = os.environ.get("BPC_MODULE_SIZE")
+        if ms is not None:
+            return str(ms)
+        else:
+            return "<MS: internal error>"
+
+    def get_files_per_dir(self):
+        fpd = os.environ.get("BPC_FILES_PER_DIR")
+        if fpd is not None:
+            return str(fpd)
+        else:
+            return "<FPD: internal error>"
+
+    def get_additional_args(self):
+        baa = os.environ.get("BPC_BUILD_ADDITIONAL_ARGS")
+        if baa is not None:
+            if len(baa) > 0:
+                return baa
+
+        return "<no-args>"
+
+    def initialize_fields(self):
+        if self.tool_label_ not in self.json_:
+            self.json_[self.tool_label_] = { }
+
+        if self.tool_version_ not in self.json_[self.tool_label_]:
+            self.json_[self.tool_label_] \
+                      [self.tool_version_] = { }
+
+        if self.host_arch_ not in self.json_[self.tool_label_] \
+                                            [self.tool_version_]:
+            self.json_[self.tool_label_] \
+                      [self.tool_version_] \
+                      [self.host_arch_]    = { }
+
+        if self.host_platform_ not in self.json_[self.tool_label_] \
+                                                [self.tool_version_] \
+                                                [self.host_arch_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] = { }
+
+
+        if self.host_version_ not in self.json_[self.tool_label_]   \
+                                               [self.tool_version_]   \
+                                               [self.host_arch_]      \
+                                               [self.host_platform_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] \
+                      [self.host_version_]  = { }
+
+        if self.host_cpus_ not in self.json_[self.tool_label_]  \
+                                            [self.tool_version_]  \
+                                            [self.host_arch_]     \
+                                            [self.host_platform_] \
+                                            [self.host_version_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] \
+                      [self.host_version_]  \
+                      [self.host_cpus_]     = { }
+
+        if self.host_memory_ not in self.json_[self.tool_label_]  \
+                                              [self.tool_version_]  \
+                                              [self.host_arch_]     \
+                                              [self.host_platform_] \
+                                              [self.host_version_]  \
+                                              [self.host_cpus_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] \
+                      [self.host_version_]  \
+                      [self.host_cpus_]     \
+                      [self.host_memory_]   = { }
+
+        if self.addl_args_ not in self.json_[self.tool_label_]  \
+                                            [self.tool_version_]  \
+                                            [self.host_arch_]     \
+                                            [self.host_platform_] \
+                                            [self.host_version_]  \
+                                            [self.host_cpus_]     \
+                                            [self.host_memory_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] \
+                      [self.host_version_]  \
+                      [self.host_cpus_]     \
+                      [self.host_memory_]   \
+                      [self.addl_args_]     = { }
+
+
+        if self.files_per_dir_ not in self.json_[self.tool_label_]  \
+                                                [self.tool_version_]  \
+                                                [self.host_arch_]     \
+                                                [self.host_platform_] \
+                                                [self.host_version_]  \
+                                                [self.host_cpus_]     \
+                                                [self.host_memory_]   \
+                                                [self.addl_args_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] \
+                      [self.host_version_]  \
+                      [self.host_cpus_]     \
+                      [self.host_memory_]   \
+                      [self.addl_args_]     \
+                      [self.files_per_dir_] = { }
+
+        if self.module_size_ not in self.json_[self.tool_label_]  \
+                                              [self.tool_version_]  \
+                                              [self.host_arch_]     \
+                                              [self.host_platform_] \
+                                              [self.host_version_]  \
+                                              [self.host_cpus_]     \
+                                              [self.host_memory_]   \
+                                              [self.addl_args_]     \
+                                              [self.files_per_dir_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] \
+                      [self.host_version_]  \
+                      [self.host_cpus_]     \
+                      [self.host_memory_]   \
+                      [self.addl_args_]     \
+                      [self.files_per_dir_] \
+                      [self.module_size_]   = { }
+
+        if self.n_modules_ not in self.json_[self.tool_label_]  \
+                                            [self.tool_version_]  \
+                                            [self.host_arch_]     \
+                                            [self.host_platform_] \
+                                            [self.host_version_]  \
+                                            [self.host_cpus_]     \
+                                            [self.host_memory_]   \
+                                            [self.addl_args_]     \
+                                            [self.files_per_dir_] \
+                                            [self.module_size_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] \
+                      [self.host_version_]  \
+                      [self.host_cpus_]     \
+                      [self.host_memory_]   \
+                      [self.addl_args_]     \
+                      [self.files_per_dir_] \
+                      [self.module_size_]   \
+                      [self.n_modules_]     = { }
+
+        if self.parallelism_ not in self.json_[self.tool_label_]  \
+                                              [self.tool_version_]  \
+                                              [self.host_arch_]     \
+                                              [self.host_platform_] \
+                                              [self.host_version_]  \
+                                              [self.host_cpus_]     \
+                                              [self.host_memory_]   \
+                                              [self.addl_args_]     \
+                                              [self.files_per_dir_] \
+                                              [self.module_size_]   \
+                                              [self.n_modules_]:
+            self.json_[self.tool_label_]  \
+                      [self.tool_version_]  \
+                      [self.host_arch_]     \
+                      [self.host_platform_] \
+                      [self.host_version_]  \
+                      [self.host_cpus_]     \
+                      [self.host_memory_]   \
+                      [self.addl_args_]     \
+                      [self.files_per_dir_] \
+                      [self.module_size_]   \
+                      [self.n_modules_]     \
+                      [self.parallelism_]   = {
+                          "run": [ ]
+                      }
+
+    def save(self):
         with open(self.json_path_, "w") as fp:
-            json.dump(self.json_, fp, indent = 3)
-
+            json.dump(self.json_, fp, indent = 2)
 
     def get_version(self, cmd):
         (stdout,
@@ -66,8 +273,25 @@ class Metrics(object):
             return stdout[1][1:] # Delete tab at beginning.
 
     def add_metrics(self, tm):
-        self.metrics_.update(tm)
-
+        # Include the metrics for this build system's run.
+        run = {
+            "date" : self.now_date_,
+            "time" : self.now_time_,
+        }
+        run.update(tm)
+        self.json_[self.tool_label_]         \
+                  [self.tool_version_]       \
+                  [self.host_arch_]          \
+                  [self.host_platform_]      \
+                  [self.host_version_]       \
+                  [self.host_cpus_]          \
+                  [self.host_memory_]        \
+                  [self.addl_args_]          \
+                  [self.files_per_dir_]      \
+                  [self.module_size_]        \
+                  [self.n_modules_]          \
+                  [self.parallelism_]        \
+                  ["run"].append(run)
 
 class build_system(object):
     def __init__(self, name, kind):
@@ -85,13 +309,6 @@ class build_system(object):
         self.builder_     = os.path.join(self.root_, "scripts",
                                          "build-%s.sh" % (name))
 
-    def get_parallelism(self):
-        j = os.environ.get("BPC_PARALLEL")
-        if j is None:
-            return "<unknown>"
-        else:
-            return j
-
     def generate(self):
         (stdout, stderr, rc, rusage) = execute_process([ self.generate_ ])
         assert(rc == 0)
@@ -108,34 +325,6 @@ class build_system(object):
     def set_build_disk_space(self):
         self.disk_space_ = self.get_directory_space(os.environ.get("BPC_BOD"))
 
-    def get_modules(self):
-        n_modules = os.environ.get("BPC_MODULES")
-        if n_modules is not None:
-            return n_modules
-        else:
-            return "<M: internal error>"
-
-    def get_module_size(self):
-        ms = os.environ.get("BPC_MODULE_SIZE")
-        if ms is not None:
-            return ms
-        else:
-            return "<MS: internal error>"
-
-    def get_files_per_dir(self):
-        fpd = os.environ.get("BPC_FILES_PER_DIR")
-        if fpd is not None:
-            return fpd
-        else:
-            return "<FPD: internal error>"
-
-    def get_additional_args(self):
-        baa = os.environ.get("BPC_BUILD_ADDITIONAL_ARGS")
-        if baa is not None:
-            return baa
-        else:
-            return ""
-
     def run(self):
         start = time.time()
         (self.stdout_,
@@ -150,14 +339,9 @@ class build_system(object):
 
     def metrics(self):
         return {
-            "additional_args" : self.get_additional_args(),
-            "disk"            : self.disk_space_,
-            "files_per_dir"   : self.get_files_per_dir(),
+            "bod-size"        : self.disk_space_,
             "kind"            : self.kind_,
-            "memory-bytes"    : self.rsz_,
-            "module_size"     : self.get_module_size(),
-            "modules"         : self.get_modules(),
-            "parallel"        : self.get_parallelism(),
+            "memory-size-b"   : self.rsz_,
             "seconds"         : self.elapsed_,
         }
 
@@ -188,9 +372,6 @@ class bazel(build_system):
         self.build_complete_  = False
         self.thread_stopped_  = True
         self.java_daemon_rsz_ = 0
-
-    def get_parallelism(self):
-        return "<n/a>"          # Bazel uses all it can, out-of-the-box.
 
     def set_build_disk_space(self):
         # Bazel writes to these directories.  They are one directory
@@ -317,15 +498,20 @@ def configure_parser():
                         dest     = "arg_tool")
 
     parser.add_argument("--kind",
-                        help     = ("Max number of files that can be "
-                                    "written to a directory.  If this "
-                                    "number is too large, the OS will spend "
-                                    "more time searching for files in the "
-                                    "filesystem [default: %(default)s files]."),
+                        help     = ("Kind of build: full, incremental, NULL."),
                         required = True,
                         choices  = [ 'incremental', 'full', 'NULL' ],
                         action   = "store",
                         dest     = "arg_kind")
+
+    parser.add_argument("--tool-label",
+                        help     = ("Name of build tool being used for "
+                                    "use in reports.  "
+                                    "If not supplied, '--name' value used."),
+                        required = False,
+                        default  = None,
+                        action   = "store",
+                        dest     = "arg_tool_label")
 
     parser.add_argument("--metrics",
                         help     = ("Name of Json file where "
@@ -344,6 +530,9 @@ def configure_parser():
 def get_options():
     parser  = configure_parser()
     options = parser.parse_args()
+
+    if options.arg_tool_label is None:
+        options.arg_tool_label = options.arg_tool
 
     return options
 
@@ -364,7 +553,9 @@ def main():
         options       = get_options()
         build_systems = create_build_data(options.arg_name,
                                           options.arg_kind)
-        metrics       = Metrics(options.arg_metrics, options.arg_tool)
+        metrics       = Metrics(options.arg_metrics,
+                                options.arg_tool,
+                                options.arg_tool_label)
 
         for bs in build_systems:
             # The 'runner' shell script must execute a full build
