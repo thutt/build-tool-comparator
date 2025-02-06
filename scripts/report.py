@@ -63,61 +63,81 @@ def scale(n_bytes):
         return "%d " % (n_bytes)
 
 
-def report_runs(m):
-    for r in m["run"]:
+def same_geometry(l, r):
+    return (l["host"]     == r ["host"] and
+            l["geometry"] == r ["geometry"])
+
+
+def print_geometry(m):
+    host = m["host"]
+    geom = m["geometry"]
+
+    memory = scale(int(host["memory"]))
+    print("arch       : %s\n"
+          "platform   : %s\n"
+          "version    : %s\n"
+          "cpus       : %s\n"
+          "memory     : %s" % (host["arch"],
+                               host["platform"],
+                               host["version"],
+                               host["cpus"],
+                               memory))
+    print("files/dir  : %s\n"
+          "module size: %s\n"
+          "num modules: %s\n"
+          "parallelism: %s\n" % (geom["files-per-dir"],
+                                 geom["module-size-kb"],
+                                 geom["num-modules"],
+                                 geom["parallelism"]))
+
+
+def print_runs(runs):
+    for r in runs:
         print("        %s %s|  kind: %s  secs: %8.3f  mem: %4s  BOD: %s" %
               (r["date"],
                r["time"][0:8],
                r["kind"][0:4],
                r["seconds"],
-               scale(r["memory-size-b"]),
+               scale(r["memory-bytes"]),
                r["bod-size"]))
     print("")
 
-def report_by_test_config(m):
-    for aa in m:                                 # Additional arguments.
-        for fpd in m[aa]:                        # Files per directory.
-            for ms in m[aa][fpd]:                # Module size.
-                for nm in m[aa][fpd][ms]:        # Module count.
-                    for p in m[aa][fpd][ms][nm]: # Parallelism.
-                        print("     Module Count : %s\n"
-                              "     Files per dir: %s\n"
-                              "     Module Size  : %s\n"
-                              "     Parallelism  : %s\n"
-                              "     Add'l args   : %s\n" % (nm, fpd, ms, p, aa))
-                        report_runs(m[aa][fpd][ms][nm][p])
+
+def print_element(elem):
+    tool = elem["tool"]
+    print("  %s  [%s]" % (tool["label"], tool["version"]))
+    print("    args: %s" % (tool["args"]))
+    print_runs(tool["runs"])
 
 
-def report_by_machine_config(m):
-    for nc in m:                # Number of CPUs.
-        for mb in m[nc]:        # Memory, in bytes.
-            print("   CPU count    : %s\n"
-                  "   Memory       : %s" % (nc, scale(int(mb))))
-            report_by_test_config(m[nc][mb])
+def print_elements(metrics, elements):
+    print_geometry(metrics[list(elements)[0]])
 
+    for elem in elements:
+        print_element(metrics[elem])
 
-def report_by_architecture(ha, m):
-    print("  %s" % (ha))
-    for hp in m:         # Host platform.
-        for hv in m[hp]: # Host version.
-            print("   %s\n"
-                  "   %s" % (hp, hv))
-            report_by_machine_config(m[hp][hv])
-
-
-def report_by_tool(tn, tv, m):
-    print("tool: %s  | version: %s" %
-          (tn, tv))
-
-    for ha in m:         # Host architecture.
-        report_by_architecture(ha, m[ha])
+    print("")
 
 
 def report(metrics):
-    for tn in metrics:          # Tool Name
-        for tv in metrics[tn]:  # Tool Version
-            report_by_tool(tn, tv, metrics[tn][tv])
-            print("\n")
+    for o_idx in range(0, len(metrics)):
+        o_data = metrics[o_idx]
+        if "processed" not in o_data:
+            # This is an unprocessed element in the JSON data.  Gather
+            # indices to all elements that were run on the same
+            # hardware, and had the same runtime geometry.
+
+            o_data["processed"] = True
+            elements = set()
+            elements.add(o_idx)
+
+            for i_idx in range(o_idx + 1, len(metrics)):
+                i_data = metrics[i_idx]
+                if "processed" not in i_data and same_geometry(o_data, i_data):
+                    i_data["processed"] = True
+                    elements.add(i_idx)
+
+            print_elements(metrics, elements)
 
 
 def main():

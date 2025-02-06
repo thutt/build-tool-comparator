@@ -38,14 +38,40 @@ class Metrics(object):
         self.files_per_dir_ = self.get_files_per_dir()
         self.parallelism_   = self.get_parallelism()
 
+        self.host_dict_ =  {
+            "arch"     : self.host_arch_,
+            "platform" : self.host_platform_,
+            "version"  : self.host_version_,
+            "cpus"     : self.host_cpus_,
+            "memory"   : self.host_memory_,
+        }
+
+        self.geometry_dict_ = {
+            "files-per-dir" : self.files_per_dir_,
+            "module-size-kb": self.module_size_,
+            "num-modules"   : self.n_modules_,
+            "parallelism"   : self.parallelism_,
+            }
+
+        self.tool_dict_ = {
+            "label"    : self.tool_label_,
+            "version"  : self.tool_version_,
+            "args"     : self.addl_args_,
+            "runs"     : [ ]
+        }
+
+        self.geometry_ = {
+            "tool"     : self.tool_dict_,
+            "host"     : self.host_dict_,
+            "geometry" : self.geometry_dict_,
+        }
+
         if os.path.exists(self.json_path_):
             with open(self.json_path_, "r") as fp:
                 self.json_ = json.load(fp)
-
-            self.initialize_fields()
         else:
-            self.json_ = { }
-            self.initialize_fields()
+            self.json_ = [ ]
+        self.add_geometry(self.geometry_) # Possibly updates self.geometry_
 
     def get_parallelism(self):
         j = os.environ.get("BPC_PARALLEL")
@@ -83,167 +109,26 @@ class Metrics(object):
 
         return "<no-args>"
 
-    def initialize_fields(self):
-        if self.tool_label_ not in self.json_:
-            self.json_[self.tool_label_] = { }
-
-        if self.tool_version_ not in self.json_[self.tool_label_]:
-            self.json_[self.tool_label_] \
-                      [self.tool_version_] = { }
-
-        if self.host_arch_ not in self.json_[self.tool_label_] \
-                                            [self.tool_version_]:
-            self.json_[self.tool_label_] \
-                      [self.tool_version_] \
-                      [self.host_arch_]    = { }
-
-        if self.host_platform_ not in self.json_[self.tool_label_] \
-                                                [self.tool_version_] \
-                                                [self.host_arch_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] = { }
-
-
-        if self.host_version_ not in self.json_[self.tool_label_]   \
-                                               [self.tool_version_]   \
-                                               [self.host_arch_]      \
-                                               [self.host_platform_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] \
-                      [self.host_version_]  = { }
-
-        if self.host_cpus_ not in self.json_[self.tool_label_]  \
-                                            [self.tool_version_]  \
-                                            [self.host_arch_]     \
-                                            [self.host_platform_] \
-                                            [self.host_version_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] \
-                      [self.host_version_]  \
-                      [self.host_cpus_]     = { }
-
-        if self.host_memory_ not in self.json_[self.tool_label_]  \
-                                              [self.tool_version_]  \
-                                              [self.host_arch_]     \
-                                              [self.host_platform_] \
-                                              [self.host_version_]  \
-                                              [self.host_cpus_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] \
-                      [self.host_version_]  \
-                      [self.host_cpus_]     \
-                      [self.host_memory_]   = { }
-
-        if self.addl_args_ not in self.json_[self.tool_label_]  \
-                                            [self.tool_version_]  \
-                                            [self.host_arch_]     \
-                                            [self.host_platform_] \
-                                            [self.host_version_]  \
-                                            [self.host_cpus_]     \
-                                            [self.host_memory_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] \
-                      [self.host_version_]  \
-                      [self.host_cpus_]     \
-                      [self.host_memory_]   \
-                      [self.addl_args_]     = { }
-
-
-        if self.files_per_dir_ not in self.json_[self.tool_label_]  \
-                                                [self.tool_version_]  \
-                                                [self.host_arch_]     \
-                                                [self.host_platform_] \
-                                                [self.host_version_]  \
-                                                [self.host_cpus_]     \
-                                                [self.host_memory_]   \
-                                                [self.addl_args_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] \
-                      [self.host_version_]  \
-                      [self.host_cpus_]     \
-                      [self.host_memory_]   \
-                      [self.addl_args_]     \
-                      [self.files_per_dir_] = { }
-
-        if self.module_size_ not in self.json_[self.tool_label_]  \
-                                              [self.tool_version_]  \
-                                              [self.host_arch_]     \
-                                              [self.host_platform_] \
-                                              [self.host_version_]  \
-                                              [self.host_cpus_]     \
-                                              [self.host_memory_]   \
-                                              [self.addl_args_]     \
-                                              [self.files_per_dir_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] \
-                      [self.host_version_]  \
-                      [self.host_cpus_]     \
-                      [self.host_memory_]   \
-                      [self.addl_args_]     \
-                      [self.files_per_dir_] \
-                      [self.module_size_]   = { }
-
-        if self.n_modules_ not in self.json_[self.tool_label_]  \
-                                            [self.tool_version_]  \
-                                            [self.host_arch_]     \
-                                            [self.host_platform_] \
-                                            [self.host_version_]  \
-                                            [self.host_cpus_]     \
-                                            [self.host_memory_]   \
-                                            [self.addl_args_]     \
-                                            [self.files_per_dir_] \
-                                            [self.module_size_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] \
-                      [self.host_version_]  \
-                      [self.host_cpus_]     \
-                      [self.host_memory_]   \
-                      [self.addl_args_]     \
-                      [self.files_per_dir_] \
-                      [self.module_size_]   \
-                      [self.n_modules_]     = { }
-
-        if self.parallelism_ not in self.json_[self.tool_label_]  \
-                                              [self.tool_version_]  \
-                                              [self.host_arch_]     \
-                                              [self.host_platform_] \
-                                              [self.host_version_]  \
-                                              [self.host_cpus_]     \
-                                              [self.host_memory_]   \
-                                              [self.addl_args_]     \
-                                              [self.files_per_dir_] \
-                                              [self.module_size_]   \
-                                              [self.n_modules_]:
-            self.json_[self.tool_label_]  \
-                      [self.tool_version_]  \
-                      [self.host_arch_]     \
-                      [self.host_platform_] \
-                      [self.host_version_]  \
-                      [self.host_cpus_]     \
-                      [self.host_memory_]   \
-                      [self.addl_args_]     \
-                      [self.files_per_dir_] \
-                      [self.module_size_]   \
-                      [self.n_modules_]     \
-                      [self.parallelism_]   = {
-                          "run": [ ]
-                      }
+    def add_geometry(self, geometry):
+        # Find the test host, geometry & tool info that matchs the
+        # current one, and set the current geometry to it.  This makes
+        # all test runs on the same machine & geometry be in the same
+        # dictionary.
+        #
+        # If the current host & geometry do not exist, add it to the
+        # main json representation.
+        for g in self.json_:
+            if (g["host"] == geometry["host"] and
+                g["geometry"] == geometry["geometry"]):
+                # Ignore the 'runs' field of the 'tool' for this
+                # comparison.
+                if (g["tool"]["label"]   == geometry["tool"]["label"]   and
+                    g["tool"]["version"] == geometry["tool"]["version"] and
+                    g["tool"]["args"]    == geometry["tool"]["args"]):
+                    self.geometry_  = g
+                    self.tool_dict_ = g["tool"]
+                    return
+        self.json_.append(geometry)
 
     def save(self):
         with open(self.json_path_, "w") as fp:
@@ -279,19 +164,8 @@ class Metrics(object):
             "time" : self.now_time_,
         }
         run.update(tm)
-        self.json_[self.tool_label_]         \
-                  [self.tool_version_]       \
-                  [self.host_arch_]          \
-                  [self.host_platform_]      \
-                  [self.host_version_]       \
-                  [self.host_cpus_]          \
-                  [self.host_memory_]        \
-                  [self.addl_args_]          \
-                  [self.files_per_dir_]      \
-                  [self.module_size_]        \
-                  [self.n_modules_]          \
-                  [self.parallelism_]        \
-                  ["run"].append(run)
+        self.tool_dict_["runs"].append(run)
+
 
 class build_system(object):
     def __init__(self, name, kind):
@@ -339,10 +213,10 @@ class build_system(object):
 
     def metrics(self):
         return {
-            "bod-size"        : self.disk_space_,
-            "kind"            : self.kind_,
-            "memory-size-b"   : self.rsz_,
-            "seconds"         : self.elapsed_,
+            "bod-size"     : self.disk_space_,
+            "kind"         : self.kind_,
+            "memory-bytes" : self.rsz_,
+            "seconds"      : self.elapsed_,
         }
 
     def scale(self, n_bytes):
@@ -558,7 +432,7 @@ def main():
                                 options.arg_tool_label)
 
         for bs in build_systems:
-            # The 'runner' shell script must execute a full build
+            # The 'runner' Bash script must execute a full build
             # FIRST, followed by all incremental and NULL builds.
             if options.arg_kind == "full":
                 bs.generate()
