@@ -187,7 +187,6 @@ source setup \
   --parallel 4 \
   --files-per-dir 100 \
   --modules 1000 \
-  --module-size 30 \
   --source /tmp/make/source
 ```
 

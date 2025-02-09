@@ -15,7 +15,6 @@ SRC_DIR=$(dirname "${SCRIPT}");
 function main ()
 {
     local n_modules="${BPC_MODULES:?Use setup.sh to configure environment.}";
-    local module_size="${BPC_MODULE_SIZE:?Use setup.sh to configure environment.}";
     local SRC="${BPC_SOURCE:?Use setup.sh to configure environment.}";
     local BOD="${BPC_BOD:?:?Use setup.sh to configure environment.}";
     local PARALLEL="${BPC_PARALLEL:?:?Use setup.sh to configure environment.}";
@@ -43,7 +42,6 @@ function main ()
     ${SRC_DIR}/../generator/generate.py         \
         --files-per-dir ${FILES_PER_DIR}        \
         --modules ${n_modules}                  \
-        --module-size ${module_size}            \
         --root ${SRC}                           \
         ${VERBOSE};
 }

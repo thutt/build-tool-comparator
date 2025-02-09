@@ -72,23 +72,20 @@ def print_geometry(m):
     host = m["host"]
     geom = m["geometry"]
 
-    memory = scale(int(host["memory"]))
-    print("arch       : %s\n"
-          "platform   : %s\n"
-          "version    : %s\n"
-          "cpus       : %s\n"
-          "memory     : %s" % (host["arch"],
-                               host["platform"],
-                               host["version"],
-                               host["cpus"],
-                               memory))
-    print("files/dir  : %s\n"
-          "module size: %s\n"
-          "num modules: %s\n"
-          "parallelism: %s\n" % (geom["files-per-dir"],
-                                 geom["module-size-kb"],
-                                 geom["num-modules"],
-                                 geom["parallelism"]))
+    print("arch        : %s\n"
+          "platform    : %s\n"
+          "version     : %s\n"
+          "cpus        : %s\n"
+          "memory      : %s" % (host["arch"],
+                                host["platform"],
+                                host["version"],
+                                host["cpus"],
+                                scale(host["memory-bytes"])))
+    print("files/dir   : %s\n"
+          "module count: %s\n"
+          "parallelism : %s\n" % (geom["files-per-dir"],
+                                  geom["num-modules"],
+                                  geom["parallelism"]))
 
 
 def print_runs(runs):
@@ -99,7 +96,7 @@ def print_runs(runs):
                r["kind"][0:4],
                r["seconds"],
                scale(r["memory-bytes"]),
-               r["bod-size"]))
+               scale(r["bod-size-bytes"])))
     print("")
 
 

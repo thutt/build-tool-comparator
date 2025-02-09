@@ -8,8 +8,6 @@
 SCRIPT="${BASH_SOURCE[0]}"
 SRC_DIR=$(dirname "${SCRIPT}");
 
-export BPC_MODULE_SIZE=30   # 30 Kilobyte module size default.
-
 function _help()
 {
     cat <<EOF
@@ -21,7 +19,6 @@ It must be loaded via 'source', like so:
   source ${SCRIPT}                                     \\
     --bod <build-output-directory>                        \\
     --modules <number-of-modules>                         \\
-    --module-size <size-in-kilobytes of modules>          \\
     --parallel <number of parallel jobs in build process> \\
     --source <directory-where-source-to-be-written>       \\
     [--files-per-dir <max-files-per-directory>]           \\
@@ -46,11 +43,6 @@ function process_args ()
 
             -m|--modules)
                 export BPC_MODULES=$(eval echo ${2});
-                shift 2;
-                ;;
-
-            -M|--module-size)
-                export BPC_MODULE_SIZE=$(eval echo ${2});
                 shift 2;
                 ;;
 
@@ -87,7 +79,7 @@ function process_args ()
 
 function main()
 {
-    unset BPC_BOD BPC_MODULES BPC_MODULE_SIZE BPC_PARALLEL BPC_SOURCE BPC_VERBOSE;
+    unset BPC_BOD BPC_MODULES BPC_PARALLEL BPC_SOURCE BPC_VERBOSE;
 
     if process_args ${@} ; then
         if [ -z "${BPC_BOD}" -o                 \
@@ -102,7 +94,7 @@ function main()
     fi;
 }
 
-args=$(/usr/bin/getopt -o b:f:m:M:p:s:v --longoptions bod:,files-per-dir:,modules:,module-size:,parallel:,source:,verbose -- "${@}")
+args=$(/usr/bin/getopt -o b:f:m:p:s:v --longoptions bod:,files-per-dir:,modules:,parallel:,source:,verbose -- "${@}")
 set -- "${args}"            # Set postional args to ${args}.
 unset args;
 

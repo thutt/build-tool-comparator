@@ -34,23 +34,21 @@ class Metrics(object):
         self.now_time_      = now.strftime("%H:%M:%S.%f") # Time script run.
         self.addl_args_     = self.get_additional_args()
         self.n_modules_     = self.get_n_modules()
-        self.module_size_   = self.get_module_size()
         self.files_per_dir_ = self.get_files_per_dir()
         self.parallelism_   = self.get_parallelism()
 
         self.host_dict_ =  {
-            "arch"     : self.host_arch_,
-            "platform" : self.host_platform_,
-            "version"  : self.host_version_,
-            "cpus"     : self.host_cpus_,
-            "memory"   : self.host_memory_,
+            "arch"         : self.host_arch_,
+            "platform"     : self.host_platform_,
+            "version"      : self.host_version_,
+            "cpus"         : int(self.host_cpus_),
+            "memory-bytes" : int(self.host_memory_),
         }
 
         self.geometry_dict_ = {
-            "files-per-dir" : self.files_per_dir_,
-            "module-size-kb": self.module_size_,
-            "num-modules"   : self.n_modules_,
-            "parallelism"   : self.parallelism_,
+            "files-per-dir"    : int(self.files_per_dir_),
+            "num-modules"      : int(self.n_modules_),
+            "parallelism"      : int(self.parallelism_),
             }
 
         self.tool_dict_ = {
@@ -86,13 +84,6 @@ class Metrics(object):
             return str(n_modules)
         else:
             return "<M: internal error>"
-
-    def get_module_size(self):
-        ms = os.environ.get("BPC_MODULE_SIZE")
-        if ms is not None:
-            return str(ms)
-        else:
-            return "<MS: internal error>"
 
     def get_files_per_dir(self):
         fpd = os.environ.get("BPC_FILES_PER_DIR")
@@ -188,13 +179,14 @@ class build_system(object):
         assert(rc == 0)
 
     def get_directory_space(self, directory):
-        cmd = [ "/usr/bin/du", "-Dsh", directory ]
+        # Produces number of Kb.
+        cmd = [ "/usr/bin/du", "--block-size", "1024", "-Ds", directory ]
         (stdout,
          stderr,
          rc,
          rusage) = execute_process(cmd)
         fields = stdout[0].split("\t")
-        return fields[0]
+        return int(fields[0]) * 1024 # Returns number of bytes.
 
     def set_build_disk_space(self):
         self.disk_space_ = self.get_directory_space(os.environ.get("BPC_BOD"))
@@ -213,10 +205,10 @@ class build_system(object):
 
     def metrics(self):
         return {
-            "bod-size"     : self.disk_space_,
-            "kind"         : self.kind_,
-            "memory-bytes" : self.rsz_,
-            "seconds"      : self.elapsed_,
+            "bod-size-bytes" : self.disk_space_,
+            "kind"           : self.kind_,
+            "memory-bytes"   : self.rsz_,
+            "seconds"        : self.elapsed_,
         }
 
     def scale(self, n_bytes):
@@ -237,7 +229,7 @@ class build_system(object):
               (self.name_, self.kind_[0:4],
                self.elapsed_,
                self.scale(self.rsz_),
-               self.disk_space_))
+               self.scale(self.disk_space_)))
 
 
 class bazel(build_system):

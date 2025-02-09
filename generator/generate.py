@@ -53,18 +53,6 @@ def configure_parser():
                         type     = int,
                         dest     = "arg_n_modules")
 
-    parser.add_argument("--module-size",
-                        help     = ("Size, in kilobytes, of module files "
-                                    "written.  This tunable is to compare "
-                                    "against build systems that checksum "
-                                    "files rather than using timestamps "
-                                    "[default: %(default)s Kb]"),
-                        required = False,
-                        default  = 30,
-                        action   = "store",
-                        type     = int,
-                        dest     = "arg_module_size")
-
     parser.add_argument("--root",
                         help     = ("Root where source files will be created."),
                         required = True,
@@ -101,6 +89,7 @@ def get_options():
     options.source_       = os.path.join(options.arg_root, "source")
     options.max_imports   = 25
     options.build_systems = [ ]
+
     return options
 
 
@@ -141,15 +130,13 @@ def bazel_script(options, modules):
 
 def main():
     try:
-        options   = get_options()
+        options = get_options()
         random.seed(options.arg_seed)
 
-        print("Creating %d source modules, "
-              "with no more than %d files per directory." %
+        print("Creating %d source modules, max %d files per directory." %
               (options.arg_n_modules, options.arg_n_files_per_dir))
         modules   = module.create(options.arg_verbose,
                                   options.source_, options.interface_,
-                                  options.arg_module_size,
                                   options.arg_n_files_per_dir,
                                   options.arg_n_modules, options.max_imports)
         assert(isinstance(modules, list))
