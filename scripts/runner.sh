@@ -193,6 +193,16 @@ function main ()
     for nf in 50 100 1000 5000 10000 50000 100000; do
         build_all "${nf}";
     done;
+
+    echo "Removing '${BPC_SOURCE}'"
+    if ! rm -rf "${BPC_SOURCE}"; then
+        echo "Failed to fully remove '${BPC_SOURCE}'";
+    fi;
+
+    echo "Removing '${BPC_BOD}'"
+    if ! rm -rf "${BPC_BOD}"; then
+        echo "Failed to fully remove '${BPC_BOD}'";
+    fi;
 }
 
 
