@@ -110,7 +110,7 @@ def print_element(elem):
 def print_elements(metrics, elements):
     print_geometry(metrics[list(elements)[0]])
 
-    for elem in elements:
+    for elem in sorted(elements):
         print_element(metrics[elem])
 
     print("")
