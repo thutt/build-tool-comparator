@@ -232,6 +232,9 @@ To run a single characterization, execute one of the following:
 ./scripts/build-bazel.sh
 ```
 ```
+./scripts/build-ninja.sh
+```
+```
 ./scripts/build-recursive-make.sh
 ```
 ```
@@ -278,6 +281,7 @@ project is Gnu Make.
 - Plays well with other build tools.
 - Pretty good documentation.
 - Scales well to large projects in terms of build time.
+- POSIX standard provides predictable cross platform behavior
 
 ### Cons
 
@@ -334,6 +338,7 @@ this project, but speed claims and disk utilization certainly are.
 ### Cons
 
 - Out-of-the-box resource use can make machine nearly unusable while building.
+- In the worst case, out-of-the-box resource use can activate OOM killer.
 - Extremely complicated.
 - Does not play well with other build tools.
 - Significant hidden state affecting build via automatically used config files.
@@ -345,6 +350,25 @@ this project, but speed claims and disk utilization certainly are.
 - Bazel places all build output into four directories one level above
   the root directory of your sources.
 - By default, these four build directories are symlinked to ~/.cache/bazel.
+
+
+## Ninja
+
+Ninja is a build system created by Google.  It is similar to Make, but
+nearly all the useful features of Make have been removed in an effort
+to make it fast.
+
+### Pros
+
+- Genuinely fast for many projects.
+- Made by Google.
+
+### Cons
+
+- Made by Google.
+- Syntax not suited to manual creation.
+- Ninja files usually created by one of a coterie of preprocessors, each accepting a different domain specific language (DSL).
+- Insignificantly faster than Make.
 
 # Informational Results
 

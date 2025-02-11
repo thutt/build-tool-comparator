@@ -14,6 +14,7 @@ import utility
 # Build process creators.
 import bash                     # Bash shell script.
 import bazel                    # Bazel files.
+import ninja                    # Ninja files.
 import rmakefile                # Recursive Makefile.
 import scons                    # Scons
 import smakefile                # Single Makefile.
@@ -114,6 +115,13 @@ def bash_script(options, modules):
     return m
 
 
+def single_ninja(options, modules):
+    m = ninja.create(options.arg_verbose, options.arg_root,
+                     options.arg_n_files_per_dir, modules)
+    assert(isinstance(m, ninja.RootNinja))
+    return m
+
+
 def scons_script(options, modules):
     m = scons.create(options.arg_verbose, options.arg_root,
                     options.arg_n_files_per_dir, modules)
@@ -141,6 +149,7 @@ def main():
                                   options.arg_n_modules, options.max_imports)
         assert(isinstance(modules, list))
 
+        options.build_systems.append(single_ninja(options, modules))
         options.build_systems.append(recursive_make(options, modules))
         options.build_systems.append(single_make(options, modules))
         options.build_systems.append(bash_script(options, modules))

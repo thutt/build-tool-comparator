@@ -137,6 +137,9 @@ class Metrics(object):
         if tool_name == "bash":
             stdout = self.get_version(["/usr/bin/bash", "--version"])
             return stdout[0]
+        elif tool_name == "ninja":
+            stdout = self.get_version(["/usr/bin/ninja", "--version"])
+            return stdout[0]
         elif tool_name == "bazel":
             stdout = self.get_version(["/usr/bin/bazel", "--version"])
             return stdout[0]
@@ -359,7 +362,8 @@ def configure_parser():
                         help     = ("Name of build tool being used  "
                                     "(for determining version)."),
                         required = True,
-                        choices  = [ 'bash', 'bazel', 'make', 'scons' ],
+                        choices  = [ "bash", "bazel", "ninja",
+                                     "make", "scons" ],
                         action   = "store",
                         dest     = "arg_tool")
 

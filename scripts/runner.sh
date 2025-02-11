@@ -25,6 +25,18 @@ function run_bash ()
 }
 
 
+function run_ninja ()
+{
+    (
+        echo -e "\nNinja";
+        ${RUN} --metrics "${METRICS}" --tool ninja --name ninja --kind full;
+        ${SRC_DIR}/modify-most-used-interface.sh >/dev/null;
+        ${RUN} --metrics "${METRICS}" --tool ninja --name ninja --kind incremental;
+        ${RUN} --metrics "${METRICS}" --tool ninja --name ninja --kind NULL;
+    );
+}
+
+
 function run_bazel ()
 {
     (
@@ -130,7 +142,13 @@ function build_all ()
     if [ $(which bash) ] ; then
         run_bash;
     else
-        echo -e "\Bash not found; skipping testing.\n"
+        echo -e "\nBash not found; skipping testing.\n"
+    fi;
+
+    if [ $(which ninja) ] ; then
+        run_ninja;
+    else
+        echo -e "\nNinja not found; skipping testing.\n"
     fi;
 
     if [ $(which bazel) ] ; then
