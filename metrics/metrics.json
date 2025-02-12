@@ -6,28 +6,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:26:17.130500",
+          "date": "2025/02/10",
+          "time": "15:02:39.311015",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14684160,
-          "seconds": 0.10394930839538574
+          "memory-bytes": 14594048,
+          "seconds": 0.10808968544006348
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:17.439897",
+          "date": "2025/02/10",
+          "time": "15:02:39.628939",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 12976128,
-          "seconds": 0.07197260856628418
+          "memory-bytes": 12845056,
+          "seconds": 0.07132363319396973
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:17.581424",
+          "date": "2025/02/10",
+          "time": "15:02:39.772644",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14684160,
-          "seconds": 0.02100849151611328
+          "memory-bytes": 14594048,
+          "seconds": 0.02101731300354004
+        }
+      ]
+    },
+    "host": {
+      "arch": "aarch64",
+      "platform": "Linux-6.8.0-1018-raspi-aarch64-with-glibc2.39",
+      "version": "#20-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 17 12:35:36 UTC 2025",
+      "cpus": 4,
+      "memory-bytes": 8323276800
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 50,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/10",
+          "time": "15:02:39.866229",
+          "bod-size-bytes": 12288,
+          "kind": "full",
+          "memory-bytes": 14606336,
+          "seconds": 0.04089498519897461
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:02:40.160224",
+          "bod-size-bytes": 12288,
+          "kind": "incremental",
+          "memory-bytes": 12845056,
+          "seconds": 0.02757549285888672
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:02:40.257502",
+          "bod-size-bytes": 12288,
+          "kind": "NULL",
+          "memory-bytes": 14606336,
+          "seconds": 0.0055353641510009766
         }
       ]
     },
@@ -51,28 +96,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:26:17.674762",
-          "bod-size-bytes": 325455872,
+          "date": "2025/02/10",
+          "time": "15:02:40.344714",
+          "bod-size-bytes": 325349376,
           "kind": "full",
-          "memory-bytes": 503472128,
-          "seconds": 21.497612237930298
+          "memory-bytes": 524521472,
+          "seconds": 20.68281364440918
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:43.764967",
-          "bod-size-bytes": 325476352,
+          "date": "2025/02/10",
+          "time": "15:03:06.616714",
+          "bod-size-bytes": 325431296,
           "kind": "incremental",
-          "memory-bytes": 365191168,
-          "seconds": 1.5509767532348633
+          "memory-bytes": 368263168,
+          "seconds": 1.5372190475463867
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:49.278417",
-          "bod-size-bytes": 325496832,
+          "date": "2025/02/10",
+          "time": "15:03:12.160429",
+          "bod-size-bytes": 325451776,
           "kind": "NULL",
-          "memory-bytes": 527441920,
-          "seconds": 0.792316198348999
+          "memory-bytes": 519909376,
+          "seconds": 0.74407958984375
         }
       ]
     },
@@ -96,28 +141,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:26:54.814939",
+          "date": "2025/02/10",
+          "time": "15:03:17.695892",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14680064,
-          "seconds": 0.07328438758850098
+          "memory-bytes": 14598144,
+          "seconds": 0.0664820671081543
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:55.226561",
+          "date": "2025/02/10",
+          "time": "15:03:18.096441",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 12976128,
-          "seconds": 0.05133414268493652
+          "memory-bytes": 12845056,
+          "seconds": 0.05195879936218262
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:55.348138",
+          "date": "2025/02/10",
+          "time": "15:03:18.217111",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14680064,
-          "seconds": 0.03630352020263672
+          "memory-bytes": 14598144,
+          "seconds": 0.03695845603942871
         }
       ]
     },
@@ -141,28 +186,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:26:55.454725",
+          "date": "2025/02/10",
+          "time": "15:03:18.322736",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14675968,
-          "seconds": 0.04686164855957031
+          "memory-bytes": 14598144,
+          "seconds": 0.045746564865112305
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:55.705236",
+          "date": "2025/02/10",
+          "time": "15:03:18.573771",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 12976128,
-          "seconds": 0.029395341873168945
+          "memory-bytes": 12845056,
+          "seconds": 0.028289079666137695
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:55.804462",
+          "date": "2025/02/10",
+          "time": "15:03:18.671961",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14675968,
-          "seconds": 0.009393453598022461
+          "memory-bytes": 14598144,
+          "seconds": 0.00828409194946289
         }
       ]
     },
@@ -186,28 +231,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:26:55.885537",
+          "date": "2025/02/10",
+          "time": "15:03:18.751228",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14680064,
-          "seconds": 0.06724405288696289
+          "memory-bytes": 14528512,
+          "seconds": 0.06836223602294922
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:56.158817",
+          "date": "2025/02/10",
+          "time": "15:03:19.026360",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 12976128,
-          "seconds": 0.047486066818237305
+          "memory-bytes": 12845056,
+          "seconds": 0.049932241439819336
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:56.275811",
+          "date": "2025/02/10",
+          "time": "15:03:19.145301",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14680064,
-          "seconds": 0.032532453536987305
+          "memory-bytes": 14528512,
+          "seconds": 0.03290748596191406
         }
       ]
     },
@@ -231,28 +276,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:26:56.378956",
+          "date": "2025/02/10",
+          "time": "15:03:19.248006",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14680064,
-          "seconds": 0.04136061668395996
+          "memory-bytes": 14602240,
+          "seconds": 0.043749332427978516
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:56.626394",
+          "date": "2025/02/10",
+          "time": "15:03:19.498182",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 12976128,
-          "seconds": 0.026853561401367188
+          "memory-bytes": 12845056,
+          "seconds": 0.02564382553100586
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:56.722336",
+          "date": "2025/02/10",
+          "time": "15:03:19.593315",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14680064,
-          "seconds": 0.0057528018951416016
+          "memory-bytes": 14602240,
+          "seconds": 0.005933046340942383
         }
       ]
     },
@@ -276,28 +321,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:26:56.799997",
+          "date": "2025/02/10",
+          "time": "15:03:19.672369",
           "bod-size-bytes": 53248,
           "kind": "full",
-          "memory-bytes": 28323840,
-          "seconds": 0.39194703102111816
+          "memory-bytes": 27979776,
+          "seconds": 0.38868141174316406
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:57.575299",
+          "date": "2025/02/10",
+          "time": "15:03:20.442071",
           "bod-size-bytes": 53248,
           "kind": "incremental",
-          "memory-bytes": 28262400,
-          "seconds": 0.3818328380584717
+          "memory-bytes": 28135424,
+          "seconds": 0.36651110649108887
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:58.199297",
+          "date": "2025/02/10",
+          "time": "15:03:21.064107",
           "bod-size-bytes": 53248,
           "kind": "NULL",
-          "memory-bytes": 28323840,
-          "seconds": 0.33106398582458496
+          "memory-bytes": 28139520,
+          "seconds": 0.33263397216796875
         }
       ]
     },
@@ -321,28 +366,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:26:58.772145",
+          "date": "2025/02/10",
+          "time": "15:03:21.638790",
           "bod-size-bytes": 45056,
           "kind": "full",
-          "memory-bytes": 27095040,
-          "seconds": 0.3548548221588135
+          "memory-bytes": 26841088,
+          "seconds": 0.3526778221130371
         },
         {
-          "date": "2025/02/08",
-          "time": "16:26:59.505973",
+          "date": "2025/02/10",
+          "time": "15:03:22.370172",
           "bod-size-bytes": 45056,
           "kind": "incremental",
-          "memory-bytes": 27103232,
-          "seconds": 0.30133628845214844
+          "memory-bytes": 26710016,
+          "seconds": 0.3018066883087158
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:00.046695",
+          "date": "2025/02/10",
+          "time": "15:03:22.913320",
           "bod-size-bytes": 45056,
           "kind": "NULL",
-          "memory-bytes": 27103232,
-          "seconds": 0.29968690872192383
+          "memory-bytes": 26972160,
+          "seconds": 0.3016335964202881
         }
       ]
     },
@@ -366,28 +411,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:00.591888",
+          "date": "2025/02/10",
+          "time": "15:03:23.460610",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14426112,
-          "seconds": 0.20311450958251953
+          "memory-bytes": 14479360,
+          "seconds": 0.20496106147766113
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:01.031979",
+          "date": "2025/02/10",
+          "time": "15:03:23.906219",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 12976128,
-          "seconds": 0.12837481498718262
+          "memory-bytes": 12845056,
+          "seconds": 0.13040661811828613
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:01.230864",
+          "date": "2025/02/10",
+          "time": "15:03:24.107120",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14426112,
-          "seconds": 0.04115915298461914
+          "memory-bytes": 14479360,
+          "seconds": 0.04148244857788086
+        }
+      ]
+    },
+    "host": {
+      "arch": "aarch64",
+      "platform": "Linux-6.8.0-1018-raspi-aarch64-with-glibc2.39",
+      "version": "#20-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 17 12:35:36 UTC 2025",
+      "cpus": 4,
+      "memory-bytes": 8323276800
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 100,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/10",
+          "time": "15:03:24.221747",
+          "bod-size-bytes": 12288,
+          "kind": "full",
+          "memory-bytes": 14352384,
+          "seconds": 0.07617950439453125
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:03:24.546302",
+          "bod-size-bytes": 12288,
+          "kind": "incremental",
+          "memory-bytes": 12845056,
+          "seconds": 0.04284501075744629
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:03:24.659897",
+          "bod-size-bytes": 12288,
+          "kind": "NULL",
+          "memory-bytes": 14352384,
+          "seconds": 0.006400108337402344
         }
       ]
     },
@@ -411,28 +501,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:01.344029",
+          "date": "2025/02/10",
+          "time": "15:03:24.740705",
           "bod-size-bytes": 325521408,
           "kind": "full",
-          "memory-bytes": 530718720,
-          "seconds": 21.57514762878418
+          "memory-bytes": 548638720,
+          "seconds": 21.58205819129944
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:27.353666",
-          "bod-size-bytes": 325513216,
+          "date": "2025/02/10",
+          "time": "15:03:50.659363",
+          "bod-size-bytes": 325541888,
           "kind": "incremental",
-          "memory-bytes": 406421504,
-          "seconds": 1.9402494430541992
+          "memory-bytes": 394620928,
+          "seconds": 1.9376437664031982
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:32.945696",
-          "bod-size-bytes": 325533696,
+          "date": "2025/02/10",
+          "time": "15:03:56.196699",
+          "bod-size-bytes": 325562368,
           "kind": "NULL",
-          "memory-bytes": 543846400,
-          "seconds": 0.8346152305603027
+          "memory-bytes": 550404096,
+          "seconds": 0.8259615898132324
         }
       ]
     },
@@ -456,28 +546,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:38.506744",
+          "date": "2025/02/10",
+          "time": "15:04:01.744706",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14430208,
-          "seconds": 0.13017034530639648
+          "memory-bytes": 14352384,
+          "seconds": 0.13190889358520508
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:38.978815",
+          "date": "2025/02/10",
+          "time": "15:04:02.352144",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 12976128,
-          "seconds": 0.09785103797912598
+          "memory-bytes": 12845056,
+          "seconds": 0.09748172760009766
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:39.148738",
+          "date": "2025/02/10",
+          "time": "15:04:02.519302",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14430208,
-          "seconds": 0.06955647468566895
+          "memory-bytes": 14352384,
+          "seconds": 0.06978845596313477
         }
       ]
     },
@@ -501,28 +591,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:39.288723",
+          "date": "2025/02/10",
+          "time": "15:04:02.659865",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14426112,
-          "seconds": 0.08113527297973633
+          "memory-bytes": 14352384,
+          "seconds": 0.08231186866760254
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:39.613513",
+          "date": "2025/02/10",
+          "time": "15:04:02.986570",
           "bod-size-bytes": 12288,
           "kind": "incremental",
           "memory-bytes": 12976128,
-          "seconds": 0.04370570182800293
+          "seconds": 0.0444188117980957
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:39.728274",
+          "date": "2025/02/10",
+          "time": "15:04:03.101842",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14426112,
-          "seconds": 0.011672496795654297
+          "memory-bytes": 14352384,
+          "seconds": 0.011990070343017578
         }
       ]
     },
@@ -546,28 +636,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:39.812152",
+          "date": "2025/02/10",
+          "time": "15:04:03.187578",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14430208,
-          "seconds": 0.1343703269958496
+          "memory-bytes": 14352384,
+          "seconds": 0.13385963439941406
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:40.188536",
+          "date": "2025/02/10",
+          "time": "15:04:03.568786",
           "bod-size-bytes": 12288,
           "kind": "incremental",
           "memory-bytes": 12976128,
-          "seconds": 0.09685397148132324
+          "seconds": 0.09722113609313965
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:40.356171",
+          "date": "2025/02/10",
+          "time": "15:04:03.736760",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14430208,
-          "seconds": 0.06644558906555176
+          "memory-bytes": 14352384,
+          "seconds": 0.06662106513977051
         }
       ]
     },
@@ -591,28 +681,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:40.493327",
+          "date": "2025/02/10",
+          "time": "15:04:03.875347",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 14430208,
-          "seconds": 0.07584333419799805
+          "memory-bytes": 14348288,
+          "seconds": 0.07787966728210449
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:40.813886",
+          "date": "2025/02/10",
+          "time": "15:04:04.199463",
           "bod-size-bytes": 12288,
           "kind": "incremental",
           "memory-bytes": 12976128,
-          "seconds": 0.03986954689025879
+          "seconds": 0.040804386138916016
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:40.923897",
+          "date": "2025/02/10",
+          "time": "15:04:04.310300",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14430208,
-          "seconds": 0.007787227630615234
+          "memory-bytes": 14348288,
+          "seconds": 0.007227897644042969
         }
       ]
     },
@@ -636,28 +726,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:41.016514",
+          "date": "2025/02/10",
+          "time": "15:04:04.390185",
           "bod-size-bytes": 94208,
           "kind": "full",
-          "memory-bytes": 29483008,
-          "seconds": 0.5403568744659424
+          "memory-bytes": 29380608,
+          "seconds": 0.5379772186279297
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:41.971585",
+          "date": "2025/02/10",
+          "time": "15:04:05.361988",
           "bod-size-bytes": 94208,
           "kind": "incremental",
-          "memory-bytes": 29704192,
-          "seconds": 0.48552560806274414
+          "memory-bytes": 29503488,
+          "seconds": 0.4877288341522217
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:42.698890",
+          "date": "2025/02/10",
+          "time": "15:04:06.090283",
           "bod-size-bytes": 94208,
           "kind": "NULL",
-          "memory-bytes": 29704192,
-          "seconds": 0.43091416358947754
+          "memory-bytes": 29614080,
+          "seconds": 0.4303579330444336
         }
       ]
     },
@@ -681,28 +771,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:43.371983",
+          "date": "2025/02/10",
+          "time": "15:04:06.787771",
           "bod-size-bytes": 81920,
           "kind": "full",
-          "memory-bytes": 29331456,
-          "seconds": 0.4870023727416992
+          "memory-bytes": 29192192,
+          "seconds": 0.47774171829223633
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:44.307522",
+          "date": "2025/02/10",
+          "time": "15:04:07.689275",
           "bod-size-bytes": 81920,
           "kind": "incremental",
           "memory-bytes": 29200384,
-          "seconds": 0.39656758308410645
+          "seconds": 0.3684711456298828
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:44.945806",
+          "date": "2025/02/10",
+          "time": "15:04:08.298236",
           "bod-size-bytes": 81920,
           "kind": "NULL",
-          "memory-bytes": 29331456,
-          "seconds": 0.3723585605621338
+          "memory-bytes": 29200384,
+          "seconds": 0.37025022506713867
         }
       ]
     },
@@ -726,28 +816,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:45.565683",
+          "date": "2025/02/10",
+          "time": "15:04:08.915783",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 16097280,
-          "seconds": 2.0466339588165283
+          "memory-bytes": 16015360,
+          "seconds": 2.043781280517578
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:48.455749",
+          "date": "2025/02/10",
+          "time": "15:04:11.838305",
           "bod-size-bytes": 49152,
           "kind": "incremental",
-          "memory-bytes": 13107200,
-          "seconds": 0.6799135208129883
+          "memory-bytes": 12976128,
+          "seconds": 0.6611189842224121
         },
         {
-          "date": "2025/02/08",
-          "time": "16:27:49.210583",
+          "date": "2025/02/10",
+          "time": "15:04:12.572897",
           "bod-size-bytes": 49152,
           "kind": "NULL",
-          "memory-bytes": 16097280,
-          "seconds": 0.46654200553894043
+          "memory-bytes": 16015360,
+          "seconds": 0.4673128128051758
+        }
+      ]
+    },
+    "host": {
+      "arch": "aarch64",
+      "platform": "Linux-6.8.0-1018-raspi-aarch64-with-glibc2.39",
+      "version": "#20-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 17 12:35:36 UTC 2025",
+      "cpus": 4,
+      "memory-bytes": 8323276800
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 1000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/10",
+          "time": "15:04:13.118067",
+          "bod-size-bytes": 49152,
+          "kind": "full",
+          "memory-bytes": 16035840,
+          "seconds": 0.7096543312072754
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:04:14.797313",
+          "bod-size-bytes": 49152,
+          "kind": "incremental",
+          "memory-bytes": 12976128,
+          "seconds": 0.10143899917602539
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:04:14.973984",
+          "bod-size-bytes": 49152,
+          "kind": "NULL",
+          "memory-bytes": 16035840,
+          "seconds": 0.030565500259399414
         }
       ]
     },
@@ -771,28 +906,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:27:49.753340",
-          "bod-size-bytes": 326082560,
+          "date": "2025/02/10",
+          "time": "15:04:15.082138",
+          "bod-size-bytes": 326057984,
           "kind": "full",
-          "memory-bytes": 563347456,
-          "seconds": 31.73947262763977
+          "memory-bytes": 557170688,
+          "seconds": 31.773732900619507
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:26.874575",
-          "bod-size-bytes": 326041600,
+          "date": "2025/02/10",
+          "time": "15:04:51.977791",
+          "bod-size-bytes": 326025216,
           "kind": "incremental",
-          "memory-bytes": 450076672,
-          "seconds": 3.3258063793182373
+          "memory-bytes": 445071360,
+          "seconds": 3.127502918243408
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:32.458909",
-          "bod-size-bytes": 326070272,
+          "date": "2025/02/10",
+          "time": "15:04:57.520609",
+          "bod-size-bytes": 326053888,
           "kind": "NULL",
-          "memory-bytes": 599384064,
-          "seconds": 1.2105696201324463
+          "memory-bytes": 596922368,
+          "seconds": 1.1313869953155518
         }
       ]
     },
@@ -816,28 +951,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:28:37.982218",
+          "date": "2025/02/10",
+          "time": "15:05:03.050758",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 16097280,
-          "seconds": 1.8461294174194336
+          "memory-bytes": 16011264,
+          "seconds": 1.8493216037750244
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:41.021581",
+          "date": "2025/02/10",
+          "time": "15:05:05.876877",
           "bod-size-bytes": 49152,
           "kind": "incremental",
-          "memory-bytes": 13107200,
-          "seconds": 1.0806777477264404
+          "memory-bytes": 12976128,
+          "seconds": 1.1057024002075195
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:42.175003",
+          "date": "2025/02/10",
+          "time": "15:05:07.055407",
           "bod-size-bytes": 49152,
           "kind": "NULL",
-          "memory-bytes": 16097280,
-          "seconds": 0.993912935256958
+          "memory-bytes": 16011264,
+          "seconds": 1.0037503242492676
         }
       ]
     },
@@ -861,28 +996,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:28:43.246308",
+          "date": "2025/02/10",
+          "time": "15:05:08.150295",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 16097280,
-          "seconds": 0.6893670558929443
+          "memory-bytes": 16011264,
+          "seconds": 0.6879000663757324
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:44.900813",
+          "date": "2025/02/10",
+          "time": "15:05:09.823952",
           "bod-size-bytes": 49152,
           "kind": "incremental",
-          "memory-bytes": 13107200,
-          "seconds": 0.10189175605773926
+          "memory-bytes": 12976128,
+          "seconds": 0.10622549057006836
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:45.075364",
+          "date": "2025/02/10",
+          "time": "15:05:10.004380",
           "bod-size-bytes": 49152,
           "kind": "NULL",
-          "memory-bytes": 16097280,
-          "seconds": 0.03584599494934082
+          "memory-bytes": 16011264,
+          "seconds": 0.03570842742919922
         }
       ]
     },
@@ -906,28 +1041,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:28:45.184764",
+          "date": "2025/02/10",
+          "time": "15:05:10.113590",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 26714112,
-          "seconds": 1.691624641418457
+          "memory-bytes": 26845184,
+          "seconds": 1.6995599269866943
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:47.842097",
+          "date": "2025/02/10",
+          "time": "15:05:12.780949",
           "bod-size-bytes": 49152,
           "kind": "incremental",
-          "memory-bytes": 22548480,
-          "seconds": 1.0899677276611328
+          "memory-bytes": 22597632,
+          "seconds": 1.0922033786773682
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:49.007472",
+          "date": "2025/02/10",
+          "time": "15:05:13.948029",
           "bod-size-bytes": 49152,
           "kind": "NULL",
-          "memory-bytes": 26714112,
-          "seconds": 1.0074841976165771
+          "memory-bytes": 26845184,
+          "seconds": 1.0079145431518555
         }
       ]
     },
@@ -951,28 +1086,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:28:50.088991",
+          "date": "2025/02/10",
+          "time": "15:05:15.029842",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 15982592,
-          "seconds": 0.7105011940002441
+          "memory-bytes": 16031744,
+          "seconds": 0.7047274112701416
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:51.758617",
+          "date": "2025/02/10",
+          "time": "15:05:16.698007",
           "bod-size-bytes": 49152,
           "kind": "incremental",
-          "memory-bytes": 13107200,
-          "seconds": 0.10668349266052246
+          "memory-bytes": 12976128,
+          "seconds": 0.10385417938232422
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:51.939148",
+          "date": "2025/02/10",
+          "time": "15:05:16.876913",
           "bod-size-bytes": 49152,
           "kind": "NULL",
-          "memory-bytes": 15982592,
-          "seconds": 0.041413307189941406
+          "memory-bytes": 16031744,
+          "seconds": 0.04131174087524414
         }
       ]
     },
@@ -996,28 +1131,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:28:52.056611",
+          "date": "2025/02/10",
+          "time": "15:05:16.994643",
           "bod-size-bytes": 1347584,
           "kind": "full",
-          "memory-bytes": 64774144,
-          "seconds": 3.531790256500244
+          "memory-bytes": 64282624,
+          "seconds": 3.511035203933716
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:56.713535",
+          "date": "2025/02/10",
+          "time": "15:05:21.635179",
           "bod-size-bytes": 1347584,
           "kind": "incremental",
-          "memory-bytes": 65060864,
-          "seconds": 2.5844011306762695
+          "memory-bytes": 64786432,
+          "seconds": 2.5765929222106934
         },
         {
-          "date": "2025/02/08",
-          "time": "16:28:59.541512",
+          "date": "2025/02/10",
+          "time": "15:05:24.456231",
           "bod-size-bytes": 1347584,
           "kind": "NULL",
-          "memory-bytes": 65191936,
-          "seconds": 2.4197468757629395
+          "memory-bytes": 65060864,
+          "seconds": 2.4418962001800537
         }
       ]
     },
@@ -1041,28 +1176,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:29:02.211271",
+          "date": "2025/02/10",
+          "time": "15:05:27.143464",
           "bod-size-bytes": 1044480,
           "kind": "full",
           "memory-bytes": 64438272,
-          "seconds": 2.9509642124176025
+          "seconds": 2.9536004066467285
         },
         {
-          "date": "2025/02/08",
-          "time": "16:29:06.293545",
+          "date": "2025/02/10",
+          "time": "15:05:31.232609",
           "bod-size-bytes": 1044480,
           "kind": "incremental",
-          "memory-bytes": 64843776,
-          "seconds": 1.9683101177215576
+          "memory-bytes": 64450560,
+          "seconds": 1.9824464321136475
         },
         {
-          "date": "2025/02/08",
-          "time": "16:29:08.507319",
+          "date": "2025/02/10",
+          "time": "15:05:33.458954",
           "bod-size-bytes": 1044480,
           "kind": "NULL",
-          "memory-bytes": 64843776,
-          "seconds": 1.8322572708129883
+          "memory-bytes": 64450560,
+          "seconds": 1.8290965557098389
         }
       ]
     },
@@ -1086,28 +1221,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:29:10.591466",
+          "date": "2025/02/10",
+          "time": "15:05:35.539255",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 19755008,
-          "seconds": 10.395957469940186
+          "memory-bytes": 19632128,
+          "seconds": 10.36986780166626
         },
         {
-          "date": "2025/02/08",
-          "time": "16:29:24.752704",
+          "date": "2025/02/10",
+          "time": "15:05:49.674639",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 13107200,
-          "seconds": 2.7987403869628906
+          "memory-bytes": 12976128,
+          "seconds": 2.7989490032196045
         },
         {
-          "date": "2025/02/08",
-          "time": "16:29:27.637045",
+          "date": "2025/02/10",
+          "time": "15:05:52.556865",
           "bod-size-bytes": 212992,
           "kind": "NULL",
-          "memory-bytes": 19755008,
-          "seconds": 2.501992702484131
+          "memory-bytes": 19632128,
+          "seconds": 2.483832597732544
+        }
+      ]
+    },
+    "host": {
+      "arch": "aarch64",
+      "platform": "Linux-6.8.0-1018-raspi-aarch64-with-glibc2.39",
+      "version": "#20-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 17 12:35:36 UTC 2025",
+      "cpus": 4,
+      "memory-bytes": 8323276800
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 5000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/10",
+          "time": "15:05:55.126107",
+          "bod-size-bytes": 212992,
+          "kind": "full",
+          "memory-bytes": 19730432,
+          "seconds": 3.9177920818328857
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:06:03.850869",
+          "bod-size-bytes": 212992,
+          "kind": "incremental",
+          "memory-bytes": 17956864,
+          "seconds": 0.2553985118865967
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:06:04.192820",
+          "bod-size-bytes": 212992,
+          "kind": "NULL",
+          "memory-bytes": 19730432,
+          "seconds": 0.1420269012451172
         }
       ]
     },
@@ -1131,28 +1311,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:29:30.225699",
-          "bod-size-bytes": 327716864,
+          "date": "2025/02/10",
+          "time": "15:06:04.421812",
+          "bod-size-bytes": 327671808,
           "kind": "full",
-          "memory-bytes": 774840320,
-          "seconds": 79.47389030456543
+          "memory-bytes": 756641792,
+          "seconds": 71.10734462738037
         },
         {
-          "date": "2025/02/08",
-          "time": "16:30:56.139128",
-          "bod-size-bytes": 327217152,
+          "date": "2025/02/10",
+          "time": "15:07:24.934027",
+          "bod-size-bytes": 327278592,
           "kind": "incremental",
-          "memory-bytes": 652070912,
-          "seconds": 6.161763668060303
+          "memory-bytes": 630022144,
+          "seconds": 6.316368579864502
         },
         {
-          "date": "2025/02/08",
-          "time": "16:31:06.838835",
-          "bod-size-bytes": 327258112,
+          "date": "2025/02/10",
+          "time": "15:07:35.558662",
+          "bod-size-bytes": 327323648,
           "kind": "NULL",
-          "memory-bytes": 793313280,
-          "seconds": 1.7151892185211182
+          "memory-bytes": 780079104,
+          "seconds": 1.478712797164917
         }
       ]
     },
@@ -1176,28 +1356,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:31:12.362971",
+          "date": "2025/02/10",
+          "time": "15:07:41.118446",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 22401024,
-          "seconds": 17.886842012405396
+          "memory-bytes": 22306816,
+          "seconds": 17.8599750995636
         },
         {
-          "date": "2025/02/08",
-          "time": "16:31:34.353532",
+          "date": "2025/02/10",
+          "time": "15:08:03.191710",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 22036480,
-          "seconds": 12.443127393722534
+          "memory-bytes": 22044672,
+          "seconds": 12.841674566268921
         },
         {
-          "date": "2025/02/08",
-          "time": "16:31:46.880436",
+          "date": "2025/02/10",
+          "time": "15:08:16.118821",
           "bod-size-bytes": 212992,
           "kind": "NULL",
-          "memory-bytes": 22401024,
-          "seconds": 12.487250804901123
+          "memory-bytes": 22306816,
+          "seconds": 12.52914023399353
         }
       ]
     },
@@ -1221,28 +1401,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:31:59.451645",
+          "date": "2025/02/10",
+          "time": "15:08:28.884069",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 19750912,
-          "seconds": 3.5220861434936523
+          "memory-bytes": 19734528,
+          "seconds": 3.5932564735412598
         },
         {
-          "date": "2025/02/08",
-          "time": "16:32:07.412191",
+          "date": "2025/02/10",
+          "time": "15:08:36.803393",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 13107200,
-          "seconds": 0.301166296005249
+          "memory-bytes": 12976128,
+          "seconds": 0.30400896072387695
         },
         {
-          "date": "2025/02/08",
-          "time": "16:32:07.797410",
+          "date": "2025/02/10",
+          "time": "15:08:37.192638",
           "bod-size-bytes": 212992,
           "kind": "NULL",
-          "memory-bytes": 19750912,
-          "seconds": 0.1911327838897705
+          "memory-bytes": 19734528,
+          "seconds": 0.1944108009338379
         }
       ]
     },
@@ -1266,28 +1446,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:32:08.072427",
+          "date": "2025/02/10",
+          "time": "15:08:37.472552",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 125087744,
-          "seconds": 12.68025255203247
+          "memory-bytes": 125214720,
+          "seconds": 12.677351951599121
         },
         {
-          "date": "2025/02/08",
-          "time": "16:32:25.445920",
+          "date": "2025/02/10",
+          "time": "15:08:54.998024",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 100724736,
-          "seconds": 9.310798406600952
+          "memory-bytes": 100782080,
+          "seconds": 9.214170217514038
         },
         {
-          "date": "2025/02/08",
-          "time": "16:32:34.840685",
+          "date": "2025/02/10",
+          "time": "15:09:04.347021",
           "bod-size-bytes": 212992,
           "kind": "NULL",
-          "memory-bytes": 125087744,
-          "seconds": 9.087806463241577
+          "memory-bytes": 125214720,
+          "seconds": 8.860552787780762
         }
       ]
     },
@@ -1311,28 +1491,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:32:44.013804",
+          "date": "2025/02/10",
+          "time": "15:09:13.292488",
           "bod-size-bytes": 212992,
           "kind": "full",
           "memory-bytes": 38404096,
-          "seconds": 3.6283981800079346
+          "seconds": 3.636855125427246
         },
         {
-          "date": "2025/02/08",
-          "time": "16:32:52.683006",
+          "date": "2025/02/10",
+          "time": "15:09:21.865287",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 14024704,
-          "seconds": 0.3165099620819092
+          "memory-bytes": 13893632,
+          "seconds": 0.468914270401001
         },
         {
-          "date": "2025/02/08",
-          "time": "16:32:53.082288",
+          "date": "2025/02/10",
+          "time": "15:09:22.418608",
           "bod-size-bytes": 212992,
           "kind": "NULL",
           "memory-bytes": 38404096,
-          "seconds": 0.2139427661895752
+          "seconds": 0.21323299407958984
         }
       ]
     },
@@ -1356,28 +1536,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:32:53.382727",
+          "date": "2025/02/10",
+          "time": "15:09:22.718434",
           "bod-size-bytes": 11292672,
           "kind": "full",
-          "memory-bytes": 213880832,
-          "seconds": 18.2618350982666
+          "memory-bytes": 213753856,
+          "seconds": 18.205615043640137
         },
         {
-          "date": "2025/02/08",
-          "time": "16:33:15.947105",
+          "date": "2025/02/10",
+          "time": "15:09:45.451253",
           "bod-size-bytes": 11292672,
           "kind": "incremental",
-          "memory-bytes": 215633920,
-          "seconds": 12.863913297653198
+          "memory-bytes": 215621632,
+          "seconds": 13.042893886566162
         },
         {
-          "date": "2025/02/08",
-          "time": "16:33:29.067160",
+          "date": "2025/02/10",
+          "time": "15:09:58.749264",
           "bod-size-bytes": 11292672,
           "kind": "NULL",
-          "memory-bytes": 215756800,
-          "seconds": 12.83704137802124
+          "memory-bytes": 215621632,
+          "seconds": 12.551103591918945
         }
       ]
     },
@@ -1401,28 +1581,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:33:42.160245",
+          "date": "2025/02/10",
+          "time": "15:10:11.557438",
           "bod-size-bytes": 8146944,
           "kind": "full",
-          "memory-bytes": 213803008,
-          "seconds": 15.072066068649292
+          "memory-bytes": 213536768,
+          "seconds": 15.095984935760498
         },
         {
-          "date": "2025/02/08",
-          "time": "16:34:01.665897",
+          "date": "2025/02/10",
+          "time": "15:10:31.306991",
           "bod-size-bytes": 8146944,
           "kind": "incremental",
-          "memory-bytes": 212402176,
-          "seconds": 9.84259819984436
+          "memory-bytes": 212144128,
+          "seconds": 9.879595518112183
         },
         {
-          "date": "2025/02/08",
-          "time": "16:34:11.768232",
+          "date": "2025/02/10",
+          "time": "15:10:41.445118",
           "bod-size-bytes": 8146944,
           "kind": "NULL",
-          "memory-bytes": 213803008,
-          "seconds": 9.50446081161499
+          "memory-bytes": 213536768,
+          "seconds": 9.530538320541382
         }
       ]
     },
@@ -1446,28 +1626,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:34:21.530568",
+          "date": "2025/02/10",
+          "time": "15:10:51.234322",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 24150016,
-          "seconds": 21.186188459396362
+          "memory-bytes": 24133632,
+          "seconds": 20.97578001022339
         },
         {
-          "date": "2025/02/08",
-          "time": "16:35:05.972806",
+          "date": "2025/02/10",
+          "time": "15:11:29.449313",
           "bod-size-bytes": 417792,
           "kind": "incremental",
           "memory-bytes": 13107200,
-          "seconds": 5.581727743148804
+          "seconds": 5.404379367828369
         },
         {
-          "date": "2025/02/08",
-          "time": "16:35:11.650940",
+          "date": "2025/02/10",
+          "time": "15:11:34.951294",
           "bod-size-bytes": 417792,
           "kind": "NULL",
-          "memory-bytes": 24150016,
-          "seconds": 5.0579893589019775
+          "memory-bytes": 24133632,
+          "seconds": 5.045631408691406
+        }
+      ]
+    },
+    "host": {
+      "arch": "aarch64",
+      "platform": "Linux-6.8.0-1018-raspi-aarch64-with-glibc2.39",
+      "version": "#20-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 17 12:35:36 UTC 2025",
+      "cpus": 4,
+      "memory-bytes": 8323276800
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 10000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/10",
+          "time": "15:11:40.098214",
+          "bod-size-bytes": 417792,
+          "kind": "full",
+          "memory-bytes": 32858112,
+          "seconds": 8.888898372650146
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:12:07.878975",
+          "bod-size-bytes": 417792,
+          "kind": "incremental",
+          "memory-bytes": 32854016,
+          "seconds": 0.4400310516357422
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:12:08.499554",
+          "bod-size-bytes": 417792,
+          "kind": "NULL",
+          "memory-bytes": 32858112,
+          "seconds": 0.30768823623657227
         }
       ]
     },
@@ -1491,28 +1716,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:35:17.096823",
-          "bod-size-bytes": 329265152,
+          "date": "2025/02/10",
+          "time": "15:12:09.062119",
+          "bod-size-bytes": 329220096,
           "kind": "full",
-          "memory-bytes": 1105059840,
-          "seconds": 128.5906138420105
+          "memory-bytes": 904257536,
+          "seconds": 132.89854288101196
         },
         {
-          "date": "2025/02/08",
-          "time": "16:37:47.660460",
-          "bod-size-bytes": 328835072,
+          "date": "2025/02/10",
+          "time": "15:14:43.908320",
+          "bod-size-bytes": 328806400,
           "kind": "incremental",
-          "memory-bytes": 976773120,
-          "seconds": 7.660172700881958
+          "memory-bytes": 774602752,
+          "seconds": 8.952276706695557
         },
         {
-          "date": "2025/02/08",
-          "time": "16:37:58.294112",
-          "bod-size-bytes": 328892416,
+          "date": "2025/02/10",
+          "time": "15:14:54.511006",
+          "bod-size-bytes": 328867840,
           "kind": "NULL",
-          "memory-bytes": 1135497216,
-          "seconds": 2.168402910232544
+          "memory-bytes": 1257082880,
+          "seconds": 2.5956859588623047
         }
       ]
     },
@@ -1536,28 +1761,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:38:03.833808",
+          "date": "2025/02/10",
+          "time": "15:15:00.081569",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 24723456,
-          "seconds": 40.007837772369385
+          "memory-bytes": 24797184,
+          "seconds": 40.02548599243164
         },
         {
-          "date": "2025/02/08",
-          "time": "16:39:02.442550",
+          "date": "2025/02/10",
+          "time": "15:15:58.454448",
           "bod-size-bytes": 417792,
           "kind": "incremental",
           "memory-bytes": 24330240,
-          "seconds": 28.98695206642151
+          "seconds": 29.25542163848877
         },
         {
-          "date": "2025/02/08",
-          "time": "16:39:31.525144",
+          "date": "2025/02/10",
+          "time": "15:16:27.807011",
           "bod-size-bytes": 417792,
           "kind": "NULL",
-          "memory-bytes": 24723456,
-          "seconds": 28.900963306427002
+          "memory-bytes": 24797184,
+          "seconds": 29.156798839569092
         }
       ]
     },
@@ -1581,28 +1806,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:40:00.521707",
+          "date": "2025/02/10",
+          "time": "15:16:57.061754",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 24178688,
-          "seconds": 7.203952789306641
+          "memory-bytes": 24014848,
+          "seconds": 7.627159118652344
         },
         {
-          "date": "2025/02/08",
-          "time": "16:40:27.266004",
+          "date": "2025/02/10",
+          "time": "15:17:25.102359",
           "bod-size-bytes": 417792,
           "kind": "incremental",
           "memory-bytes": 13107200,
-          "seconds": 0.5501980781555176
+          "seconds": 0.5373623371124268
         },
         {
-          "date": "2025/02/08",
-          "time": "16:40:28.331618",
+          "date": "2025/02/10",
+          "time": "15:17:26.131900",
           "bod-size-bytes": 417792,
           "kind": "NULL",
-          "memory-bytes": 24178688,
-          "seconds": 0.4128265380859375
+          "memory-bytes": 24014848,
+          "seconds": 0.4082612991333008
         }
       ]
     },
@@ -1626,28 +1851,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:40:28.965754",
+          "date": "2025/02/10",
+          "time": "15:17:26.909593",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 250126336,
-          "seconds": 30.66581964492798
+          "memory-bytes": 250163200,
+          "seconds": 30.306326150894165
         },
         {
-          "date": "2025/02/08",
-          "time": "16:41:18.227435",
+          "date": "2025/02/10",
+          "time": "15:18:19.137316",
           "bod-size-bytes": 417792,
           "kind": "incremental",
-          "memory-bytes": 200437760,
-          "seconds": 23.592148542404175
+          "memory-bytes": 200429568,
+          "seconds": 23.28516173362732
         },
         {
-          "date": "2025/02/08",
-          "time": "16:41:41.917415",
+          "date": "2025/02/10",
+          "time": "15:18:42.518750",
           "bod-size-bytes": 417792,
           "kind": "NULL",
-          "memory-bytes": 250126336,
-          "seconds": 23.268369674682617
+          "memory-bytes": 250163200,
+          "seconds": 23.00826597213745
         }
       ]
     },
@@ -1671,28 +1896,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:42:05.282826",
+          "date": "2025/02/10",
+          "time": "15:19:05.623092",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 75628544,
-          "seconds": 7.519345760345459
+          "memory-bytes": 75366400,
+          "seconds": 7.5776047706604
         },
         {
-          "date": "2025/02/08",
-          "time": "16:42:31.789197",
+          "date": "2025/02/10",
+          "time": "15:19:31.883692",
           "bod-size-bytes": 417792,
           "kind": "incremental",
-          "memory-bytes": 25690112,
-          "seconds": 0.6121315956115723
+          "memory-bytes": 25821184,
+          "seconds": 0.6062719821929932
         },
         {
-          "date": "2025/02/08",
-          "time": "16:42:32.659465",
+          "date": "2025/02/10",
+          "time": "15:19:32.730355",
           "bod-size-bytes": 417792,
           "kind": "NULL",
-          "memory-bytes": 75628544,
-          "seconds": 0.4858229160308838
+          "memory-bytes": 75366400,
+          "seconds": 0.4846208095550537
         }
       ]
     },
@@ -1716,28 +1941,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:42:33.260433",
+          "date": "2025/02/10",
+          "time": "15:19:33.394631",
           "bod-size-bytes": 26267648,
           "kind": "full",
-          "memory-bytes": 402898944,
-          "seconds": 38.531235218048096
+          "memory-bytes": 402636800,
+          "seconds": 37.958373069763184
         },
         {
-          "date": "2025/02/08",
-          "time": "16:43:31.350026",
+          "date": "2025/02/10",
+          "time": "15:20:31.407833",
           "bod-size-bytes": 26267648,
           "kind": "incremental",
-          "memory-bytes": 406642688,
-          "seconds": 26.684814453125
+          "memory-bytes": 406388736,
+          "seconds": 26.630367040634155
         },
         {
-          "date": "2025/02/08",
-          "time": "16:43:58.302769",
+          "date": "2025/02/10",
+          "time": "15:20:58.306292",
           "bod-size-bytes": 26267648,
           "kind": "NULL",
-          "memory-bytes": 407154688,
-          "seconds": 26.42444157600403
+          "memory-bytes": 407068672,
+          "seconds": 26.353217601776123
         }
       ]
     },
@@ -1761,28 +1986,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:44:24.996309",
+          "date": "2025/02/10",
+          "time": "15:21:24.926761",
           "bod-size-bytes": 18657280,
           "kind": "full",
-          "memory-bytes": 402685952,
-          "seconds": 30.84091567993164
+          "memory-bytes": 402583552,
+          "seconds": 31.989946603775024
         },
         {
-          "date": "2025/02/08",
-          "time": "16:45:14.946825",
+          "date": "2025/02/10",
+          "time": "15:22:16.091649",
           "bod-size-bytes": 18657280,
           "kind": "incremental",
-          "memory-bytes": 399904768,
-          "seconds": 20.757745504379272
+          "memory-bytes": 399380480,
+          "seconds": 20.794753551483154
         },
         {
-          "date": "2025/02/08",
-          "time": "16:45:35.972939",
+          "date": "2025/02/10",
+          "time": "15:22:37.153741",
           "bod-size-bytes": 18657280,
           "kind": "NULL",
-          "memory-bytes": 402685952,
-          "seconds": 20.288575410842896
+          "memory-bytes": 402583552,
+          "seconds": 20.426997900009155
         }
       ]
     },
@@ -1806,28 +2031,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:45:56.534501",
+          "date": "2025/02/10",
+          "time": "15:22:57.874627",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 59142144,
-          "seconds": 103.89220428466797
+          "memory-bytes": 59703296,
+          "seconds": 104.31371593475342
         },
         {
-          "date": "2025/02/08",
-          "time": "16:52:00.879563",
+          "date": "2025/02/10",
+          "time": "15:28:48.478900",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 13238272,
-          "seconds": 26.74809503555298
+          "memory-bytes": 13107200,
+          "seconds": 26.717746257781982
         },
         {
-          "date": "2025/02/08",
-          "time": "16:52:27.857187",
+          "date": "2025/02/10",
+          "time": "15:29:15.388356",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
-          "memory-bytes": 59142144,
-          "seconds": 26.04963517189026
+          "memory-bytes": 59703296,
+          "seconds": 26.02739381790161
+        }
+      ]
+    },
+    "host": {
+      "arch": "aarch64",
+      "platform": "Linux-6.8.0-1018-raspi-aarch64-with-glibc2.39",
+      "version": "#20-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 17 12:35:36 UTC 2025",
+      "cpus": 4,
+      "memory-bytes": 8323276800
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 50000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/10",
+          "time": "15:29:41.609531",
+          "bod-size-bytes": 2064384,
+          "kind": "full",
+          "memory-bytes": 155820032,
+          "seconds": 67.80700159072876
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:35:08.935438",
+          "bod-size-bytes": 2064384,
+          "kind": "incremental",
+          "memory-bytes": 155815936,
+          "seconds": 3.01375150680542
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:35:12.139951",
+          "bod-size-bytes": 2064384,
+          "kind": "NULL",
+          "memory-bytes": 155820032,
+          "seconds": 1.840789556503296
         }
       ]
     },
@@ -1851,28 +2121,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "16:52:54.106975",
+          "date": "2025/02/10",
+          "time": "15:35:14.172133",
           "bod-size-bytes": 342106112,
           "kind": "full",
-          "memory-bytes": 1940729856,
-          "seconds": 501.6117606163025
+          "memory-bytes": 1853587456,
+          "seconds": 488.3754835128784
         },
         {
-          "date": "2025/02/08",
-          "time": "17:05:50.491191",
+          "date": "2025/02/10",
+          "time": "15:48:08.963923",
+          "bod-size-bytes": 339210240,
+          "kind": "incremental",
+          "memory-bytes": 1994743808,
+          "seconds": 36.09824752807617
+        },
+        {
+          "date": "2025/02/10",
+          "time": "15:48:50.000574",
           "bod-size-bytes": 339255296,
-          "kind": "incremental",
-          "memory-bytes": 1825370112,
-          "seconds": 36.114646196365356
-        },
-        {
-          "date": "2025/02/08",
-          "time": "17:06:31.516499",
-          "bod-size-bytes": 339300352,
           "kind": "NULL",
-          "memory-bytes": 2207756288,
-          "seconds": 9.53834056854248
+          "memory-bytes": 2142617600,
+          "seconds": 8.429504632949829
         }
       ]
     },
@@ -1896,28 +2166,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "17:06:42.085064",
+          "date": "2025/02/10",
+          "time": "15:49:00.662865",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 58957824,
-          "seconds": 236.99456477165222
+          "memory-bytes": 59695104,
+          "seconds": 236.0397698879242
         },
         {
-          "date": "2025/02/08",
-          "time": "17:15:03.283672",
+          "date": "2025/02/10",
+          "time": "15:57:24.956525",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 29270016,
-          "seconds": 182.0376558303833
+          "memory-bytes": 29274112,
+          "seconds": 182.00912475585938
         },
         {
-          "date": "2025/02/08",
-          "time": "17:18:05.513937",
+          "date": "2025/02/10",
+          "time": "16:00:27.160049",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
-          "memory-bytes": 58957824,
-          "seconds": 181.50812602043152
+          "memory-bytes": 59695104,
+          "seconds": 181.28565502166748
         }
       ]
     },
@@ -1941,28 +2211,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "17:21:07.222555",
+          "date": "2025/02/10",
+          "time": "16:03:28.639034",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 58957824,
-          "seconds": 36.51331114768982
+          "memory-bytes": 59703296,
+          "seconds": 36.5687153339386
         },
         {
-          "date": "2025/02/08",
-          "time": "17:26:26.401746",
+          "date": "2025/02/10",
+          "time": "16:08:44.871872",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 13238272,
-          "seconds": 2.6698384284973145
+          "memory-bytes": 13107200,
+          "seconds": 2.633997678756714
         },
         {
-          "date": "2025/02/08",
-          "time": "17:26:29.262566",
+          "date": "2025/02/10",
+          "time": "16:08:47.697342",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
-          "memory-bytes": 58957824,
-          "seconds": 2.287273406982422
+          "memory-bytes": 59703296,
+          "seconds": 2.2938132286071777
         }
       ]
     },
@@ -1986,28 +2256,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "17:26:31.736093",
+          "date": "2025/02/10",
+          "time": "16:08:50.182027",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 1241776128,
-          "seconds": 98.35439777374268
+          "memory-bytes": 1241899008,
+          "seconds": 98.03188180923462
         },
         {
-          "date": "2025/02/08",
-          "time": "17:32:33.542459",
+          "date": "2025/02/10",
+          "time": "16:14:50.722003",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 981733376,
-          "seconds": 63.124905586242676
+          "memory-bytes": 981909504,
+          "seconds": 63.2876992225647
         },
         {
-          "date": "2025/02/08",
-          "time": "17:33:36.858170",
+          "date": "2025/02/10",
+          "time": "16:15:54.200834",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
-          "memory-bytes": 1241776128,
-          "seconds": 62.16570448875427
+          "memory-bytes": 1241899008,
+          "seconds": 61.8043155670166
         }
       ]
     },
@@ -2031,28 +2301,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "17:34:39.212185",
+          "date": "2025/02/10",
+          "time": "16:16:56.194145",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 381607936,
-          "seconds": 39.35076928138733
+          "memory-bytes": 381476864,
+          "seconds": 38.74156856536865
         },
         {
-          "date": "2025/02/08",
-          "time": "17:40:17.204507",
+          "date": "2025/02/10",
+          "time": "16:22:01.473389",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 122146816,
-          "seconds": 4.4763970375061035
+          "memory-bytes": 122068992,
+          "seconds": 4.043991804122925
         },
         {
-          "date": "2025/02/08",
-          "time": "17:40:21.871126",
+          "date": "2025/02/10",
+          "time": "16:22:05.706588",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
-          "memory-bytes": 381607936,
-          "seconds": 3.412475109100342
+          "memory-bytes": 381476864,
+          "seconds": 3.4055988788604736
         }
       ]
     },
@@ -2076,28 +2346,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "17:40:25.476161",
+          "date": "2025/02/10",
+          "time": "16:22:09.345916",
           "bod-size-bytes": 158298112,
           "kind": "full",
-          "memory-bytes": 1847492608,
-          "seconds": 301.6294231414795
+          "memory-bytes": 1847508992,
+          "seconds": 289.70565915107727
         },
         {
-          "date": "2025/02/08",
-          "time": "17:49:49.151286",
+          "date": "2025/02/10",
+          "time": "16:31:26.355619",
           "bod-size-bytes": 158298112,
           "kind": "incremental",
-          "memory-bytes": 1867476992,
-          "seconds": 227.2519998550415
+          "memory-bytes": 1867382784,
+          "seconds": 226.0662214756012
         },
         {
-          "date": "2025/02/08",
-          "time": "17:53:36.895940",
+          "date": "2025/02/10",
+          "time": "16:35:12.788750",
           "bod-size-bytes": 158298112,
           "kind": "NULL",
-          "memory-bytes": 1867476992,
-          "seconds": 223.45210981369019
+          "memory-bytes": 1867382784,
+          "seconds": 225.14048051834106
         }
       ]
     },
@@ -2121,28 +2391,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "17:57:20.838984",
+          "date": "2025/02/10",
+          "time": "16:38:58.294296",
           "bod-size-bytes": 111067136,
           "kind": "full",
-          "memory-bytes": 1839538176,
-          "seconds": 168.00032830238342
+          "memory-bytes": 1839419392,
+          "seconds": 161.81243324279785
         },
         {
-          "date": "2025/02/08",
-          "time": "18:04:32.268811",
+          "date": "2025/02/10",
+          "time": "16:46:00.962287",
           "bod-size-bytes": 111067136,
           "kind": "incremental",
-          "memory-bytes": 1812799488,
-          "seconds": 110.94589805603027
+          "memory-bytes": 1812516864,
+          "seconds": 111.306795835495
         },
         {
-          "date": "2025/02/08",
-          "time": "18:06:23.710940",
+          "date": "2025/02/10",
+          "time": "16:47:52.633323",
           "bod-size-bytes": 111067136,
           "kind": "NULL",
-          "memory-bytes": 1839538176,
-          "seconds": 107.54488945007324
+          "memory-bytes": 1839419392,
+          "seconds": 108.2599663734436
         }
       ]
     },
@@ -2166,28 +2436,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "18:08:11.624514",
+          "date": "2025/02/10",
+          "time": "16:49:41.257216",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 103088128,
-          "seconds": 207.38615822792053
+          "memory-bytes": 104210432,
+          "seconds": 207.35928177833557
         },
         {
-          "date": "2025/02/08",
-          "time": "18:21:40.507244",
+          "date": "2025/02/10",
+          "time": "17:03:11.592828",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 13238272,
-          "seconds": 54.47280240058899
+          "memory-bytes": 13107200,
+          "seconds": 54.40711545944214
         },
         {
-          "date": "2025/02/08",
-          "time": "18:22:35.283680",
+          "date": "2025/02/10",
+          "time": "17:04:06.300483",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
-          "memory-bytes": 103088128,
-          "seconds": 52.69461393356323
+          "memory-bytes": 104210432,
+          "seconds": 52.56090044975281
+        }
+      ]
+    },
+    "host": {
+      "arch": "aarch64",
+      "platform": "Linux-6.8.0-1018-raspi-aarch64-with-glibc2.39",
+      "version": "#20-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 17 12:35:36 UTC 2025",
+      "cpus": 4,
+      "memory-bytes": 8323276800
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 100000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/10",
+          "time": "17:04:59.164782",
+          "bod-size-bytes": 4120576,
+          "kind": "full",
+          "memory-bytes": 310214656,
+          "seconds": 200.05522203445435
+        },
+        {
+          "date": "2025/02/10",
+          "time": "17:18:47.407131",
+          "bod-size-bytes": 4120576,
+          "kind": "incremental",
+          "memory-bytes": 310136832,
+          "seconds": 6.8957579135894775
+        },
+        {
+          "date": "2025/02/10",
+          "time": "17:18:54.613810",
+          "bod-size-bytes": 4120576,
+          "kind": "NULL",
+          "memory-bytes": 310214656,
+          "seconds": 3.961151361465454
         }
       ]
     },
@@ -2211,28 +2526,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "18:23:28.281487",
-          "bod-size-bytes": 358064128,
+          "date": "2025/02/10",
+          "time": "17:18:58.883376",
+          "bod-size-bytes": 358113280,
           "kind": "full",
-          "memory-bytes": 2688741376,
-          "seconds": 1105.6078894138336
+          "memory-bytes": 2682798080,
+          "seconds": 1112.9888360500336
         },
         {
-          "date": "2025/02/08",
-          "time": "18:53:37.004010",
-          "bod-size-bytes": 351944704,
+          "date": "2025/02/10",
+          "time": "17:49:21.986567",
+          "bod-size-bytes": 352129024,
           "kind": "incremental",
-          "memory-bytes": 2586968064,
-          "seconds": 140.93977522850037
+          "memory-bytes": 2575228928,
+          "seconds": 133.38256549835205
         },
         {
-          "date": "2025/02/08",
-          "time": "18:56:03.578893",
-          "bod-size-bytes": 351985664,
+          "date": "2025/02/10",
+          "time": "17:51:38.702302",
+          "bod-size-bytes": 352169984,
           "kind": "NULL",
-          "memory-bytes": 2725810176,
-          "seconds": 14.877414464950562
+          "memory-bytes": 2703409152,
+          "seconds": 16.195066452026367
         }
       ]
     },
@@ -2256,28 +2571,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "18:56:24.219717",
+          "date": "2025/02/10",
+          "time": "17:51:59.374011",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 102936576,
-          "seconds": 502.6623628139496
+          "memory-bytes": 104132608,
+          "seconds": 501.15065932273865
         },
         {
-          "date": "2025/02/08",
-          "time": "19:15:24.777007",
+          "date": "2025/02/10",
+          "time": "18:11:01.567362",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
           "memory-bytes": 32567296,
-          "seconds": 395.65243268013
+          "seconds": 394.5577781200409
         },
         {
-          "date": "2025/02/08",
-          "time": "19:22:00.746981",
+          "date": "2025/02/10",
+          "time": "18:17:36.437675",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
-          "memory-bytes": 102936576,
-          "seconds": 392.4446613788605
+          "memory-bytes": 104132608,
+          "seconds": 392.34471106529236
         }
       ]
     },
@@ -2301,28 +2616,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "19:28:33.496314",
+          "date": "2025/02/10",
+          "time": "18:24:09.146717",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 103108608,
-          "seconds": 72.39107847213745
+          "memory-bytes": 104300544,
+          "seconds": 73.39903259277344
         },
         {
-          "date": "2025/02/08",
-          "time": "19:40:25.551429",
+          "date": "2025/02/10",
+          "time": "18:36:20.174277",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 13238272,
-          "seconds": 5.894262313842773
+          "memory-bytes": 13107200,
+          "seconds": 5.8695831298828125
         },
         {
-          "date": "2025/02/08",
-          "time": "19:40:31.749602",
+          "date": "2025/02/10",
+          "time": "18:36:26.411742",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
-          "memory-bytes": 103108608,
-          "seconds": 5.168084383010864
+          "memory-bytes": 104300544,
+          "seconds": 4.798783779144287
         }
       ]
     },
@@ -2346,28 +2661,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "19:40:37.221639",
+          "date": "2025/02/10",
+          "time": "18:36:31.518943",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 2490404864,
-          "seconds": 205.5831310749054
+          "memory-bytes": 2490458112,
+          "seconds": 205.3973307609558
         },
         {
-          "date": "2025/02/08",
-          "time": "19:54:42.360706",
+          "date": "2025/02/10",
+          "time": "18:50:45.807668",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 1965408256,
-          "seconds": 137.80365300178528
+          "memory-bytes": 1965129728,
+          "seconds": 137.94464659690857
         },
         {
-          "date": "2025/02/08",
-          "time": "19:57:00.513366",
+          "date": "2025/02/10",
+          "time": "18:53:04.111717",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
-          "memory-bytes": 2490404864,
-          "seconds": 134.17463517189026
+          "memory-bytes": 2490458112,
+          "seconds": 134.08216428756714
         }
       ]
     },
@@ -2391,28 +2706,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "19:59:14.994819",
+          "date": "2025/02/10",
+          "time": "18:55:18.580622",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 765501440,
-          "seconds": 79.14397430419922
+          "memory-bytes": 765407232,
+          "seconds": 79.39053535461426
         },
         {
-          "date": "2025/02/08",
-          "time": "20:11:28.026477",
+          "date": "2025/02/10",
+          "time": "19:07:10.284644",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 241688576,
-          "seconds": 10.125761985778809
+          "memory-bytes": 241750016,
+          "seconds": 10.180018424987793
         },
         {
-          "date": "2025/02/08",
-          "time": "20:11:38.469183",
+          "date": "2025/02/10",
+          "time": "19:07:20.770929",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
-          "memory-bytes": 765501440,
-          "seconds": 7.780905723571777
+          "memory-bytes": 765407232,
+          "seconds": 7.78100061416626
         }
       ]
     },
@@ -2436,28 +2751,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "20:11:46.664667",
+          "date": "2025/02/10",
+          "time": "19:07:28.855123",
           "bod-size-bytes": 328028160,
           "kind": "full",
-          "memory-bytes": 3717525504,
-          "seconds": 722.9930002689362
+          "memory-bytes": 3717758976,
+          "seconds": 725.8856537342072
         },
         {
-          "date": "2025/02/08",
-          "time": "20:34:21.619320",
+          "date": "2025/02/10",
+          "time": "19:30:21.620700",
           "bod-size-bytes": 328028160,
           "kind": "incremental",
-          "memory-bytes": 3755905024,
-          "seconds": 562.6941530704498
+          "memory-bytes": 3755565056,
+          "seconds": 579.657710313797
         },
         {
-          "date": "2025/02/08",
-          "time": "20:43:45.058379",
-          "bod-size-bytes": 328032256,
+          "date": "2025/02/10",
+          "time": "19:40:01.893025",
+          "bod-size-bytes": 328028160,
           "kind": "NULL",
-          "memory-bytes": 3755905024,
-          "seconds": 594.918363571167
+          "memory-bytes": 3755565056,
+          "seconds": 607.0049872398376
         }
       ]
     },
@@ -2481,28 +2796,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "20:53:40.770629",
+          "date": "2025/02/10",
+          "time": "19:50:09.653902",
           "bod-size-bytes": 229838848,
           "kind": "full",
-          "memory-bytes": 3702247424,
-          "seconds": 329.10035371780396
+          "memory-bytes": 3702493184,
+          "seconds": 330.348064661026
         },
         {
-          "date": "2025/02/08",
-          "time": "21:10:31.109211",
+          "date": "2025/02/10",
+          "time": "20:07:07.589460",
           "bod-size-bytes": 229838848,
           "kind": "incremental",
-          "memory-bytes": 3645300736,
-          "seconds": 223.063250541687
+          "memory-bytes": 3645444096,
+          "seconds": 223.58570408821106
         },
         {
-          "date": "2025/02/08",
-          "time": "21:14:14.817319",
+          "date": "2025/02/10",
+          "time": "20:10:51.869257",
           "bod-size-bytes": 229838848,
           "kind": "NULL",
-          "memory-bytes": 3702247424,
-          "seconds": 217.0026514530182
+          "memory-bytes": 3702493184,
+          "seconds": 217.78738451004028
         }
       ]
     },
@@ -2526,28 +2841,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:06.755380",
+          "date": "2025/02/11",
+          "time": "05:00:02.697257",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16355328,
-          "seconds": 0.15498852729797363
+          "memory-bytes": 16510976,
+          "seconds": 0.16164398193359375
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:07.345359",
+          "date": "2025/02/11",
+          "time": "05:00:03.302569",
           "bod-size-bytes": 12288,
           "kind": "incremental",
           "memory-bytes": 14942208,
-          "seconds": 0.1002340316772461
+          "seconds": 0.1015470027923584
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:07.607132",
+          "date": "2025/02/11",
+          "time": "05:00:03.564175",
           "bod-size-bytes": 12288,
           "kind": "NULL",
+          "memory-bytes": 15073280,
+          "seconds": 0.037188053131103516
+        }
+      ]
+    },
+    "host": {
+      "arch": "x86_64",
+      "platform": "Linux-6.8.0-48-generic-x86_64-with-glibc2.39",
+      "version": "#48~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  7 11:24:13 UTC 2",
+      "cpus": 4,
+      "memory-bytes": 8169140224
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 50,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/11",
+          "time": "05:00:03.768571",
+          "bod-size-bytes": 12288,
+          "kind": "full",
+          "memory-bytes": 16515072,
+          "seconds": 0.07139325141906738
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:00:04.264133",
+          "bod-size-bytes": 12288,
+          "kind": "incremental",
           "memory-bytes": 14942208,
-          "seconds": 0.036600589752197266
+          "seconds": 0.0428924560546875
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:00:04.466400",
+          "bod-size-bytes": 12288,
+          "kind": "NULL",
+          "memory-bytes": 15073280,
+          "seconds": 0.009902715682983398
         }
       ]
     },
@@ -2571,28 +2931,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:07.803550",
+          "date": "2025/02/11",
+          "time": "05:00:04.642172",
           "bod-size-bytes": 7307264,
           "kind": "full",
-          "memory-bytes": 243302400,
-          "seconds": 9.846479415893555
+          "memory-bytes": 256692224,
+          "seconds": 9.979260206222534
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:18.406474",
+          "date": "2025/02/11",
+          "time": "05:00:15.291820",
           "bod-size-bytes": 10788864,
           "kind": "incremental",
-          "memory-bytes": 245075968,
-          "seconds": 0.960477352142334
+          "memory-bytes": 262311936,
+          "seconds": 0.8637502193450928
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:23.684152",
+          "date": "2025/02/11",
+          "time": "05:00:20.584742",
           "bod-size-bytes": 10362880,
           "kind": "NULL",
-          "memory-bytes": 247791616,
-          "seconds": 0.3775036334991455
+          "memory-bytes": 263659520,
+          "seconds": 0.3848726749420166
         }
       ]
     },
@@ -2616,28 +2976,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:28.966784",
+          "date": "2025/02/11",
+          "time": "05:00:25.875264",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16183296,
-          "seconds": 0.1147153377532959
+          "memory-bytes": 16568320,
+          "seconds": 0.11792588233947754
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:29.510398",
+          "date": "2025/02/11",
+          "time": "05:00:26.424313",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 14811136,
-          "seconds": 0.09004449844360352
+          "memory-bytes": 15073280,
+          "seconds": 0.09138631820678711
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:29.756475",
+          "date": "2025/02/11",
+          "time": "05:00:26.676446",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14942208,
-          "seconds": 0.06326651573181152
+          "memory-bytes": 15073280,
+          "seconds": 0.061145782470703125
         }
       ]
     },
@@ -2661,28 +3021,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:29.982298",
+          "date": "2025/02/11",
+          "time": "05:00:26.900540",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16355328,
-          "seconds": 0.07001757621765137
+          "memory-bytes": 16379904,
+          "seconds": 0.0721750259399414
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:30.468158",
+          "date": "2025/02/11",
+          "time": "05:00:27.394680",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 14942208,
-          "seconds": 0.043144941329956055
+          "memory-bytes": 15073280,
+          "seconds": 0.044855594635009766
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:30.667379",
+          "date": "2025/02/11",
+          "time": "05:00:27.599522",
           "bod-size-bytes": 12288,
           "kind": "NULL",
           "memory-bytes": 14942208,
-          "seconds": 0.014493227005004883
+          "seconds": 0.015253305435180664
         }
       ]
     },
@@ -2706,28 +3066,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:30.838668",
+          "date": "2025/02/11",
+          "time": "05:00:27.775445",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16314368,
-          "seconds": 0.11384868621826172
+          "memory-bytes": 16470016,
+          "seconds": 0.11370658874511719
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:31.368891",
+          "date": "2025/02/11",
+          "time": "05:00:28.314597",
           "bod-size-bytes": 12288,
           "kind": "incremental",
           "memory-bytes": 14942208,
-          "seconds": 0.08661794662475586
+          "seconds": 0.08914709091186523
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:31.611673",
+          "date": "2025/02/11",
+          "time": "05:00:28.565274",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14942208,
-          "seconds": 0.058676719665527344
+          "memory-bytes": 15073280,
+          "seconds": 0.0601656436920166
         }
       ]
     },
@@ -2751,28 +3111,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:31.830330",
+          "date": "2025/02/11",
+          "time": "05:00:28.790012",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16359424,
-          "seconds": 0.06876778602600098
+          "memory-bytes": 16326656,
+          "seconds": 0.06939840316772461
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:32.314052",
+          "date": "2025/02/11",
+          "time": "05:00:29.278455",
           "bod-size-bytes": 12288,
           "kind": "incremental",
           "memory-bytes": 14942208,
-          "seconds": 0.04024648666381836
+          "seconds": 0.04041719436645508
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:32.511324",
+          "date": "2025/02/11",
+          "time": "05:00:29.477670",
           "bod-size-bytes": 12288,
           "kind": "NULL",
           "memory-bytes": 14942208,
-          "seconds": 0.010870933532714844
+          "seconds": 0.010973691940307617
         }
       ]
     },
@@ -2796,28 +3156,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:32.687679",
+          "date": "2025/02/11",
+          "time": "05:00:29.652599",
           "bod-size-bytes": 53248,
           "kind": "full",
-          "memory-bytes": 30572544,
-          "seconds": 0.8598306179046631
+          "memory-bytes": 30629888,
+          "seconds": 0.8709056377410889
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:34.388728",
+          "date": "2025/02/11",
+          "time": "05:00:31.385033",
           "bod-size-bytes": 53248,
           "kind": "incremental",
-          "memory-bytes": 30760960,
-          "seconds": 0.7704010009765625
+          "memory-bytes": 30629888,
+          "seconds": 0.769460916519165
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:35.683049",
+          "date": "2025/02/11",
+          "time": "05:00:32.685936",
           "bod-size-bytes": 53248,
           "kind": "NULL",
-          "memory-bytes": 30760960,
-          "seconds": 0.7100675106048584
+          "memory-bytes": 30765056,
+          "seconds": 0.7089765071868896
         }
       ]
     },
@@ -2841,28 +3201,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:36.904516",
+          "date": "2025/02/11",
+          "time": "05:00:33.913049",
           "bod-size-bytes": 45056,
           "kind": "full",
-          "memory-bytes": 29515776,
-          "seconds": 0.7685050964355469
+          "memory-bytes": 29675520,
+          "seconds": 0.7858173847198486
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:38.457351",
+          "date": "2025/02/11",
+          "time": "05:00:35.481204",
           "bod-size-bytes": 45056,
           "kind": "incremental",
-          "memory-bytes": 29646848,
-          "seconds": 0.6708621978759766
+          "memory-bytes": 29675520,
+          "seconds": 0.6643352508544922
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:39.640213",
+          "date": "2025/02/11",
+          "time": "05:00:36.660941",
           "bod-size-bytes": 45056,
           "kind": "NULL",
-          "memory-bytes": 29519872,
-          "seconds": 0.6642482280731201
+          "memory-bytes": 29646848,
+          "seconds": 0.6673233509063721
         }
       ]
     },
@@ -2886,28 +3246,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:40.828322",
+          "date": "2025/02/11",
+          "time": "05:00:37.867942",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16109568,
-          "seconds": 0.274308443069458
+          "memory-bytes": 16392192,
+          "seconds": 0.3032238483428955
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:41.585055",
+          "date": "2025/02/11",
+          "time": "05:00:38.667304",
           "bod-size-bytes": 12288,
           "kind": "incremental",
           "memory-bytes": 14942208,
-          "seconds": 0.1815803050994873
+          "seconds": 0.20013856887817383
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:41.930695",
+          "date": "2025/02/11",
+          "time": "05:00:39.035095",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14942208,
-          "seconds": 0.07502341270446777
+          "memory-bytes": 15073280,
+          "seconds": 0.0751945972442627
+        }
+      ]
+    },
+    "host": {
+      "arch": "x86_64",
+      "platform": "Linux-6.8.0-48-generic-x86_64-with-glibc2.39",
+      "version": "#48~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  7 11:24:13 UTC 2",
+      "cpus": 4,
+      "memory-bytes": 8169140224
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 100,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/11",
+          "time": "05:00:39.279444",
+          "bod-size-bytes": 12288,
+          "kind": "full",
+          "memory-bytes": 16396288,
+          "seconds": 0.12354350090026855
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:00:39.904306",
+          "bod-size-bytes": 12288,
+          "kind": "incremental",
+          "memory-bytes": 15073280,
+          "seconds": 0.06746363639831543
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:00:40.134369",
+          "bod-size-bytes": 12288,
+          "kind": "NULL",
+          "memory-bytes": 15073280,
+          "seconds": 0.011809587478637695
         }
       ]
     },
@@ -2931,28 +3336,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:48:42.174041",
+          "date": "2025/02/11",
+          "time": "05:00:40.327838",
           "bod-size-bytes": 16207872,
           "kind": "full",
-          "memory-bytes": 264867840,
-          "seconds": 10.462939262390137
+          "memory-bytes": 254730240,
+          "seconds": 10.399571418762207
         },
         {
-          "date": "2025/02/08",
-          "time": "21:48:57.881257",
+          "date": "2025/02/11",
+          "time": "05:00:56.078179",
           "bod-size-bytes": 22192128,
           "kind": "incremental",
-          "memory-bytes": 261967872,
-          "seconds": 1.3306474685668945
+          "memory-bytes": 255336448,
+          "seconds": 1.407318115234375
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:03.187357",
+          "date": "2025/02/11",
+          "time": "05:01:01.364165",
           "bod-size-bytes": 21458944,
           "kind": "NULL",
-          "memory-bytes": 262025216,
-          "seconds": 0.4096224308013916
+          "memory-bytes": 256995328,
+          "seconds": 0.39373159408569336
         }
       ]
     },
@@ -2976,28 +3381,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:49:08.480851",
+          "date": "2025/02/11",
+          "time": "05:01:06.669993",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16109568,
-          "seconds": 0.23186588287353516
+          "memory-bytes": 16392192,
+          "seconds": 0.23015594482421875
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:09.219435",
+          "date": "2025/02/11",
+          "time": "05:01:07.406503",
           "bod-size-bytes": 12288,
           "kind": "incremental",
           "memory-bytes": 15073280,
-          "seconds": 0.17339611053466797
+          "seconds": 0.17508840560913086
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:09.551213",
+          "date": "2025/02/11",
+          "time": "05:01:07.744525",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14942208,
-          "seconds": 0.12338376045227051
+          "memory-bytes": 15073280,
+          "seconds": 0.12504267692565918
         }
       ]
     },
@@ -3021,28 +3426,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:49:09.841774",
+          "date": "2025/02/11",
+          "time": "05:01:08.039069",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16109568,
-          "seconds": 0.12567615509033203
+          "memory-bytes": 16392192,
+          "seconds": 0.1305227279663086
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:10.457505",
+          "date": "2025/02/11",
+          "time": "05:01:08.667215",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 15073280,
-          "seconds": 0.07634091377258301
+          "memory-bytes": 14942208,
+          "seconds": 0.06973958015441895
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:10.691356",
+          "date": "2025/02/11",
+          "time": "05:01:08.897585",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14942208,
-          "seconds": 0.019324779510498047
+          "memory-bytes": 15073280,
+          "seconds": 0.019858360290527344
         }
       ]
     },
@@ -3066,28 +3471,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:49:10.870655",
+          "date": "2025/02/11",
+          "time": "05:01:09.079436",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16109568,
-          "seconds": 0.23065471649169922
+          "memory-bytes": 16392192,
+          "seconds": 0.23207640647888184
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:11.590788",
+          "date": "2025/02/11",
+          "time": "05:01:09.807784",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 14942208,
-          "seconds": 0.17765116691589355
+          "memory-bytes": 15073280,
+          "seconds": 0.1764240264892578
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:11.928045",
+          "date": "2025/02/11",
+          "time": "05:01:10.150673",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14942208,
-          "seconds": 0.12306427955627441
+          "memory-bytes": 15073280,
+          "seconds": 0.12489724159240723
         }
       ]
     },
@@ -3111,28 +3516,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:49:12.225598",
+          "date": "2025/02/11",
+          "time": "05:01:10.438635",
           "bod-size-bytes": 12288,
           "kind": "full",
-          "memory-bytes": 16109568,
-          "seconds": 0.1180722713470459
+          "memory-bytes": 16388096,
+          "seconds": 0.12008142471313477
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:12.839119",
+          "date": "2025/02/11",
+          "time": "05:01:11.057836",
           "bod-size-bytes": 12288,
           "kind": "incremental",
-          "memory-bytes": 14942208,
-          "seconds": 0.06095314025878906
+          "memory-bytes": 15073280,
+          "seconds": 0.06375360488891602
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:13.058095",
+          "date": "2025/02/11",
+          "time": "05:01:11.284467",
           "bod-size-bytes": 12288,
           "kind": "NULL",
-          "memory-bytes": 14942208,
-          "seconds": 0.012815713882446289
+          "memory-bytes": 15204352,
+          "seconds": 0.01300358772277832
         }
       ]
     },
@@ -3156,28 +3561,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:49:13.233431",
+          "date": "2025/02/11",
+          "time": "05:01:11.463409",
           "bod-size-bytes": 94208,
           "kind": "full",
-          "memory-bytes": 31899648,
-          "seconds": 1.159855842590332
+          "memory-bytes": 31920128,
+          "seconds": 1.1662945747375488
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:15.232632",
+          "date": "2025/02/11",
+          "time": "05:01:13.487270",
           "bod-size-bytes": 94208,
           "kind": "incremental",
           "memory-bytes": 32247808,
-          "seconds": 1.0390188694000244
+          "seconds": 1.0421209335327148
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:16.798572",
+          "date": "2025/02/11",
+          "time": "05:01:15.047781",
           "bod-size-bytes": 94208,
           "kind": "NULL",
-          "memory-bytes": 32251904,
-          "seconds": 0.9402024745941162
+          "memory-bytes": 32149504,
+          "seconds": 0.9336185455322266
         }
       ]
     },
@@ -3201,28 +3606,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:49:18.268977",
+          "date": "2025/02/11",
+          "time": "05:01:16.506563",
           "bod-size-bytes": 81920,
           "kind": "full",
-          "memory-bytes": 31641600,
-          "seconds": 1.062516212463379
+          "memory-bytes": 31850496,
+          "seconds": 1.073202133178711
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:20.188600",
+          "date": "2025/02/11",
+          "time": "05:01:18.435832",
           "bod-size-bytes": 81920,
           "kind": "incremental",
           "memory-bytes": 31772672,
-          "seconds": 0.9750368595123291
+          "seconds": 0.9445176124572754
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:21.671168",
+          "date": "2025/02/11",
+          "time": "05:01:19.906849",
           "bod-size-bytes": 81920,
           "kind": "NULL",
-          "memory-bytes": 31641600,
-          "seconds": 0.8541803359985352
+          "memory-bytes": 31903744,
+          "seconds": 0.8523871898651123
         }
       ]
     },
@@ -3246,28 +3651,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:49:23.053483",
+          "date": "2025/02/11",
+          "time": "05:01:21.307218",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 17784832,
-          "seconds": 2.8538763523101807
+          "memory-bytes": 17936384,
+          "seconds": 2.836604356765747
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:27.732229",
+          "date": "2025/02/11",
+          "time": "05:01:25.984896",
           "bod-size-bytes": 49152,
           "kind": "incremental",
           "memory-bytes": 15073280,
-          "seconds": 1.1084699630737305
+          "seconds": 1.1096858978271484
         },
         {
-          "date": "2025/02/08",
-          "time": "21:49:29.014520",
+          "date": "2025/02/11",
+          "time": "05:01:27.259446",
           "bod-size-bytes": 49152,
           "kind": "NULL",
           "memory-bytes": 15073280,
-          "seconds": 0.8678476810455322
+          "seconds": 0.8641414642333984
+        }
+      ]
+    },
+    "host": {
+      "arch": "x86_64",
+      "platform": "Linux-6.8.0-48-generic-x86_64-with-glibc2.39",
+      "version": "#48~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  7 11:24:13 UTC 2",
+      "cpus": 4,
+      "memory-bytes": 8169140224
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 1000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/11",
+          "time": "05:01:28.301222",
+          "bod-size-bytes": 49152,
+          "kind": "full",
+          "memory-bytes": 17764352,
+          "seconds": 1.1204659938812256
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:01:31.403033",
+          "bod-size-bytes": 49152,
+          "kind": "incremental",
+          "memory-bytes": 15073280,
+          "seconds": 0.15729689598083496
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:01:31.733210",
+          "bod-size-bytes": 49152,
+          "kind": "NULL",
+          "memory-bytes": 15073280,
+          "seconds": 0.04726433753967285
         }
       ]
     },
@@ -3291,28 +3741,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:49:30.054453",
+          "date": "2025/02/11",
+          "time": "05:01:31.959113",
           "bod-size-bytes": 203345920,
           "kind": "full",
-          "memory-bytes": 312975360,
-          "seconds": 28.168280839920044
+          "memory-bytes": 315195392,
+          "seconds": 27.225603342056274
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:02.505508",
-          "bod-size-bytes": 207175680,
+          "date": "2025/02/11",
+          "time": "05:02:04.404640",
+          "bod-size-bytes": 207179776,
           "kind": "incremental",
-          "memory-bytes": 310865920,
-          "seconds": 2.439072847366333
+          "memory-bytes": 316329984,
+          "seconds": 2.34810209274292
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:07.791824",
+          "date": "2025/02/11",
+          "time": "05:02:09.702081",
           "bod-size-bytes": 205631488,
           "kind": "NULL",
-          "memory-bytes": 316104704,
-          "seconds": 0.5760083198547363
+          "memory-bytes": 327213056,
+          "seconds": 0.6051807403564453
         }
       ]
     },
@@ -3336,28 +3786,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:50:13.076229",
+          "date": "2025/02/11",
+          "time": "05:02:15.026025",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 17731584,
-          "seconds": 2.879192352294922
+          "memory-bytes": 17805312,
+          "seconds": 2.8940436840057373
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:19.438146",
+          "date": "2025/02/11",
+          "time": "05:02:21.570184",
           "bod-size-bytes": 49152,
           "kind": "incremental",
           "memory-bytes": 15073280,
-          "seconds": 1.9470782279968262
+          "seconds": 1.9123060703277588
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:21.554160",
+          "date": "2025/02/11",
+          "time": "05:02:23.648379",
           "bod-size-bytes": 49152,
           "kind": "NULL",
           "memory-bytes": 15073280,
-          "seconds": 1.867065191268921
+          "seconds": 1.81624174118042
         }
       ]
     },
@@ -3381,28 +3831,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:50:23.605796",
+          "date": "2025/02/11",
+          "time": "05:02:25.648031",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 17788928,
-          "seconds": 0.9834511280059814
+          "memory-bytes": 17846272,
+          "seconds": 1.0184786319732666
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:26.571698",
+          "date": "2025/02/11",
+          "time": "05:02:28.668811",
           "bod-size-bytes": 49152,
           "kind": "incremental",
           "memory-bytes": 15073280,
-          "seconds": 0.15114712715148926
+          "seconds": 0.15643525123596191
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:26.897382",
+          "date": "2025/02/11",
+          "time": "05:02:28.993510",
           "bod-size-bytes": 49152,
           "kind": "NULL",
-          "memory-bytes": 15073280,
-          "seconds": 0.05981588363647461
+          "memory-bytes": 15204352,
+          "seconds": 0.05911755561828613
         }
       ]
     },
@@ -3426,28 +3876,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:50:27.121769",
+          "date": "2025/02/11",
+          "time": "05:02:29.219331",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 27209728,
-          "seconds": 3.191063404083252
+          "memory-bytes": 27140096,
+          "seconds": 3.217135190963745
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:32.278322",
+          "date": "2025/02/11",
+          "time": "05:02:34.415260",
           "bod-size-bytes": 49152,
           "kind": "incremental",
-          "memory-bytes": 23232512,
-          "seconds": 2.2498927116394043
+          "memory-bytes": 23154688,
+          "seconds": 2.26202130317688
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:34.710283",
+          "date": "2025/02/11",
+          "time": "05:02:36.859047",
           "bod-size-bytes": 49152,
           "kind": "NULL",
           "memory-bytes": 22970368,
-          "seconds": 2.1045095920562744
+          "seconds": 2.122363328933716
         }
       ]
     },
@@ -3471,28 +3921,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:50:36.985357",
+          "date": "2025/02/11",
+          "time": "05:02:39.151158",
           "bod-size-bytes": 49152,
           "kind": "full",
-          "memory-bytes": 17547264,
-          "seconds": 1.0892324447631836
+          "memory-bytes": 17932288,
+          "seconds": 1.1134114265441895
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:40.055840",
+          "date": "2025/02/11",
+          "time": "05:02:42.254451",
           "bod-size-bytes": 49152,
           "kind": "incremental",
           "memory-bytes": 15073280,
-          "seconds": 0.16614890098571777
+          "seconds": 0.17187213897705078
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:40.388813",
+          "date": "2025/02/11",
+          "time": "05:02:42.591922",
           "bod-size-bytes": 49152,
           "kind": "NULL",
           "memory-bytes": 15073280,
-          "seconds": 0.06788086891174316
+          "seconds": 0.06731367111206055
         }
       ]
     },
@@ -3516,28 +3966,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:50:40.624998",
+          "date": "2025/02/11",
+          "time": "05:02:42.830754",
           "bod-size-bytes": 1347584,
           "kind": "full",
-          "memory-bytes": 67268608,
-          "seconds": 7.616850852966309
+          "memory-bytes": 67137536,
+          "seconds": 7.710009813308716
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:50.540244",
+          "date": "2025/02/11",
+          "time": "05:02:52.868124",
           "bod-size-bytes": 1347584,
           "kind": "incremental",
-          "memory-bytes": 67772416,
-          "seconds": 5.69075870513916
+          "memory-bytes": 67600384,
+          "seconds": 5.6623694896698
         },
         {
-          "date": "2025/02/08",
-          "time": "21:50:56.750247",
+          "date": "2025/02/11",
+          "time": "05:02:59.061257",
           "bod-size-bytes": 1347584,
           "kind": "NULL",
-          "memory-bytes": 67670016,
-          "seconds": 5.367207288742065
+          "memory-bytes": 67686400,
+          "seconds": 5.428256988525391
         }
       ]
     },
@@ -3561,28 +4011,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:51:02.634927",
+          "date": "2025/02/11",
+          "time": "05:03:05.009581",
           "bod-size-bytes": 1044480,
           "kind": "full",
           "memory-bytes": 67067904,
-          "seconds": 6.831623077392578
+          "seconds": 6.856561899185181
         },
         {
-          "date": "2025/02/08",
-          "time": "21:51:11.791090",
+          "date": "2025/02/11",
+          "time": "05:03:14.217382",
           "bod-size-bytes": 1044480,
           "kind": "incremental",
-          "memory-bytes": 67207168,
-          "seconds": 4.9542717933654785
+          "memory-bytes": 67219456,
+          "seconds": 4.9303693771362305
         },
         {
-          "date": "2025/02/08",
-          "time": "21:51:17.260313",
+          "date": "2025/02/11",
+          "time": "05:03:19.675248",
           "bod-size-bytes": 1044480,
           "kind": "NULL",
-          "memory-bytes": 66826240,
-          "seconds": 4.622982740402222
+          "memory-bytes": 67072000,
+          "seconds": 4.6506266593933105
         }
       ]
     },
@@ -3606,28 +4056,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:51:22.417116",
+          "date": "2025/02/11",
+          "time": "05:03:24.884213",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 21442560,
-          "seconds": 13.95450735092163
+          "memory-bytes": 21651456,
+          "seconds": 14.035146236419678
         },
         {
-          "date": "2025/02/08",
-          "time": "21:51:44.700541",
+          "date": "2025/02/11",
+          "time": "05:03:47.426897",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 15073280,
-          "seconds": 4.931131362915039
+          "memory-bytes": 15204352,
+          "seconds": 4.955016374588013
         },
         {
-          "date": "2025/02/08",
-          "time": "21:51:49.817369",
+          "date": "2025/02/11",
+          "time": "05:03:52.580515",
           "bod-size-bytes": 212992,
           "kind": "NULL",
-          "memory-bytes": 15073280,
-          "seconds": 4.516733169555664
+          "memory-bytes": 15204352,
+          "seconds": 4.537984609603882
+        }
+      ]
+    },
+    "host": {
+      "arch": "x86_64",
+      "platform": "Linux-6.8.0-48-generic-x86_64-with-glibc2.39",
+      "version": "#48~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  7 11:24:13 UTC 2",
+      "cpus": 4,
+      "memory-bytes": 8169140224
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 5000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/11",
+          "time": "05:03:57.311774",
+          "bod-size-bytes": 212992,
+          "kind": "full",
+          "memory-bytes": 21667840,
+          "seconds": 6.078516244888306
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:04:12.707198",
+          "bod-size-bytes": 212992,
+          "kind": "incremental",
+          "memory-bytes": 18612224,
+          "seconds": 0.4270772933959961
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:04:13.325252",
+          "bod-size-bytes": 212992,
+          "kind": "NULL",
+          "memory-bytes": 18612224,
+          "seconds": 0.25444650650024414
         }
       ]
     },
@@ -3651,28 +4146,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:51:54.524796",
-          "bod-size-bytes": 1220509696,
+          "date": "2025/02/11",
+          "time": "05:04:13.783596",
+          "bod-size-bytes": 1220513792,
           "kind": "full",
-          "memory-bytes": 462323712,
-          "seconds": 78.2547960281372
+          "memory-bytes": 469508096,
+          "seconds": 82.77944231033325
         },
         {
-          "date": "2025/02/08",
-          "time": "21:53:29.734436",
+          "date": "2025/02/11",
+          "time": "05:05:54.326751",
           "bod-size-bytes": 1176285184,
           "kind": "incremental",
-          "memory-bytes": 457867264,
-          "seconds": 4.324931383132935
+          "memory-bytes": 453431296,
+          "seconds": 4.0404157638549805
         },
         {
-          "date": "2025/02/08",
-          "time": "21:53:40.117875",
+          "date": "2025/02/11",
+          "time": "05:06:04.651541",
           "bod-size-bytes": 1173929984,
           "kind": "NULL",
-          "memory-bytes": 459583488,
-          "seconds": 1.1256091594696045
+          "memory-bytes": 459239424,
+          "seconds": 1.0906314849853516
         }
       ]
     },
@@ -3696,28 +4191,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:53:45.402513",
+          "date": "2025/02/11",
+          "time": "05:06:09.946253",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 23113728,
-          "seconds": 29.210376262664795
+          "memory-bytes": 22839296,
+          "seconds": 28.72339153289795
         },
         {
-          "date": "2025/02/08",
-          "time": "21:54:34.922689",
+          "date": "2025/02/11",
+          "time": "05:06:58.512604",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 22700032,
-          "seconds": 22.38484287261963
+          "memory-bytes": 22573056,
+          "seconds": 22.407956838607788
         },
         {
-          "date": "2025/02/08",
-          "time": "21:54:57.487628",
+          "date": "2025/02/11",
+          "time": "05:07:21.122421",
           "bod-size-bytes": 212992,
           "kind": "NULL",
-          "memory-bytes": 22654976,
-          "seconds": 22.321438789367676
+          "memory-bytes": 22552576,
+          "seconds": 22.23600745201111
         }
       ]
     },
@@ -3741,28 +4236,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:55:19.992618",
+          "date": "2025/02/11",
+          "time": "05:07:43.551830",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 21196800,
-          "seconds": 4.887105226516724
+          "memory-bytes": 21663744,
+          "seconds": 5.321756362915039
         },
         {
-          "date": "2025/02/08",
-          "time": "21:55:34.128590",
+          "date": "2025/02/11",
+          "time": "05:07:58.132332",
           "bod-size-bytes": 212992,
           "kind": "incremental",
           "memory-bytes": 15073280,
-          "seconds": 0.45987510681152344
+          "seconds": 0.4665405750274658
         },
         {
-          "date": "2025/02/08",
-          "time": "21:55:34.766380",
+          "date": "2025/02/11",
+          "time": "05:07:58.795033",
           "bod-size-bytes": 212992,
           "kind": "NULL",
           "memory-bytes": 15073280,
-          "seconds": 0.3234217166900635
+          "seconds": 0.31911444664001465
         }
       ]
     },
@@ -3786,28 +4281,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:55:35.273480",
+          "date": "2025/02/11",
+          "time": "05:07:59.312487",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 125751296,
-          "seconds": 29.927101850509644
+          "memory-bytes": 125779968,
+          "seconds": 30.02989912033081
         },
         {
-          "date": "2025/02/08",
-          "time": "21:56:14.288624",
+          "date": "2025/02/11",
+          "time": "05:08:38.603506",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 101298176,
-          "seconds": 24.907089471817017
+          "memory-bytes": 101326848,
+          "seconds": 24.81265926361084
         },
         {
-          "date": "2025/02/08",
-          "time": "21:56:39.374568",
+          "date": "2025/02/11",
+          "time": "05:09:03.613651",
           "bod-size-bytes": 212992,
           "kind": "NULL",
-          "memory-bytes": 100876288,
-          "seconds": 24.552990436553955
+          "memory-bytes": 100909056,
+          "seconds": 24.472757577896118
         }
       ]
     },
@@ -3831,28 +4326,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:57:04.123441",
+          "date": "2025/02/11",
+          "time": "05:09:28.266333",
           "bod-size-bytes": 212992,
           "kind": "full",
-          "memory-bytes": 39059456,
-          "seconds": 5.734051465988159
+          "memory-bytes": 38797312,
+          "seconds": 5.687250852584839
         },
         {
-          "date": "2025/02/08",
-          "time": "21:57:18.959690",
+          "date": "2025/02/11",
+          "time": "05:09:43.276226",
           "bod-size-bytes": 212992,
           "kind": "incremental",
-          "memory-bytes": 15073280,
-          "seconds": 0.5709488391876221
+          "memory-bytes": 15335424,
+          "seconds": 0.568575382232666
         },
         {
-          "date": "2025/02/08",
-          "time": "21:57:19.708710",
+          "date": "2025/02/11",
+          "time": "05:09:44.026510",
           "bod-size-bytes": 212992,
           "kind": "NULL",
-          "memory-bytes": 15073280,
-          "seconds": 0.41820383071899414
+          "memory-bytes": 15204352,
+          "seconds": 0.4166417121887207
         }
       ]
     },
@@ -3876,28 +4371,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:57:20.330159",
+          "date": "2025/02/11",
+          "time": "05:09:44.641101",
           "bod-size-bytes": 11292672,
           "kind": "full",
-          "memory-bytes": 216301568,
-          "seconds": 38.51936960220337
+          "memory-bytes": 216252416,
+          "seconds": 38.60180711746216
         },
         {
-          "date": "2025/02/08",
-          "time": "21:58:08.349945",
+          "date": "2025/02/11",
+          "time": "05:10:32.839509",
           "bod-size-bytes": 11292672,
           "kind": "incremental",
-          "memory-bytes": 218263552,
-          "seconds": 28.108930826187134
+          "memory-bytes": 218394624,
+          "seconds": 28.22213315963745
         },
         {
-          "date": "2025/02/08",
-          "time": "21:58:37.021381",
+          "date": "2025/02/11",
+          "time": "05:11:01.624440",
           "bod-size-bytes": 11292672,
           "kind": "NULL",
-          "memory-bytes": 218267648,
-          "seconds": 27.579496383666992
+          "memory-bytes": 218398720,
+          "seconds": 27.707491636276245
         }
       ]
     },
@@ -3921,28 +4416,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "21:59:05.151700",
+          "date": "2025/02/11",
+          "time": "05:11:29.875255",
           "bod-size-bytes": 8146944,
           "kind": "full",
           "memory-bytes": 216453120,
-          "seconds": 34.69612431526184
+          "seconds": 34.891098499298096
         },
         {
-          "date": "2025/02/08",
-          "time": "21:59:49.423356",
+          "date": "2025/02/11",
+          "time": "05:12:14.254103",
           "bod-size-bytes": 8146944,
           "kind": "incremental",
-          "memory-bytes": 214917120,
-          "seconds": 24.203134298324585
+          "memory-bytes": 214790144,
+          "seconds": 24.335493087768555
         },
         {
-          "date": "2025/02/08",
-          "time": "22:00:14.185802",
+          "date": "2025/02/11",
+          "time": "05:12:39.139638",
           "bod-size-bytes": 8146944,
           "kind": "NULL",
-          "memory-bytes": 214241280,
-          "seconds": 23.57444715499878
+          "memory-bytes": 214372352,
+          "seconds": 23.65181279182434
         }
       ]
     },
@@ -3966,28 +4461,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:00:38.324745",
+          "date": "2025/02/11",
+          "time": "05:13:03.346202",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 25821184,
-          "seconds": 28.043415307998657
+          "memory-bytes": 26021888,
+          "seconds": 28.339776515960693
         },
         {
-          "date": "2025/02/08",
-          "time": "22:01:23.903662",
+          "date": "2025/02/11",
+          "time": "05:13:49.279515",
           "bod-size-bytes": 417792,
           "kind": "incremental",
-          "memory-bytes": 15073280,
-          "seconds": 9.664654016494751
+          "memory-bytes": 15204352,
+          "seconds": 9.65123438835144
         },
         {
-          "date": "2025/02/08",
-          "time": "22:01:33.794419",
+          "date": "2025/02/11",
+          "time": "05:13:59.141145",
           "bod-size-bytes": 417792,
           "kind": "NULL",
           "memory-bytes": 15204352,
-          "seconds": 9.156698226928711
+          "seconds": 9.125364542007446
+        }
+      ]
+    },
+    "host": {
+      "arch": "x86_64",
+      "platform": "Linux-6.8.0-48-generic-x86_64-with-glibc2.39",
+      "version": "#48~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  7 11:24:13 UTC 2",
+      "cpus": 4,
+      "memory-bytes": 8169140224
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 10000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/11",
+          "time": "05:14:08.472170",
+          "bod-size-bytes": 417792,
+          "kind": "full",
+          "memory-bytes": 33529856,
+          "seconds": 13.282175779342651
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:14:39.979387",
+          "bod-size-bytes": 417792,
+          "kind": "incremental",
+          "memory-bytes": 33394688,
+          "seconds": 0.7618951797485352
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:14:40.948804",
+          "bod-size-bytes": 417792,
+          "kind": "NULL",
+          "memory-bytes": 33525760,
+          "seconds": 0.5513765811920166
         }
       ]
     },
@@ -4011,28 +4551,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:01:43.163623",
-          "bod-size-bytes": 2593361920,
+          "date": "2025/02/11",
+          "time": "05:14:41.709317",
+          "bod-size-bytes": 2593357824,
           "kind": "full",
-          "memory-bytes": 636190720,
-          "seconds": 136.63725399971008
+          "memory-bytes": 628588544,
+          "seconds": 153.25727009773254
         },
         {
-          "date": "2025/02/08",
-          "time": "22:04:38.962144",
+          "date": "2025/02/11",
+          "time": "05:18:06.992045",
           "bod-size-bytes": 2479271936,
           "kind": "incremental",
-          "memory-bytes": 572039168,
-          "seconds": 5.103168487548828
+          "memory-bytes": 560312320,
+          "seconds": 5.341447353363037
         },
         {
-          "date": "2025/02/08",
-          "time": "22:04:54.413350",
+          "date": "2025/02/11",
+          "time": "05:18:32.476973",
           "bod-size-bytes": 2476539904,
           "kind": "NULL",
-          "memory-bytes": 572403712,
-          "seconds": 1.6315665245056152
+          "memory-bytes": 559931392,
+          "seconds": 1.6774225234985352
         }
       ]
     },
@@ -4056,28 +4596,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:05:04.783781",
+          "date": "2025/02/11",
+          "time": "05:18:42.810762",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 25767936,
-          "seconds": 63.97994565963745
+          "memory-bytes": 25833472,
+          "seconds": 65.59689497947693
         },
         {
-          "date": "2025/02/08",
-          "time": "22:06:49.856779",
+          "date": "2025/02/11",
+          "time": "05:20:31.000714",
           "bod-size-bytes": 417792,
           "kind": "incremental",
-          "memory-bytes": 24985600,
-          "seconds": 51.58480620384216
+          "memory-bytes": 24854528,
+          "seconds": 51.89534115791321
         },
         {
-          "date": "2025/02/08",
-          "time": "22:07:41.661709",
+          "date": "2025/02/11",
+          "time": "05:21:23.113539",
           "bod-size-bytes": 417792,
           "kind": "NULL",
-          "memory-bytes": 24989696,
-          "seconds": 51.3540894985199
+          "memory-bytes": 24854528,
+          "seconds": 51.756141662597656
         }
       ]
     },
@@ -4101,28 +4641,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:08:33.219169",
+          "date": "2025/02/11",
+          "time": "05:22:15.077270",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 25980928,
-          "seconds": 10.06945276260376
+          "memory-bytes": 25894912,
+          "seconds": 10.130965232849121
         },
         {
-          "date": "2025/02/08",
-          "time": "22:09:01.817088",
+          "date": "2025/02/11",
+          "time": "05:22:43.720324",
           "bod-size-bytes": 417792,
           "kind": "incremental",
-          "memory-bytes": 15073280,
-          "seconds": 0.8455684185028076
+          "memory-bytes": 15204352,
+          "seconds": 0.8552653789520264
         },
         {
-          "date": "2025/02/08",
-          "time": "22:09:02.888630",
+          "date": "2025/02/11",
+          "time": "05:22:44.788626",
           "bod-size-bytes": 417792,
           "kind": "NULL",
-          "memory-bytes": 15073280,
-          "seconds": 0.6790661811828613
+          "memory-bytes": 15204352,
+          "seconds": 0.6783120632171631
         }
       ]
     },
@@ -4146,28 +4686,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:09:03.777469",
+          "date": "2025/02/11",
+          "time": "05:22:45.675687",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 250822656,
-          "seconds": 72.37631916999817
+          "memory-bytes": 250683392,
+          "seconds": 72.45801281929016
         },
         {
-          "date": "2025/02/08",
-          "time": "22:10:34.554626",
+          "date": "2025/02/11",
+          "time": "05:24:16.858867",
           "bod-size-bytes": 417792,
           "kind": "incremental",
-          "memory-bytes": 201003008,
-          "seconds": 61.843419313430786
+          "memory-bytes": 201068544,
+          "seconds": 61.8608980178833
         },
         {
-          "date": "2025/02/08",
-          "time": "22:11:36.628644",
+          "date": "2025/02/11",
+          "time": "05:25:18.939313",
           "bod-size-bytes": 417792,
           "kind": "NULL",
           "memory-bytes": 200474624,
-          "seconds": 61.3267707824707
+          "seconds": 61.555946350097656
         }
       ]
     },
@@ -4191,28 +4731,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:12:38.170673",
+          "date": "2025/02/11",
+          "time": "05:26:20.712184",
           "bod-size-bytes": 417792,
           "kind": "full",
-          "memory-bytes": 76021760,
-          "seconds": 11.2854642868042
+          "memory-bytes": 75890688,
+          "seconds": 11.60379958152771
         },
         {
-          "date": "2025/02/08",
-          "time": "22:13:07.875826",
+          "date": "2025/02/11",
+          "time": "05:26:50.501936",
           "bod-size-bytes": 417792,
           "kind": "incremental",
-          "memory-bytes": 26476544,
-          "seconds": 1.1309709548950195
+          "memory-bytes": 26345472,
+          "seconds": 1.1263492107391357
         },
         {
-          "date": "2025/02/08",
-          "time": "22:13:09.202840",
+          "date": "2025/02/11",
+          "time": "05:26:51.841844",
           "bod-size-bytes": 417792,
           "kind": "NULL",
-          "memory-bytes": 25821184,
-          "seconds": 0.9521999359130859
+          "memory-bytes": 25952256,
+          "seconds": 0.9384751319885254
         }
       ]
     },
@@ -4236,28 +4776,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:13:10.370233",
+          "date": "2025/02/11",
+          "time": "05:26:52.984082",
           "bod-size-bytes": 26267648,
           "kind": "full",
-          "memory-bytes": 405241856,
-          "seconds": 78.25203013420105
+          "memory-bytes": 405516288,
+          "seconds": 78.82963514328003
         },
         {
-          "date": "2025/02/08",
-          "time": "22:14:47.143794",
+          "date": "2025/02/11",
+          "time": "05:28:30.464521",
           "bod-size-bytes": 26267648,
           "kind": "incremental",
-          "memory-bytes": 409399296,
-          "seconds": 57.33637595176697
+          "memory-bytes": 409645056,
+          "seconds": 57.915018796920776
         },
         {
-          "date": "2025/02/08",
-          "time": "22:15:45.037666",
+          "date": "2025/02/11",
+          "time": "05:29:28.947849",
           "bod-size-bytes": 26267648,
           "kind": "NULL",
-          "memory-bytes": 409653248,
-          "seconds": 56.83454942703247
+          "memory-bytes": 409911296,
+          "seconds": 56.75810098648071
         }
       ]
     },
@@ -4281,28 +4821,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:16:42.427635",
+          "date": "2025/02/11",
+          "time": "05:30:26.274117",
           "bod-size-bytes": 18657280,
           "kind": "full",
-          "memory-bytes": 405295104,
-          "seconds": 70.23865842819214
+          "memory-bytes": 405565440,
+          "seconds": 70.84416580200195
         },
         {
-          "date": "2025/02/08",
-          "time": "22:18:11.368429",
+          "date": "2025/02/11",
+          "time": "05:31:55.965207",
           "bod-size-bytes": 18657280,
           "kind": "incremental",
-          "memory-bytes": 402493440,
-          "seconds": 49.868812799453735
+          "memory-bytes": 402120704,
+          "seconds": 50.010497093200684
         },
         {
-          "date": "2025/02/08",
-          "time": "22:19:01.794390",
+          "date": "2025/02/11",
+          "time": "05:32:46.552590",
           "bod-size-bytes": 18657280,
           "kind": "NULL",
-          "memory-bytes": 401838080,
-          "seconds": 48.9615752696991
+          "memory-bytes": 401973248,
+          "seconds": 48.97744560241699
         }
       ]
     },
@@ -4326,28 +4866,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:19:51.327074",
+          "date": "2025/02/11",
+          "time": "05:33:36.102657",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 60837888,
-          "seconds": 138.9099497795105
+          "memory-bytes": 61591552,
+          "seconds": 141.8008918762207
         },
         {
-          "date": "2025/02/08",
-          "time": "22:24:49.880595",
+          "date": "2025/02/11",
+          "time": "05:38:34.923167",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 15204352,
-          "seconds": 49.6753876209259
+          "memory-bytes": 15466496,
+          "seconds": 49.58603119850159
         },
         {
-          "date": "2025/02/08",
-          "time": "22:25:39.884715",
+          "date": "2025/02/11",
+          "time": "05:39:24.834817",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
           "memory-bytes": 15204352,
-          "seconds": 47.133036375045776
+          "seconds": 47.07895088195801
+        }
+      ]
+    },
+    "host": {
+      "arch": "x86_64",
+      "platform": "Linux-6.8.0-48-generic-x86_64-with-glibc2.39",
+      "version": "#48~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  7 11:24:13 UTC 2",
+      "cpus": 4,
+      "memory-bytes": 8169140224
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 50000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/11",
+          "time": "05:40:12.245526",
+          "bod-size-bytes": 2064384,
+          "kind": "full",
+          "memory-bytes": 156356608,
+          "seconds": 122.18713688850403
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:44:53.468824",
+          "bod-size-bytes": 2064384,
+          "kind": "incremental",
+          "memory-bytes": 156491776,
+          "seconds": 4.964233875274658
+        },
+        {
+          "date": "2025/02/11",
+          "time": "05:44:58.835308",
+          "bod-size-bytes": 2064384,
+          "kind": "NULL",
+          "memory-bytes": 156274688,
+          "seconds": 3.364391326904297
         }
       ]
     },
@@ -4371,28 +4956,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "22:26:27.340574",
-          "bod-size-bytes": 14004682752,
+          "date": "2025/02/11",
+          "time": "05:45:02.539848",
+          "bod-size-bytes": 14004695040,
           "kind": "full",
-          "memory-bytes": 1611276288,
-          "seconds": 663.0454406738281
+          "memory-bytes": 1559166976,
+          "seconds": 694.3892545700073
         },
         {
-          "date": "2025/02/08",
-          "time": "22:49:35.226713",
+          "date": "2025/02/11",
+          "time": "06:09:12.512192",
           "bod-size-bytes": 13288304640,
           "kind": "incremental",
-          "memory-bytes": 1302167552,
-          "seconds": 20.864494800567627
+          "memory-bytes": 1284976640,
+          "seconds": 16.908406019210815
         },
         {
-          "date": "2025/02/08",
-          "time": "22:58:54.722082",
+          "date": "2025/02/11",
+          "time": "06:17:36.626542",
           "bod-size-bytes": 13284884480,
           "kind": "NULL",
-          "memory-bytes": 1319997440,
-          "seconds": 6.507142782211304
+          "memory-bytes": 1284669440,
+          "seconds": 6.820821285247803
         }
       ]
     },
@@ -4416,28 +5001,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "23:07:48.904149",
+          "date": "2025/02/11",
+          "time": "06:26:36.025758",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 60723200,
-          "seconds": 381.00665640830994
+          "memory-bytes": 61366272,
+          "seconds": 383.58076763153076
         },
         {
-          "date": "2025/02/08",
-          "time": "23:25:42.960126",
+          "date": "2025/02/11",
+          "time": "06:44:28.443817",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 29831168,
-          "seconds": 321.1640725135803
+          "memory-bytes": 29806592,
+          "seconds": 321.4008831977844
         },
         {
-          "date": "2025/02/08",
-          "time": "23:31:04.468704",
+          "date": "2025/02/11",
+          "time": "06:49:50.176008",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
-          "memory-bytes": 29921280,
-          "seconds": 319.0923328399658
+          "memory-bytes": 29806592,
+          "seconds": 319.00264525413513
         }
       ]
     },
@@ -4461,28 +5046,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "23:36:23.894319",
+          "date": "2025/02/11",
+          "time": "06:55:09.521232",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 60833792,
-          "seconds": 50.070202350616455
+          "memory-bytes": 61243392,
+          "seconds": 51.57734966278076
         },
         {
-          "date": "2025/02/08",
-          "time": "23:39:56.416984",
+          "date": "2025/02/11",
+          "time": "06:58:40.102705",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 15073280,
-          "seconds": 4.614964723587036
+          "memory-bytes": 15065088,
+          "seconds": 4.701363563537598
         },
         {
-          "date": "2025/02/08",
-          "time": "23:40:01.398657",
+          "date": "2025/02/11",
+          "time": "06:58:45.152442",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
-          "memory-bytes": 15073280,
-          "seconds": 3.7405507564544678
+          "memory-bytes": 15204352,
+          "seconds": 3.7804195880889893
         }
       ]
     },
@@ -4506,28 +5091,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "23:40:05.472485",
+          "date": "2025/02/11",
+          "time": "06:58:49.273429",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 1242247168,
-          "seconds": 191.02872943878174
+          "memory-bytes": 1242148864,
+          "seconds": 192.05908155441284
         },
         {
-          "date": "2025/02/08",
-          "time": "23:45:57.326677",
+          "date": "2025/02/11",
+          "time": "07:04:39.195265",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 982347776,
-          "seconds": 139.15044236183167
+          "memory-bytes": 982343680,
+          "seconds": 139.1754424571991
         },
         {
-          "date": "2025/02/08",
-          "time": "23:48:16.873841",
+          "date": "2025/02/11",
+          "time": "07:06:58.791628",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
-          "memory-bytes": 981692416,
-          "seconds": 134.70819115638733
+          "memory-bytes": 981643264,
+          "seconds": 136.51617765426636
         }
       ]
     },
@@ -4551,28 +5136,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "23:50:31.903802",
+          "date": "2025/02/11",
+          "time": "07:09:15.649103",
           "bod-size-bytes": 2064384,
           "kind": "full",
-          "memory-bytes": 381870080,
-          "seconds": 59.07405877113342
+          "memory-bytes": 381952000,
+          "seconds": 60.2437801361084
         },
         {
-          "date": "2025/02/08",
-          "time": "23:54:17.051410",
+          "date": "2025/02/11",
+          "time": "07:12:52.311870",
           "bod-size-bytes": 2064384,
           "kind": "incremental",
-          "memory-bytes": 122740736,
-          "seconds": 8.230774641036987
+          "memory-bytes": 122535936,
+          "seconds": 8.084981918334961
         },
         {
-          "date": "2025/02/08",
-          "time": "23:54:25.615151",
+          "date": "2025/02/11",
+          "time": "07:13:00.762582",
           "bod-size-bytes": 2064384,
           "kind": "NULL",
           "memory-bytes": 122085376,
-          "seconds": 6.361487865447998
+          "seconds": 6.294611930847168
         }
       ]
     },
@@ -4596,28 +5181,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/08",
-          "time": "23:54:32.319547",
+          "date": "2025/02/11",
+          "time": "07:13:07.389287",
           "bod-size-bytes": 158298112,
           "kind": "full",
-          "memory-bytes": 1849917440,
-          "seconds": 463.03601336479187
+          "memory-bytes": 1850015744,
+          "seconds": 465.7246503829956
         },
         {
-          "date": "2025/02/09",
-          "time": "00:04:57.837902",
+          "date": "2025/02/11",
+          "time": "07:23:34.618830",
           "bod-size-bytes": 158298112,
           "kind": "incremental",
-          "memory-bytes": 1869881344,
-          "seconds": 381.282603263855
+          "memory-bytes": 1869656064,
+          "seconds": 379.6405074596405
         },
         {
-          "date": "2025/02/09",
-          "time": "00:11:19.893296",
+          "date": "2025/02/11",
+          "time": "07:29:55.043733",
           "bod-size-bytes": 158298112,
           "kind": "NULL",
-          "memory-bytes": 1869193216,
-          "seconds": 375.9045045375824
+          "memory-bytes": 1869414400,
+          "seconds": 374.8509237766266
         }
       ]
     },
@@ -4641,28 +5226,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "00:17:36.564742",
+          "date": "2025/02/11",
+          "time": "07:36:10.646884",
           "bod-size-bytes": 111067136,
           "kind": "full",
-          "memory-bytes": 1842286592,
-          "seconds": 366.23411107063293
+          "memory-bytes": 1842176000,
+          "seconds": 365.60047578811646
         },
         {
-          "date": "2025/02/09",
-          "time": "00:26:28.164028",
+          "date": "2025/02/11",
+          "time": "07:45:02.923043",
           "bod-size-bytes": 111067136,
           "kind": "incremental",
-          "memory-bytes": 1815109632,
-          "seconds": 259.81349062919617
+          "memory-bytes": 1814966272,
+          "seconds": 262.7338800430298
         },
         {
-          "date": "2025/02/09",
-          "time": "00:30:48.692245",
+          "date": "2025/02/11",
+          "time": "07:49:26.378409",
           "bod-size-bytes": 111067136,
           "kind": "NULL",
-          "memory-bytes": 1813569536,
-          "seconds": 256.4916479587555
+          "memory-bytes": 1813512192,
+          "seconds": 255.48970437049866
         }
       ]
     },
@@ -4686,28 +5271,73 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "00:35:05.878422",
+          "date": "2025/02/11",
+          "time": "07:53:42.558568",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 104767488,
-          "seconds": 278.1041417121887
+          "memory-bytes": 105811968,
+          "seconds": 283.80894565582275
         },
         {
-          "date": "2025/02/09",
-          "time": "00:45:22.432864",
+          "date": "2025/02/11",
+          "time": "08:04:06.948650",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 15073280,
-          "seconds": 99.11489987373352
+          "memory-bytes": 15204352,
+          "seconds": 99.4224967956543
         },
         {
-          "date": "2025/02/09",
-          "time": "00:47:02.051552",
+          "date": "2025/02/11",
+          "time": "08:05:46.866508",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
-          "memory-bytes": 15073280,
-          "seconds": 94.51359510421753
+          "memory-bytes": 15204352,
+          "seconds": 94.85051655769348
+        }
+      ]
+    },
+    "host": {
+      "arch": "x86_64",
+      "platform": "Linux-6.8.0-48-generic-x86_64-with-glibc2.39",
+      "version": "#48~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct  7 11:24:13 UTC 2",
+      "cpus": 4,
+      "memory-bytes": 8169140224
+    },
+    "geometry": {
+      "files-per-dir": 100,
+      "num-modules": 100000,
+      "parallelism": 4
+    }
+  },
+  {
+    "tool": {
+      "label": "ninja",
+      "version": "1.11.1",
+      "args": "<no-args>",
+      "runs": [
+        {
+          "date": "2025/02/11",
+          "time": "08:07:22.213850",
+          "bod-size-bytes": 4120576,
+          "kind": "full",
+          "memory-bytes": 310628352,
+          "seconds": 407.1314606666565
+        },
+        {
+          "date": "2025/02/11",
+          "time": "08:19:53.915447",
+          "bod-size-bytes": 4120576,
+          "kind": "incremental",
+          "memory-bytes": 310751232,
+          "seconds": 10.358443975448608
+        },
+        {
+          "date": "2025/02/11",
+          "time": "08:20:04.825766",
+          "bod-size-bytes": 4120576,
+          "kind": "NULL",
+          "memory-bytes": 310751232,
+          "seconds": 7.072690725326538
         }
       ]
     },
@@ -4731,28 +5361,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "00:48:37.060830",
+          "date": "2025/02/11",
+          "time": "08:20:12.413782",
           "bod-size-bytes": 28423405568,
           "kind": "full",
-          "memory-bytes": 2776805376,
-          "seconds": 1372.4492058753967
+          "memory-bytes": 4425609216,
+          "seconds": 1381.4021701812744
         },
         {
-          "date": "2025/02/09",
-          "time": "01:41:06.719182",
-          "bod-size-bytes": 26943807488,
+          "date": "2025/02/11",
+          "time": "09:13:45.937378",
+          "bod-size-bytes": 26943811584,
           "kind": "incremental",
-          "memory-bytes": 2294374400,
-          "seconds": 56.993587493896484
+          "memory-bytes": 2242301952,
+          "seconds": 61.91137719154358
         },
         {
-          "date": "2025/02/09",
-          "time": "02:05:22.977065",
+          "date": "2025/02/11",
+          "time": "09:37:11.759789",
           "bod-size-bytes": 26940108800,
           "kind": "NULL",
-          "memory-bytes": 2303401984,
-          "seconds": 14.891924858093262
+          "memory-bytes": 2112012288,
+          "seconds": 20.19302225112915
         }
       ]
     },
@@ -4776,28 +5406,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "02:28:18.639095",
+          "date": "2025/02/11",
+          "time": "09:59:31.916779",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 104579072,
-          "seconds": 811.8574533462524
+          "memory-bytes": 106131456,
+          "seconds": 818.5708525180817
         },
         {
-          "date": "2025/02/09",
-          "time": "03:08:37.933668",
+          "date": "2025/02/11",
+          "time": "10:39:16.346474",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 33226752,
-          "seconds": 692.4268527030945
+          "memory-bytes": 33095680,
+          "seconds": 692.2012577056885
         },
         {
-          "date": "2025/02/09",
-          "time": "03:20:10.964601",
+          "date": "2025/02/11",
+          "time": "10:50:49.185443",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
-          "memory-bytes": 33222656,
-          "seconds": 687.7494885921478
+          "memory-bytes": 33095680,
+          "seconds": 688.1005947589874
         }
       ]
     },
@@ -4821,28 +5451,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "03:31:39.191441",
+          "date": "2025/02/11",
+          "time": "11:02:17.778591",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 104701952,
-          "seconds": 100.4087986946106
+          "memory-bytes": 105971712,
+          "seconds": 103.7855498790741
         },
         {
-          "date": "2025/02/09",
-          "time": "03:39:09.083915",
+          "date": "2025/02/11",
+          "time": "11:09:49.500244",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 15204352,
-          "seconds": 9.417780637741089
+          "memory-bytes": 15073280,
+          "seconds": 9.485615015029907
         },
         {
-          "date": "2025/02/09",
-          "time": "03:39:19.165684",
+          "date": "2025/02/11",
+          "time": "11:09:59.518577",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
           "memory-bytes": 15204352,
-          "seconds": 7.781867742538452
+          "seconds": 7.815871238708496
         }
       ]
     },
@@ -4866,28 +5496,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "03:39:27.438213",
+          "date": "2025/02/11",
+          "time": "11:10:07.823648",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 2490707968,
-          "seconds": 392.7337634563446
+          "memory-bytes": 2490527744,
+          "seconds": 396.18093156814575
         },
         {
-          "date": "2025/02/09",
-          "time": "03:51:57.584037",
+          "date": "2025/02/11",
+          "time": "11:22:34.504814",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 1965846528,
-          "seconds": 293.1583032608032
+          "memory-bytes": 1966034944,
+          "seconds": 292.0185112953186
         },
         {
-          "date": "2025/02/09",
-          "time": "03:56:51.640099",
+          "date": "2025/02/11",
+          "time": "11:27:27.308377",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
-          "memory-bytes": 1965092864,
-          "seconds": 284.25852227211
+          "memory-bytes": 1965015040,
+          "seconds": 285.58273220062256
         }
       ]
     },
@@ -4911,28 +5541,28 @@
       "args": "--no-builtin-rules --no-builtin-variables",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "04:01:36.378375",
+          "date": "2025/02/11",
+          "time": "11:32:13.404361",
           "bod-size-bytes": 4120576,
           "kind": "full",
-          "memory-bytes": 765890560,
-          "seconds": 119.62908220291138
+          "memory-bytes": 765898752,
+          "seconds": 122.26929664611816
         },
         {
-          "date": "2025/02/09",
-          "time": "04:09:14.517081",
+          "date": "2025/02/11",
+          "time": "11:40:00.033038",
           "bod-size-bytes": 4120576,
           "kind": "incremental",
-          "memory-bytes": 242249728,
-          "seconds": 17.9490008354187
+          "memory-bytes": 242139136,
+          "seconds": 17.799181938171387
         },
         {
-          "date": "2025/02/09",
-          "time": "04:09:33.042147",
+          "date": "2025/02/11",
+          "time": "11:40:18.378892",
           "bod-size-bytes": 4120576,
           "kind": "NULL",
           "memory-bytes": 241610752,
-          "seconds": 14.531443119049072
+          "seconds": 14.232483863830566
         }
       ]
     },
@@ -4956,28 +5586,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "04:09:48.087465",
+          "date": "2025/02/11",
+          "time": "11:40:33.098779",
           "bod-size-bytes": 328028160,
           "kind": "full",
-          "memory-bytes": 3720478720,
-          "seconds": 928.8499572277069
+          "memory-bytes": 3720306688,
+          "seconds": 935.8011124134064
         },
         {
-          "date": "2025/02/09",
-          "time": "04:30:57.242415",
+          "date": "2025/02/11",
+          "time": "12:02:06.446241",
           "bod-size-bytes": 328028160,
           "kind": "incremental",
-          "memory-bytes": 3758546944,
-          "seconds": 770.965705871582
+          "memory-bytes": 3758583808,
+          "seconds": 761.8748157024384
         },
         {
-          "date": "2025/02/09",
-          "time": "04:43:49.463374",
+          "date": "2025/02/11",
+          "time": "12:14:49.489923",
           "bod-size-bytes": 328028160,
           "kind": "NULL",
-          "memory-bytes": 3758252032,
-          "seconds": 752.9765932559967
+          "memory-bytes": 3758501888,
+          "seconds": 747.3801414966583
         }
       ]
     },
@@ -5001,28 +5631,28 @@
       "args": "<no-args>",
       "runs": [
         {
-          "date": "2025/02/09",
-          "time": "04:56:23.599177",
+          "date": "2025/02/11",
+          "time": "12:27:18.029931",
           "bod-size-bytes": 229838848,
           "kind": "full",
-          "memory-bytes": 3704786944,
-          "seconds": 743.4609234333038
+          "memory-bytes": 3704672256,
+          "seconds": 740.371643781662
         },
         {
-          "date": "2025/02/09",
-          "time": "05:14:46.717195",
+          "date": "2025/02/11",
+          "time": "12:45:36.166192",
           "bod-size-bytes": 229838848,
           "kind": "incremental",
-          "memory-bytes": 3648253952,
-          "seconds": 527.9556157588959
+          "memory-bytes": 3647856640,
+          "seconds": 530.4472894668579
         },
         {
-          "date": "2025/02/09",
-          "time": "05:23:35.610499",
+          "date": "2025/02/11",
+          "time": "12:54:27.566502",
           "bod-size-bytes": 229838848,
           "kind": "NULL",
-          "memory-bytes": 3646185472,
-          "seconds": 518.4317972660065
+          "memory-bytes": 3646345216,
+          "seconds": 520.4664063453674
         }
       ]
     },
