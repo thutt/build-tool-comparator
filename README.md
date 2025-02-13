@@ -267,66 +267,15 @@ scale with the amount of parallelism being used.
 
 # Tools Being Measured
 
-## Bash
+## Bash [https://www.gnu.org/software/bash/]
 
 Bash is not a build tool, but it can used to conveniently create a
 shell script that emulates the unoptimized operations of creating an
 artifact if any of its prerequisite are changed.  It represents a
 naive low bound for the time needed to create artifacts.
 
-## Make
 
-Make is the oldest of the build tools.  The Make dialect used in this
-project is Gnu Make.
-
-### Pros
-- Easy to start a project.
-- Fast.
-- Common.
-- Simple enough to understand 95% of the tool, but capable enough to
-  do everything you need.
-- Plays well with other build tools.
-- Pretty good documentation.
-- Scales well to large projects in terms of build time.
-- POSIX standard provides predictable cross platform behavior
-
-### Cons
-
-- Moderately complicated.
-- Single global namespace.
-- Minimal checking of input files.
-- Undefined (eg: misspelled) variables have an empty value.
-- Does not handle pathnames with embedded spaces well.
-- Hidden state affecting build mostly through environment variables.
-- Scales very poorly to large projects in terms of Makefile management.
-
-## Scons
-
-Scons is a build tool written in Python.  Possibly simpler to use
-for those with no familiarity at all with Make.
-
-### Pros
-
-- Plays somewhat well with other build tools.
-- Uses Python.
-- Fairly good documentation.
-- Scales well in terms of Scons code.
-- Scales well to medium-sized projects in terms of speed.
-- Scales moderately well to medium-sized projects in terms of disk usage overhead.
-
-### Cons
-
-- Moderately complicated.
-- Hidden state affecting build via automatically used config files.
-- Uses Python; people tend to treat it is a general purpose
-  programming language, and not a builder of a DAG to build to
-  product.  This causes work, that should be done only when
-  _out-of-date_, to be done on every startup.
-- Large projects have significant administrative overheads in time and disk space.
-- Significant use of RAM for large projects.
-- Significant use of disk space for large projects.
-
-## Bazel
+## Bazel [https://bazel.build/]
 
 Bazel is the public version of Google's internal Blaze build tool,
 without the secret sauce that makes it work well in their network.
@@ -359,7 +308,45 @@ this project, but speed claims and disk utilization certainly are.
 - By default, these four build directories are symlinked to ~/.cache/bazel.
 
 
-## Ninja
+## Make [https://www.gnu.org/software/make/]
+
+Make is the oldest of the build tools.  The Make dialect used in this
+project is Gnu Make.
+
+## Note on variant Make runs:
+```
+   Make has a lot of built-in suffix rules, and will automatically
+   search them when deciding how a file should be built.  In many
+   cases, these legacy-esque rules are not necessary and can be
+   disabled, resulting in a faster build.  When these rules are
+   disabled, the Makefile maintainer will have to supply the rules (or
+   copy them from Make) needed to build the product (as is required for
+   Ninja).
+```
+
+### Pros
+- Easy to start a project.
+- Fast.
+- Common.
+- Simple enough to understand 95% of the tool, but capable enough to
+  do everything you need.
+- Plays well with other build tools.
+- Pretty good documentation.
+- Scales well to large projects in terms of build time.
+- POSIX standard provides predictable cross platform behavior
+
+### Cons
+
+- Moderately complicated.
+- Single global namespace.
+- Minimal checking of input files.
+- Undefined (eg: misspelled) variables have an empty value.
+- Does not handle pathnames with embedded spaces well.
+- Hidden state affecting build mostly through environment variables.
+- Scales very poorly to large projects in terms of Makefile management.
+
+
+## Ninja [https://ninja-build.org/]
 
 Ninja is a build system created by Google.  It is similar to Make, but
 nearly all the useful features of Make have been removed in an effort
@@ -367,15 +354,49 @@ to make it fast.
 
 ### Pros
 
-- Genuinely fast for many projects.
+- Fast for many projects.
 - Made by Google.
 
 ### Cons
 
 - Made by Google.
-- Syntax not suited to manual creation.
+- Syntax not suited to by-hand build process creation.
 - Ninja files usually created by one of a coterie of preprocessors, each accepting a different domain specific language (DSL).
 - Insignificantly faster than Make.
+
+
+## Scons [https://scons.org/]
+
+Scons is a build tool written in Python.  Possibly simpler to use
+for those with no familiarity at all with Make.
+
+### Note on variant Scons runs:
+```
+  By default, Scons uses md5sums to determine if files have changed.
+  There is a simple option to have it use just timestamps, like make.
+  This make Scons builds complete more quickly.
+```
+
+### Pros
+
+- Plays somewhat well with other build tools.
+- Uses Python.
+- Fairly good documentation.
+- Scales well in terms of Scons code.
+- Scales well to medium-sized projects in terms of speed.
+- Scales moderately well to medium-sized projects in terms of disk usage overhead.
+
+### Cons
+
+- Moderately complicated.
+- Hidden state affecting build via automatically used config files.
+- Uses Python; people tend to treat it is a general purpose
+  programming language, and not a builder of a DAG to build to
+  product.  This causes work, that should be done only when
+  _out-of-date_, to be done on every startup.
+- Large projects have significant administrative overheads in time and disk space.
+- Significant use of RAM for large projects.
+- Significant use of disk space for large projects.
 
 # Informational Results
 
@@ -392,21 +413,6 @@ normally needed to build software.  Because each tool is doing the
 same thing, this gives a representative example of the base overhead
 you will see if you use a particular build tool for your project.
 
-## Note on Scons variants:
-```
-  By default, Scons uses md5sums to determine if files have changed.
-  There is a simple option to have it use just timestamps, like make.
-```
-
-## Note on Make variants:
-```
-   Make has a lot of built-in suffix rules, and will automatically
-   search them when deciding how a file should be built.  In many
-   cases, these legacy-esque rules are not necessary and can be
-   disabled, resulting in a faster build.  When these rules are
-   disabled, the Makefile maintainer will have to supply the rules (or
-   copy them from Make) needed to build the product.
-```
 
 # Results
 
