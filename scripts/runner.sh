@@ -12,6 +12,8 @@ set -o errexit;
 SCRIPT="${BASH_SOURCE[0]}"
 SRC_DIR=$(dirname "${SCRIPT}");
 
+ALL_TOOLS="bash bazel make ninja scons"; # All tools to test.
+
 
 function run_bash ()
 {
@@ -120,6 +122,23 @@ function run_make_scons ()
 }
 
 
+function enabled ()
+{
+    local tool="${1}";
+
+    if [[ ${TOOLS_TO_MEASURE} == *${tool}* ]] ; then
+        # ${tool} enabled.
+        if [ $(which "${tool}") ] ; then
+            return 0;           # Tool found on path.
+        fi;
+        return 1;               # Tool not found in path.
+    else
+        # ${tool} not enabled.
+        return 1;
+    fi;
+}
+
+
 function build_all ()
 {
     local nf="${1}";
@@ -139,36 +158,36 @@ function build_all ()
     echo "Parallel     : ${BPC_PARALLEL}";
     echo "Source       : ${BPC_SOURCE}";
 
-    if [ $(which bash) ] ; then
+    if enabled "bash"; then
         run_bash;
     else
-        echo -e "\nBash not found; skipping testing.\n"
+        echo -e "\nBash not enabled or not found; testing skipped.\n"
     fi;
 
-    if [ $(which ninja) ] ; then
+    if enabled "ninja"; then
         run_ninja;
     else
-        echo -e "\nNinja not found; skipping testing.\n"
+        echo -e "\nNinja not enabled or not found; testing skipped.\n"
     fi;
 
-    if [ $(which bazel) ] ; then
+    if enabled "bazel"; then
         run_bazel;
     else
-        echo -e "\nBazel not found; skipping testing.\n"
+        echo -e "\nBazel not enabled or not found; testing skipped.\n"
     fi;
 
-    if [ $(which make) ] ; then
+    if enabled "make"; then
         run_recursive_make;
         run_single_make;
     else
-        echo -e "\nMake not found; skipping testing.\n"
+        echo -e "\nMake not enabled or not found; testing skipped.\n"
     fi;
 
-    if [ $(which scons) ] ; then
+    if enabled "scons"; then
         run_md5sum_scons;
         run_make_scons;
     else
-        echo -e "\nScons not found; skipping testing.\n"
+        echo -e "\nScons not enabled or not found; testing skipped.\n"
     fi;
 }
 
@@ -202,26 +221,106 @@ EOF
     fi;
 }
 
+function process_args ()
+{
+    TOOLS_TO_MEASURE="";
+
+    while true ; do
+        case "${1}" in
+            -h)
+                cat <<EOF
+This program runs measurements for one or more build tools.
+
+  --all   : Measure all tools.
+  --bash  : Measure runs with Bash.
+  --bazel : Measure runs using Bazel.
+  --make  : Measure runs with Gnu Make.
+  --ninja : Measure runs with Ninja.
+  --scons : Measure runs with Scons.
+  -h      : The help message.
+
+  If no argument is supplied, '--all' is used.
+EOF
+                exit 0;
+                ;;
+
+            --all)
+                export TOOLS_TO_MEASURE="${ALL_TOOLS}";
+                shift 1;
+                ;;
+
+            --bash)
+                export TOOLS_TO_MEASURE="bash ${TOOLS_TO_MEASURE}"
+                shift 1;
+                ;;
+
+            --bazel)
+                export TOOLS_TO_MEASURE="bazel ${TOOLS_TO_MEASURE}"
+                shift 1;
+                ;;
+
+            --make)
+                export TOOLS_TO_MEASURE="make ${TOOLS_TO_MEASURE}"
+                shift 1;
+                ;;
+
+            --ninja)
+                export TOOLS_TO_MEASURE="ninja ${TOOLS_TO_MEASURE}"
+                shift 1;
+                ;;
+
+            --scons)
+                export TOOLS_TO_MEASURE="scons ${TOOLS_TO_MEASURE}"
+                shift 1;
+                ;;
+
+            --)                 # End of arguments
+                shift;
+                break;
+                ;;
+
+            *)
+                echo "Unknown option '${1}'";
+                return 1;
+                ;;
+        esac
+    done
+
+    if [ -z "${TOOLS_TO_MEASURE}" ] ; then
+        TOOLS_TO_MEASURE="${ALL_TOOLS}";
+    fi;
+
+    return 0;
+}
+
+
 function main ()
 {
     local nf;                   # Number of files.
 
-    check_bazel_cache;
+    if process_args ${@} ; then
+        check_bazel_cache;
 
-    for nf in 50 100 1000 5000 10000 50000 100000; do
-        build_all "${nf}";
-    done;
+        for nf in 50 100 1000 5000 10000 50000 100000; do
+            build_all "${nf}";
+        done;
 
-    echo "Removing '${BPC_SOURCE}'"
-    if ! rm -rf "${BPC_SOURCE}"; then
-        echo "Failed to fully remove '${BPC_SOURCE}'";
-    fi;
+        echo "Removing '${BPC_SOURCE}'"
+        if ! rm -rf "${BPC_SOURCE}"; then
+            echo "Failed to fully remove '${BPC_SOURCE}'";
+        fi;
 
-    echo "Removing '${BPC_BOD}'"
-    if ! rm -rf "${BPC_BOD}"; then
-        echo "Failed to fully remove '${BPC_BOD}'";
+        echo "Removing '${BPC_BOD}'"
+        if ! rm -rf "${BPC_BOD}"; then
+            echo "Failed to fully remove '${BPC_BOD}'";
+        fi;
     fi;
 }
 
+args=$(/usr/bin/getopt -o h --longoptions help,all,bash,bazel,make,ninja,scons -- "${@}")
+set -- "${args}"            # Set postional args to ${args}.
+unset args;
+
+main ${@};
 
 main "${@}";
